@@ -3,16 +3,19 @@
 
 :root {
   --primary: #18191A;
-  --yellow: rgb(242, 165, 21);
+  --yellow: #f2a515;
   --dark: #363949;
-  --black: #111010;
-  --green: #41f1b6;
-  --grey: #1C1C1C;
-  --red: #e63946;
-  --white: #fff;
-  --blue: #1e90ff;
+  --black: #21313c;
+  --green: #00684a;
+  --dark-green: #023430;
+  --grey: #637279;
+  --red: #ff3b4b;
+  --white: #ffffff;
+  --blue: #006cfa;
+  --cyan: #13a3b5;
+  --gradient-blue: linear-gradient(195deg, rgb(196, 249, 253) 15%, rgb(167, 221, 250) 70%);
   --text-color: #161824;
-
+  
   --font-family: 'Poppins', sans-serif;
 
   --search-button-width: "300px";
