@@ -1,0 +1,27 @@
+:root {
+  --default-layout-header-height: 68.5px;
+  --default-layout-width: 1400px;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  margin-top: var(--default-layout-header-height);
+  min-width: var(--default-layout-width);
+  min-height: 100vh;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inner {
+  max-width: 100%;
+  display: flex;
+}
+
+.content {
+  flex: 1;
+}
