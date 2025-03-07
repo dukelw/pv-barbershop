@@ -20,14 +20,6 @@ class UploadController {
     });
     res.status(200).send(result);
   }
-
-  async uploadAudio(req, res, next) {
-    const { file } = req;
-    console.log("Audio:::", file);
-    if (!file) throw new Error("File missing");
-    const result = await UploadService.uploadAudioFromLocal(file.path);
-    return res.status(200).send(result);
-  }
 }
 
 module.exports = new UploadController();
