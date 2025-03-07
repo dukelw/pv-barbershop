@@ -7,7 +7,7 @@ const uploadMemory = multer({
 const uploadDisk = multer({
   storage: multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "./uploads");
+      cb(null, "./src/uploads");
       // When deploy, use ./src as root folder so ./uploads
     },
     filename: function (req, file, cb) {
