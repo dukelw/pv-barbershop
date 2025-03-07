@@ -1,0 +1,20 @@
+[{
+  "_id": {
+    "$oid": "67caf2b0231e1de6abb78f84"
+  },
+  "user_name": "Jack",
+  "user_email": "thevi@gmail.com",
+  "user_avatar": "",
+  "user_password": "$2b$10$5ARLRtC.WJ7fXsIj1Fu3Pu2LE.M7qwC1f5a.m7aOY.5JOVZeVt6Ru",
+  "user_gender": {
+    "enum": []
+  },
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2025-03-07T13:20:48.664Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T13:20:48.664Z"
+  },
+  "__v": 0
+}]
