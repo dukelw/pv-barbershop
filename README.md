@@ -60,6 +60,9 @@ For the frontend, you'll need to create a `.env` file in the `client` directory 
 
 Make sure to restart your frontend server after setting these environment variables.
 
+### Dashboard Environment Variables
+
+**VITE_REACT_APP_BASE_URL**: The base URL for API requests when using the dashboard (defaults to `http://localhost:5000/api/v1/`).
 
 ### Steps to run locally
 
@@ -85,17 +88,17 @@ Make sure to restart your frontend server after setting these environment variab
 
    ```bash
     npm start
-6. Start the frontend application:
+7. Start the frontend application:
    ```bash
     cd ../client
     npm start
 
-6. Start the dashboard:
+8. Start the dashboard:
    ```bash
     cd ../dashboard
     npm run dev
 
-7. Open your browser and navigate to http://localhost:3000 to see the website in action.
+9. Open your browser and navigate to http://localhost:3000 to see the website in action.
 
 ## API Endpoints
 
