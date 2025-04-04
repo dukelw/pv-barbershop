@@ -70,3 +70,22 @@ This folder contains the NodeJS backend API.
    ```bash
    git clone https://github.com/your-username/pv-barbershop.git
    cd pv-barbershop
+
+2. Install the frontend dependencies:
+   ```bash
+    cd client
+    npm install
+3. Install the backend dependencies:
+   ```bash
+    cd ../server
+    npm install
+4. Set up environment variables in the server/.env file (MongoDB URI, JWT Secret, etc.)
+5. Start the backend server:
+
+   ```bash
+    npm start
+6. Start the frontend application:
+   ```bash
+    cd ../client
+    npm start
+7. Open your browser and navigate to http://localhost:3000 to see the website in action.
