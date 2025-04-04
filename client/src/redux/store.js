@@ -5,6 +5,7 @@ import commentReducer from "./commentSlice";
 import notificationReducer from "./notificationSlice";
 import appointmentReducer from "./appointmentSlice";
 import sliderReducer from "./sliderSlice";
+import serviceReducer from "./serviceSlice";
 
 import {
   persistStore,
@@ -31,6 +32,7 @@ const rootReducer = combineReducers({
   notification: notificationReducer,
   slider: sliderReducer,
   appointment: appointmentReducer,
+  service: serviceReducer,
 });
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

@@ -1,14 +1,20 @@
-const { ServiceModel } = require("../models/Service");
+const ServiceModel = require("../models/Service");
 const { NotFoundError, BadRequestError } = require("../core/error-response");
 
 class ServiceService {
-  async createService({ name, price, duration, description, image }) {
+  async createService({
+    service_name,
+    service_price,
+    service_duration,
+    service_description,
+    service_image,
+  }) {
     const newService = await ServiceModel.create({
-      service_name: name,
-      service_price: price,
-      service_duration: duration,
-      service_description: description,
-      service_image: image,
+      service_name,
+      service_price,
+      service_duration,
+      service_description,
+      service_image,
     });
 
     return newService;

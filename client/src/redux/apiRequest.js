@@ -89,6 +89,23 @@ import {
   updateSliderStart,
   updateSliderSuccess,
 } from "./sliderSlice";
+import {
+  createServiceFailure,
+  createServiceStart,
+  createServiceSuccess,
+  deleteServiceFailure,
+  deleteServiceStart,
+  deleteServiceSuccess,
+  getAllServicesFailure,
+  getAllServicesStart,
+  getAllServicesSuccess,
+  getServiceFailure,
+  getServiceStart,
+  getServiceSuccess,
+  updateServiceFailure,
+  updateServiceStart,
+  updateServiceSuccess,
+} from "./serviceSlice";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -694,3 +711,110 @@ export const deleteCollection = async (
 };
 
 // End slider
+
+// Start service
+
+export const getService = async (ID, dispatch) => {
+  dispatch(getServiceStart());
+  try {
+    const res = await axios.get(`${REACT_APP_BASE_URL}service/${ID}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    dispatch(getServiceSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    console.error("Error fetching service:", error);
+    dispatch(getServiceFailure());
+  }
+};
+
+export const getAllServices = async (dispatch) => {
+  dispatch(getAllServicesStart());
+  try {
+    const res = await axios.get(`${REACT_APP_BASE_URL}service/all`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    dispatch(getAllServicesSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    dispatch(getAllServicesFailure());
+  }
+};
+
+export const createService = async (
+  accessToken,
+  service,
+  dispatch,
+  navigate,
+  axiosJWT
+) => {
+  dispatch(createServiceStart());
+  try {
+    const res = await axiosJWT.post(
+      `${REACT_APP_BASE_URL}service/create`,
+      service,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `${accessToken}`,
+        },
+      }
+    );
+    dispatch(createServiceSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    dispatch(createServiceFailure());
+  }
+};
+
+export const updateService = async (
+  accessToken,
+  service,
+  dispatch,
+  navigate,
+  axiosJWT
+) => {
+  dispatch(updateServiceStart());
+  try {
+    const res = await axiosJWT.put(
+      `${REACT_APP_BASE_URL}service/${service.service_id}`,
+      service,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `${accessToken}`,
+        },
+      }
+    );
+    dispatch(updateServiceSuccess(res.data));
+    navigate("/management/collection");
+  } catch (error) {
+    dispatch(updateServiceFailure());
+  }
+};
+
+export const deleteService = async (accessToken, ID, dispatch, axiosJWT) => {
+  dispatch(deleteServiceStart());
+  try {
+    await axiosJWT.delete(
+      `${REACT_APP_BASE_URL}service/${ID}`,
+      {},
+      {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `${accessToken}`,
+        },
+      }
+    );
+    dispatch(deleteServiceSuccess());
+  } catch (error) {
+    dispatch(deleteServiceFailure());
+    return false;
+  }
+};
+
+// End service
