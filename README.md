@@ -12,7 +12,6 @@ This project uses **ReactJS** for the frontend, **NodeJS** for the backend, and 
 - [API Endpoints](#api-endpoints)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Technologies Used
 
@@ -70,39 +69,64 @@ This folder contains the NodeJS backend API.
 ## API Endpoints
 
 ### Authentication
-
-- **POST /api/auth/register**: Register a new user.
-- **POST /api/auth/login**: Log in a user and generate a JWT token.
-- **POST /api/auth/reset-password**: Reset the password for a user.
+- **POST /api/v1/user/signin**: Log in a user and generate a JWT token.
+- **POST /api/v1/user/signup**: Register a new user.
+- **POST /api/v1/user/other-signin**: Sign in via an alternative method.
+- **POST /api/v1/user/other-signup**: Sign up via an alternative method.
+- **POST /api/v1/user/signin**: Log in a user.
+- **POST /api/v1/user/logout**: Log out a user.
+- **POST /api/v1/user/add-favourite**: Add to the user's favourite list.
+- **POST /api/v1/user/change-password**: Change user password.
+- **POST /api/v1/user/update-address-default**: Update the default address.
+- **POST /api/v1/user/add-address**: Add a new address.
+- **POST /api/v1/user/update**: Update user information.
+- **POST /api/v1/user/refresh-token**: Refresh the JWT token.
 
 ### Appointments
+- **POST /api/v1/appointment/create**: Create a new appointment.
+- **GET /api/v1/appointment/user**: Get appointments for the user.
+- **GET /api/v1/appointment/barber/:barberId**: Get appointments for a specific barber.
+- **PUT /api/v1/appointment/:id/status**: Update the status of an appointment.
+- **DELETE /api/v1/appointment/:id**: Delete an appointment.
 
-- **GET /api/appointments**: Get a list of all appointments.
-- **POST /api/appointments/book**: Book a new appointment.
-- **PUT /api/appointments/:id**: Update an appointment.
-- **DELETE /api/appointments/:id**: Delete an appointment.
+### Reviews
+- **POST /api/v1/review/create**: Create a new review.
+- **GET /api/v1/review/barber/:barberId**: Get reviews by barber.
+- **GET /api/v1/review/service/:serviceId**: Get reviews by service.
 
-### Customers
+### Services
+- **POST /api/v1/service/create**: Create a new service.
+- **GET /api/v1/service/all**: Get all services.
+- **GET /api/v1/service/:id**: Get a specific service by ID.
+- **PUT /api/v1/service/:id**: Update a service.
+- **DELETE /api/v1/service/:id**: Delete a service.
 
-- **GET /api/customers**: Get a list of all customers.
-- **GET /api/customers/:id**: Get a specific customer's details.
-- **PUT /api/customers/:id**: Update a customer's information.
+### Inventory
+- **POST /api/v1/inventory/add**: Add a new inventory item.
+- **GET /api/v1/inventory/all**: Get all inventory items.
+- **PUT /api/v1/inventory/:id**: Update an inventory item.
+- **DELETE /api/v1/inventory/:id**: Delete an inventory item.
+
+### Invoices
+- **POST /api/v1/invoice/create**: Create a new invoice.
+- **GET /api/v1/invoice/user**: Get invoices for a user.
+- **PUT /api/v1/invoice/:id/status**: Update the status of an invoice.
+
+### File Uploads
+- **POST /api/v1/upload/image**: Upload an image.
+
+### Slider
+- **POST /api/v1/slider/create**: Create a new slider.
+- **POST /api/v1/slider/update**: Update a slider.
+- **POST /api/v1/slider/toggle**: Toggle the visibility of a slider.
+- **GET /api/v1/slider/find-active**: Get active sliders.
+- **GET /api/v1/slider/find/:id**: Get a specific slider by ID.
+- **DELETE /api/v1/slider/:id**: Delete a slider.
+
+### Site
+- **GET /**: Welcome route for the site.
 
 ## Usage
-
 - **Customers** can browse available times and book appointments.
-- **Admins** can manage appointments, customer details, and generate reports through the dashboard.
-
-## Contributing
-
-We welcome contributions to improve this project! Please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch for your feature (`git checkout -b feature-name`).
-3. Commit your changes (`git commit -am 'Add new feature'`).
-4. Push to the branch (`git push origin feature-name`).
-5. Open a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+- **Admins** can manage appointments, customer details, inventory, and generate reports through the dashboard.
+- **Receptionist** can manage appointments, customer details, inventory, and generate reports through the dashboard.
