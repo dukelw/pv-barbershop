@@ -27,35 +27,12 @@ This project uses **ReactJS** for the frontend, **NodeJS** for the backend, and 
 
 ### `client/`
 This folder contains the frontend ReactJS application.
-- **components/**: Reusable React components for the app UI.
-- **config/**: Configuration files for setting up Axios and other services.
-- **constants/**: Static values such as API URLs or constant data.
-- **layouts/**: React components that handle the layout of the pages.
-- **pages/**: The pages of the app, such as home, booking page, and customer profile.
-- **redux/**: Redux state management setup.
-- **routes/**: React Router setup for handling page navigation.
-- **src/**: Contains core files for rendering the app, such as `App.js` and `index.js`.
 
 ### `dashboard/`
 This folder contains the admin panel ReactJS app.
-- **src/**: Includes files to handle the logic and rendering of the dashboard.
-- **createAxios.js**: Handles API requests to the backend.
-- **index.html**: Main HTML file for the dashboard.
-- **package.json**: Contains dependencies and scripts for the dashboard app.
-- **README.md**: Documentation for the dashboard.
 
 ### `server/`
 This folder contains the NodeJS backend API.
-- **auth/**: Handles user authentication (login, registration, password reset).
-- **controllers/**: Contains controller functions to manage business logic.
-- **core/**: Contains core services for the backend.
-- **databases/**: MongoDB database connection setup.
-- **models/**: Mongoose models for MongoDB collections (e.g., User, Appointment).
-- **routes/**: Defines API routes for the frontend to interact with.
-- **services/**: Business logic for processing data.
-- **uploads/**: Manages file uploads, if applicable.
-- **utils/**: Helper functions.
-- **index.js**: Main entry point for the NodeJS server.
 
 ## Setup Instructions
 
