@@ -1,26 +1,29 @@
 const { Schema, model } = require("mongoose");
 
-const DOCUMENT_NAME = "Answer";
-const COLLECTION_NAME = "Answers";
+const DOCUMENT_NAME = "Slider";
+const COLLECTION_NAME = "Sliders";
 
-var answerSchema = new Schema(
+var sliderSchema = new Schema(
   {
-    answer_name: {
+    slider_collection: {
       type: String,
       required: true,
     },
-    answer_content: {
-      type: String,
-      default: "",
-      required: true,
-    },
-    answer_image: {
+    slider_content: {
       type: String,
       default: "",
     },
-    answer_audio: {
+    slider_image: {
       type: String,
       default: "",
+    },
+    slider_link: {
+      type: String,
+      default: "",
+    },
+    isActive: {
+      type: Boolean,
+      default: false,
     },
   },
   {
@@ -30,5 +33,5 @@ var answerSchema = new Schema(
 );
 
 module.exports = {
-  AnswerModel: model(DOCUMENT_NAME, answerSchema),
+  SliderModel: model(DOCUMENT_NAME, sliderSchema),
 };

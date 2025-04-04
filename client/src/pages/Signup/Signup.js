@@ -30,7 +30,7 @@ function Signup() {
 
     // Validate fields
     if (!name || !email || !password) {
-      setErrorMessage("All fields are required.");
+      setErrorMessage("Vui lòng nhập đầy đủ thông tin.");
       setOpenSnackbar(true);
       return;
     }
@@ -44,7 +44,7 @@ function Signup() {
     const result = await signup(user, dispatch, navigate);
 
     if (result === false) {
-      setErrorMessage("Signup failed. Please try again.");
+      setErrorMessage("Đăng ký thất bại. Vui lòng thử lại.");
       setOpenSnackbar(true); // Open snackbar if signup fails
     }
   };
@@ -54,82 +54,142 @@ function Signup() {
   };
 
   return (
-    <Container>
-      <h1>SIGN UP</h1>
-      <form onSubmit={handleSubmit} className={cx("form")}>
-        <Box mb={2}>
-          <TextField
-            fullWidth
-            label="Name"
-            variant="outlined"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            error={!name && openSnackbar}
-            helperText={!name && openSnackbar ? "Name is required" : ""}
-          />
-        </Box>
-        <Box mb={2}>
-          <TextField
-            fullWidth
-            label="Email"
-            variant="outlined"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            error={!email && openSnackbar}
-            helperText={!email && openSnackbar ? "Email is required" : ""}
-          />
-        </Box>
-        <Box mb={2}>
-          <TextField
-            fullWidth
-            label="Password"
-            variant="outlined"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            error={!password && openSnackbar}
-            helperText={!password && openSnackbar ? "Password is required" : ""}
-          />
-        </Box>
-        <Box mb={2}>
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={rememberMe}
-                onChange={(e) => setRememberMe(e.target.checked)}
-                color="primary"
-              />
-            }
-            label="Remember me"
-          />
-          <Link className={cx("link")} to="/signin">
-            Sign in
+    <div className={cx("container")}>
+      <div className={cx("content")}>
+        <div className={cx("left-part")}>
+          <Link to={"/"}>
+            <img
+              src="https://res.cloudinary.com/lewisshop/image/upload/v1743512129/toeic/answers/1743512126263-Logo.png.png"
+              alt="Logo"
+            />
           </Link>
-        </Box>
-        <Box mb={2}>
-          <Button type="submit" variant="contained" color="primary" fullWidth>
-            Sign up
-          </Button>
-        </Box>
-      </form>
-      <Link className={cx("link")} to="/">
-        Go to HomePage
-      </Link>
-      <Snackbar
-        open={openSnackbar}
-        autoHideDuration={6000}
-        onClose={handleCloseSnackbar}
-      >
-        <MuiAlert
-          onClose={handleCloseSnackbar}
-          severity="error"
-          sx={{ width: "100%" }}
-        >
-          {errorMessage}
-        </MuiAlert>
-      </Snackbar>
-    </Container>
+        </div>
+        <div className={cx("right-part")}>
+          <h1 className={cx("title")}>Đăng ký</h1>
+          <form
+            onSubmit={handleSubmit}
+            className={cx("form")}
+            style={{ color: "white" }}
+          >
+            <Box mb={1}>
+              <label style={{ color: "white" }}>Tên đăng ký</label>
+              <input
+                className={cx("input")}
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                onMouseOver={(e) => (e.target.style.borderColor = "black")}
+                onMouseOut={(e) => (e.target.style.borderColor = "white")}
+                onFocus={(e) => (e.target.style.borderColor = "white")}
+              />
+              {!name && openSnackbar && (
+                <p style={{ color: "red", fontSize: "12px" }}>
+                  Vui lòng nhập tên
+                </p>
+              )}
+            </Box>
+
+            <Box mb={1}>
+              <label style={{ color: "white" }}>Email</label>
+              <input
+                className={cx("input")}
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                onMouseOver={(e) => (e.target.style.borderColor = "black")}
+                onMouseOut={(e) => (e.target.style.borderColor = "white")}
+                onFocus={(e) => (e.target.style.borderColor = "white")}
+              />
+              {!email && openSnackbar && (
+                <p style={{ color: "red", fontSize: "12px" }}>
+                  Vui lòng nhập email
+                </p>
+              )}
+            </Box>
+
+            <Box mb={1}>
+              <label style={{ color: "white" }}>Mật khẩu</label>
+              <input
+                className={cx("input")}
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              {!password && openSnackbar && (
+                <p style={{ color: "red", fontSize: "12px" }}>
+                  Vui lòng nhập mật khẩu
+                </p>
+              )}
+            </Box>
+
+            <Box>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={rememberMe}
+                    onChange={(e) => setRememberMe(e.target.checked)}
+                    sx={{
+                      color: "var(--yellow)",
+                      "&.Mui-checked": {
+                        color: "var(--yellow)",
+                      },
+                    }}
+                  />
+                }
+                label={
+                  <span style={{ color: "white" }}>Ghi nhớ đăng nhập</span>
+                }
+              />
+            </Box>
+            <Box sx={{ textAlign: "center" }} mb={2}>
+              <Button
+                sx={{
+                  backgroundColor: "var(--yellow)",
+                  color: "var(--dark)",
+                  fontWeight: "bold",
+                  width: "200px",
+                  "&:hover": {
+                    backgroundColor: "var(--white)",
+                    color: "var(--black)",
+                  },
+                }}
+                type="submit"
+                variant="contained"
+              >
+                Đăng ký
+              </Button>
+            </Box>
+            <Box mb={2}>
+              Đã có tài khoản
+              <Link
+                to="/signin"
+                style={{
+                  color: "var(--yellow)",
+                  marginLeft: "12px",
+                  fontWeight: "bold",
+                }}
+              >
+                Đăng nhập
+              </Link>
+            </Box>
+          </form>
+
+          <Snackbar
+            open={openSnackbar}
+            autoHideDuration={6000}
+            onClose={handleCloseSnackbar}
+          >
+            <MuiAlert
+              onClose={handleCloseSnackbar}
+              severity="error"
+              sx={{ width: "100%" }}
+            >
+              {errorMessage}
+            </MuiAlert>
+          </Snackbar>
+        </div>
+      </div>
+    </div>
   );
 }
 

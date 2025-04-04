@@ -2,3 +2,25 @@
   color: #ffffff;
   text-decoration: none;
 }
+
+.contact-information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .contact-part {
+    display: flex;
+    align-items: center;
+    margin: 4px 0;
+
+    .text {
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+
+  .contact-part:first-child {
+    margin-top: 8px;
+  }
+}
+

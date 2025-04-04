@@ -26,14 +26,15 @@ var userSchema = new Schema(
     },
     user_gender: {
       Type: String,
-      enum: ["male", "female", "other"],
     },
     user_phone: {
       Type: String,
     },
-    isAdmin: {
-      type: Boolean,
-      default: false,
+    user_role: {
+      type: String,
+      enum: ["admin", "staff", "customer", "receptionist"],
+      required: true,
+      default: "customer",
     },
   },
   {
