@@ -66,3 +66,43 @@ This folder contains the NodeJS backend API.
     cd ../client
     npm start
 7. Open your browser and navigate to http://localhost:3000 to see the website in action.
+
+## API Endpoints
+
+### Authentication
+
+- **POST /api/auth/register**: Register a new user.
+- **POST /api/auth/login**: Log in a user and generate a JWT token.
+- **POST /api/auth/reset-password**: Reset the password for a user.
+
+### Appointments
+
+- **GET /api/appointments**: Get a list of all appointments.
+- **POST /api/appointments/book**: Book a new appointment.
+- **PUT /api/appointments/:id**: Update an appointment.
+- **DELETE /api/appointments/:id**: Delete an appointment.
+
+### Customers
+
+- **GET /api/customers**: Get a list of all customers.
+- **GET /api/customers/:id**: Get a specific customer's details.
+- **PUT /api/customers/:id**: Update a customer's information.
+
+## Usage
+
+- **Customers** can browse available times and book appointments.
+- **Admins** can manage appointments, customer details, and generate reports through the dashboard.
+
+## Contributing
+
+We welcome contributions to improve this project! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature (`git checkout -b feature-name`).
+3. Commit your changes (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature-name`).
+5. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
