@@ -42,6 +42,7 @@ This folder contains the NodeJS backend API.
 
 ## Environment Variables
 
+### Server Environment Variables
 Before running the server, you'll need to configure the environment variables. Create a `.env` file in the `server` directory with the following contents:
 
 - **CLOUDINARY_NAME**: Your Cloudinary account name (for image uploads).
@@ -51,6 +52,14 @@ Before running the server, you'll need to configure the environment variables. C
 - **MONGODB_URL**: The URL for connecting to your MongoDB database. Make sure to replace this with the appropriate URL if you're using a remote MongoDB service.
 
 Ensure that you have these values properly set before starting the backend server.
+
+### Client Environment Variables
+For the frontend, you'll need to create a `.env` file in the `client` directory with the following contents:
+
+- **REACT_APP_BASE_URL**: The base URL for API requests. This should match the backend server's address (default is `http://localhost:5000/api/v1/` if running locally).
+
+Make sure to restart your frontend server after setting these environment variables.
+
 
 ### Steps to run locally
 
