@@ -40,6 +40,18 @@ This folder contains the NodeJS backend API.
 - **NodeJS** (v14.x or higher)
 - **MongoDB**: Local or remote database setup.
 
+## Environment Variables
+
+Before running the server, you'll need to configure the environment variables. Create a `.env` file in the `server` directory with the following contents:
+
+- **CLOUDINARY_NAME**: Your Cloudinary account name (for image uploads).
+- **CLOUDINARY_KEY**: Your Cloudinary API key.
+- **CLOUDINARY_KEY_SECRET**: Your Cloudinary API secret.
+- **PORT**: The port number for the backend server (default is 5000).
+- **MONGODB_URL**: The URL for connecting to your MongoDB database. Make sure to replace this with the appropriate URL if you're using a remote MongoDB service.
+
+Ensure that you have these values properly set before starting the backend server.
+
 ### Steps to run locally
 
 1. Clone this repository:
