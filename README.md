@@ -72,12 +72,16 @@ Make sure to restart your frontend server after setting these environment variab
    ```bash
     cd client
     npm install
-3. Install the backend dependencies:
+4. Install the backend dependencies:
    ```bash
     cd ../server
     npm install
-4. Set up environment variables in the server/.env file (MongoDB URI, JWT Secret, etc.)
-5. Start the backend server:
+5. Install the dashboard:
+   ```bash
+    cd dashboard
+    npm install
+
+6. Start the backend server:
 
    ```bash
     npm start
@@ -85,6 +89,11 @@ Make sure to restart your frontend server after setting these environment variab
    ```bash
     cd ../client
     npm start
+
+6. Start the dashboard:
+   ```bash
+    cd ../dashboard
+    npm run dev
 
 7. Open your browser and navigate to http://localhost:3000 to see the website in action.
 
