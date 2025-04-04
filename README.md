@@ -64,6 +64,7 @@ This folder contains the NodeJS backend API.
    ```bash
     cd ../client
     npm start
+
 7. Open your browser and navigate to http://localhost:3000 to see the website in action.
 
 ## API Endpoints
