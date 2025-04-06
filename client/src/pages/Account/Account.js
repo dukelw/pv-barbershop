@@ -189,6 +189,7 @@ function Account() {
         </div>
 
         <button
+          className={cx("submit-button")}
           type="button"
           onClick={!editable ? handleToggleEdit : handleSubmit}
         >
