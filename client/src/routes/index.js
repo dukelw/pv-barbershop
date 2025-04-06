@@ -49,7 +49,7 @@ const privateRoutes = [
     type: "customer",
     path: config.routes.account,
     component: Account,
-    layout: Account,
+    layout: MainLayout,
   },
 ];
 
