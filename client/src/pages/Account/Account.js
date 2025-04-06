@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
@@ -8,7 +8,7 @@ import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import { createAxios } from "../../createAxios";
 import { MenuItem, Typography } from "@mui/material";
-import { updateUser, uploadImage } from "../../redux/apiRequest";
+import { findUser, updateUser, uploadImage } from "../../redux/apiRequest";
 import { toast } from "react-toastify";
 import classNames from "classnames/bind";
 import styles from "./Account.module.scss";
@@ -20,7 +20,7 @@ function Account() {
   const accessToken = currentUser?.metadata.tokens.accessToken;
   const userID = currentUser?.metadata.user._id;
   const axiosJWT = createAxios(currentUser);
-  const userInfor = currentUser?.metadata.user;
+  const userInfor = useSelector((state) => state.user.signin.currentUser);
   const dispatch = useDispatch();
 
   const normalizeGender = (gender) => (typeof gender === "string" ? gender : "unknown");
@@ -37,6 +37,7 @@ function Account() {
 
   const [editable, setEditable] = useState(false);
   const [file, setFile] = useState(null); // New state for file
+
   const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "success" });
 
   const handleChange = (e) => {
@@ -55,6 +56,14 @@ function Account() {
     setEditable(true);
   };
   console.log(userInfor)
+  const handleGetInfor = async() => {
+    const data = await findUser(userID, dispatch)
+    console.log(data.metadata)
+  };
+
+  useEffect(()=>{
+    handleGetInfor()
+  },[])
   const handleSubmit = async () => {
     try {
       // If file is selected, upload the image first
@@ -65,6 +74,7 @@ function Account() {
 
       // Update user information
       await updateUser(accessToken, userID, form, dispatch, axiosJWT);
+      await handleGetInfor();
       toast.success("Cập nhật thành công");
       setEditable(false);
     } catch (err) {
