@@ -54,7 +54,7 @@ function Account() {
   const handleToggleEdit = () => {
     setEditable(true);
   };
-
+  console.log(userInfor)
   const handleSubmit = async () => {
     try {
       // If file is selected, upload the image first
