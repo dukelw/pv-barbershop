@@ -20,7 +20,7 @@ function Account() {
   const accessToken = currentUser?.metadata.tokens.accessToken;
   const userID = currentUser?.metadata.user._id;
   const axiosJWT = createAxios(currentUser);
-  const userInfor = useSelector((state) => stateuser.find.foundUser.metadata.user);
+  const userInfor = useSelector((state) => state?.user?.find?.foundUser?.metadata?.user);
   const dispatch = useDispatch();
 
   const normalizeGender = (gender) => (typeof gender === "string" ? gender : "unknown");
@@ -55,7 +55,6 @@ function Account() {
   const handleToggleEdit = () => {
     setEditable(true);
   };
-  console.log(userInfor)
   const handleGetInfor = async() => {
     const data = await findUser(userID, dispatch)
     console.log(data.metadata)
