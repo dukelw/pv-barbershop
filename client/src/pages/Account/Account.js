@@ -11,6 +11,8 @@ import { MenuItem, Typography } from "@mui/material";
 
 import classNames from "classnames/bind";
 import styles from "./Account.module.scss";
+import { updateInformation } from "../../../../server/src/controllers/UserController";
+import { updateUser } from "../../redux/apiRequest";
 
 const cx = classNames.bind(styles);
 
@@ -45,15 +47,7 @@ function Account() {
 
   const handleSubmit = async () => {
     try {
-      await axiosJWT.put(
-        `/api/users/${userID}`,
-        { ...form },
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      );
+      updateUser()
       setSnackbar({ open: true, message: "Cập nhật thành công", severity: "success" });
       setEditable(false);
     } catch (err) {
