@@ -77,7 +77,7 @@ function Account() {
       }
 
       // Update user information
-      await updateUser(accessToken, userID, {form,avatar: imageUrl.img_url}, dispatch, axiosJWT);
+      await updateUser(accessToken, userID, {form,avatar: imageUrl.img_url, userID: userID}, dispatch, axiosJWT);
       await handleGetInfor();
       toast.success("Cập nhật thành công");
       setEditable(false);
