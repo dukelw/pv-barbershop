@@ -157,23 +157,25 @@ function Account() {
           />
         </div>
 
-        <div className={cx("box")}>
-          {editable && <label className={cx("label")}>Avatar</label>}
-          {file && editable && (
-            <div className={cx("avatar-container")}>
-              <img src={URL.createObjectURL(file)} alt="Avatar" className={cx("preview-avatar")} />
-            </div>
-          )
-          }
+        {editable && 
+          <div className={cx("box")}>
+            <label className={cx("label")}>Avatar</label>
+            {file && editable && (
+              <div className={cx("avatar-container")}>
+                <img src={URL.createObjectURL(file)} alt="Avatar" className={cx("preview-avatar")} />
+              </div>
+            )
+            }
 
-          {editable && (
-            <input
-              type="file"
-              onChange={handleFileChange}
-              accept="image/*"
-            />
-          )}
-        </div>
+            {editable && (
+              <input
+                type="file"
+                onChange={handleFileChange}
+                accept="image/*"
+              />
+            )}
+          </div>
+        }
 
         <div className={cx("box")}>
           <label className={cx("label")}>Giới tính</label>
