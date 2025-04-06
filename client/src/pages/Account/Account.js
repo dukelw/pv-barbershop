@@ -152,7 +152,7 @@ function Account() {
             onChange={(date) => setForm((prev) => ({ ...prev, birthday: format(date, "dd-MM-yyyy") }))}
             dateFormat="dd-MM-yyyy"
             disabled={!editable}
-            />
+          />
         </div>
 
         <div className={cx("box")}>
