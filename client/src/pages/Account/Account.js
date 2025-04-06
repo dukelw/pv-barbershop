@@ -71,7 +71,7 @@ function Account() {
             className={cx("input")}
             type="text"
             name="user_name"
-            value={form.user_name}
+            value={form.name}
             onChange={handleChange}
             disabled={!editable}
           />
@@ -83,7 +83,7 @@ function Account() {
             className={cx("input")}
             type="email"
             name="user_email"
-            value={form.user_email}
+            value={form.email}
             onChange={handleChange}
             disabled={!editable}
           />
@@ -95,7 +95,7 @@ function Account() {
             className={cx("input")}
             type="text"
             name="user_phone"
-            value={form.user_phone}
+            value={form.phone}
             onChange={handleChange}
             disabled={!editable}
           />
@@ -107,7 +107,7 @@ function Account() {
             className={cx("input")}
             type="text"
             name="user_avatar"
-            value={form.user_avatar}
+            value={form.avatar}
             onChange={handleChange}
             disabled={!editable}
           />
@@ -118,7 +118,7 @@ function Account() {
           <select
             className={cx("input")}
             name="user_gender"
-            value={form.user_gender}
+            value={form.gender}
             onChange={handleChange}
             disabled={!editable}
           >
