@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Container from "@mui/material/Container";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
-import Snackbar from "@mui/material/Snackbar";
-import MuiAlert from "@mui/material/Alert";
 import { createAxios } from "../../createAxios";
-import { MenuItem, Typography } from "@mui/material";
 import { findUser, updateUser, uploadImage } from "../../redux/apiRequest";
 import { toast } from "react-toastify";
 import classNames from "classnames/bind";
@@ -20,9 +13,10 @@ function Account() {
   const accessToken = currentUser?.metadata.tokens.accessToken;
   const userID = currentUser?.metadata.user._id;
   const axiosJWT = createAxios(currentUser);
-  const [userInfor,setUserInfor] = useState({});
+  const [userInfor, setUserInfor] = useState({});
   const dispatch = useDispatch();
   const normalizeGender = (gender) => (typeof gender === "string" ? gender : "unknown");
+
   const [form, setForm] = useState({
     userID: userID,
     name: userInfor?.user_name || "",
@@ -34,9 +28,8 @@ function Account() {
   });
 
   const [editable, setEditable] = useState(false);
-  const [file, setFile] = useState(null); // New state for file
+  const [file, setFile] = useState(null); // State to store file
 
-  const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "success" });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,31 +46,31 @@ function Account() {
   const handleToggleEdit = () => {
     setEditable(true);
   };
-  const handleGetInfor = async() => {
-    const data = await findUser(userID, dispatch)
+
+  const handleGetInfor = async () => {
+    const data = await findUser(userID, dispatch);
     setUserInfor(data.metadata.user);
-    console.log(data.metadata.user);
     setForm({
-        userID: userID,
-        name: data.metadata.user?.name || "",
-        email: data.metadata.user?.email || "",
-        birthday: data.metadata.user?.birthday || "",
-        phone: data.metadata.user?.phone || "",
-        avatar: data.metadata.user?.avatar || "",
-        gender: normalizeGender(data.metadata.user?.gender),
-      }
-    );
+      userID: userID,
+      name: data.metadata.user?.name || "",
+      email: data.metadata.user?.email || "",
+      birthday: data.metadata.user?.birthday || "",
+      phone: data.metadata.user?.phone || "",
+      avatar: data.metadata.user?.avatar || "",
+      gender: normalizeGender(data.metadata.user?.gender),
+    });
   };
 
-  useEffect(()=>{
-    handleGetInfor()
-  },[])
+  useEffect(() => {
+    handleGetInfor();
+  }, []);
+
   const handleSubmit = async () => {
     try {
-      // If file is selected, upload the image first
+      // Upload file if selected
       if (file) {
         const imageUrl = await uploadImage(file, "avatars", dispatch);
-        console.log(imageUrl) 
+        console.log(file)
         setForm((prev) => ({ ...prev, avatar: imageUrl.img_url }));
       }
 
@@ -134,34 +127,18 @@ function Account() {
         </div>
 
         <div className={cx("box")}>
-          <label className={cx("label")}>Avatar URL</label>
-          <input
-            className={cx("input")}
-            type="text"
-            name="avatar"
-            value={form.avatar}
-            onChange={handleChange}
-            disabled={!editable}
-          />
+          <label className={cx("label")}>Avatar</label>
           {form.avatar && !editable && (
             <div>
               <img src={form.avatar} alt="Avatar" width="100" />
             </div>
           )}
           {editable && (
-            <TextField
-            sx={{ marginTop: '12px' }}
-            type="file"
-            fullWidth
-            InputLabelProps={{ shrink: true }}
-            inputProps={{ accept: 'image/*' }}
-            onChange={(e) => {
-              const fileInput = e.target as HTMLInputElement;
-              if (fileInput.files && fileInput.files[0]) {
-                setImageFile(fileInput.files[0]);
-              }
-            }}
-          />
+            <input
+              type="file"
+              onChange={handleFileChange}
+              accept="image/*"
+            />
           )}
         </div>
 
@@ -187,16 +164,6 @@ function Account() {
           {!editable ? "Cập nhật" : "Lưu"}
         </button>
       </form>
-
-      <Snackbar
-        open={snackbar.open}
-        autoHideDuration={3000}
-        onClose={() => setSnackbar({ ...snackbar, open: false })}
-      >
-        <MuiAlert severity={snackbar.severity} variant="filled">
-          {snackbar.message}
-        </MuiAlert>
-      </Snackbar>
     </div>
   );
 }
