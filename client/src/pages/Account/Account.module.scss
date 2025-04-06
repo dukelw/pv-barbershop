@@ -111,42 +111,48 @@
             cursor: not-allowed;
           }
         }
-      }
-  
-    .submit-button {
-        background-color: var(--yellow);
-        color: var(--dark);
-        font-weight: bold;
-        width: 200px;
-        border: none;
-        border-radius: 8px; // thêm nếu muốn bo góc
-        padding: 10px 16px;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        transform: translateX(50%);
-        
-      
-        &:hover {
-          background-color: var(--white);
-          color: var(--black);
-        }
-    }
-    .avatar {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;        
-        object-fit: cover;         
-        border: 2px solid #ccc;   
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);     
 
       }
-    .avatar-container
-    {
-        width: 100%;
+    
+      .box:last-child {
+        text-align: center;
         display: flex;
         justify-content: center;
-    }
+        width: 100%;
+        .submit-button {
+          background-color: var(--yellow);
+          color: var(--dark);
+          font-weight: bold;
+          width: 200px;
+          border: none;
+          border-radius: 8px; // thêm nếu muốn bo góc
+          padding: 10px 16px;
+          text-transform: uppercase;
+          cursor: pointer;
+          transition: all 0.3s ease;        
+        
+          &:hover {
+            background-color: var(--white);
+            color: var(--black);
+          }
+        }
+      }
+      
+      .avatar {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;        
+          object-fit: cover;         
+          border: 2px solid #ccc;   
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);     
+
+        }
+      .avatar-container
+      {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+      }
       
   }
 }

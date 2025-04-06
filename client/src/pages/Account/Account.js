@@ -187,14 +187,17 @@ function Account() {
             <option value="unknown">Không rõ</option>
           </select>
         </div>
-
-        <button
-          className={cx("submit-button")}
-          type="button"
-          onClick={!editable ? handleToggleEdit : handleSubmit}
-        >
-          {!editable ? "Cập nhật" : "Lưu"}
-        </button>
+      
+        <div className={cx("box")}>
+          <button
+            className={cx("submit-button")}
+            type="button"
+            onClick={!editable ? handleToggleEdit : handleSubmit}
+          >
+            {!editable ? "Cập nhật" : "Lưu"}
+          </button>
+        </div>
+        
       </form>
     </div>
   );
