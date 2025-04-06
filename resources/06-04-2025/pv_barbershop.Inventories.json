@@ -1,0 +1,738 @@
+[{
+  "_id": {
+    "$oid": "67f27e727c9ecae7fdb3767e"
+  },
+  "item_name": "Kéo cắt tóc",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743945330/inventories/1743945327178-k%C3%83%C2%A9o%20c%C3%A1%C2%BA%C2%AFt%20t%C3%83%C2%B3c.jpg.jpg",
+  "item_category": "Dụng cụ cắt tóc",
+  "quantity": 20,
+  "unit_price": 900000,
+  "supplier": "Mạnh Nguyễn",
+  "createdAt": {
+    "$date": "2025-04-06T13:15:30.006Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:15:30.006Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f27f057c9ecae7fdb37681"
+  },
+  "item_name": "Tông đơ",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743945478/inventories/1743945475508-t%C3%83%C2%B4ng%20%C3%84%C2%91%C3%86%C2%A1.jpg.jpg",
+  "item_category": "Dụng cụ cắt tóc",
+  "quantity": 30,
+  "unit_price": 2149997,
+  "supplier": "Mạnh Nguyễn",
+  "createdAt": {
+    "$date": "2025-04-06T13:17:57.724Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:17:57.724Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f27fa17c9ecae7fdb37684"
+  },
+  "item_name": "Lưỡi tông đơ",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743945633/inventories/1743945631157-l%C3%86%C2%B0%C3%A1%C2%BB%C2%A1i%20t%C3%83%C2%B4ng%20%C3%84%C2%91%C3%86%C2%A1.jpg.jpg",
+  "item_category": "Dụng cụ cắt tóc",
+  "quantity": 50,
+  "unit_price": 590000,
+  "supplier": "Mạnh Nguyễn",
+  "createdAt": {
+    "$date": "2025-04-06T13:20:33.437Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:20:33.437Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f280347c9ecae7fdb37687"
+  },
+  "item_name": "Dao lam",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743945780/inventories/1743945778085-dao%20lam.jpg.jpg",
+  "item_category": "Dụng cụ cắt tóc",
+  "quantity": 30,
+  "unit_price": 13000,
+  "supplier": "An Lộc Việt",
+  "createdAt": {
+    "$date": "2025-04-06T13:23:00.126Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:23:00.126Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f280907c9ecae7fdb3768a"
+  },
+  "item_name": "Lược sấy tạo kiểu tóc",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743945873/inventories/1743945870561-l%C3%86%C2%B0%C3%A1%C2%BB%C2%A3c%20s%C3%A1%C2%BA%C2%A5y.jpg.jpg",
+  "item_category": "Dụng cụ tạo kiểu",
+  "quantity": 36,
+  "unit_price": 35000,
+  "supplier": "Mạnh Nguyễn",
+  "createdAt": {
+    "$date": "2025-04-06T13:24:32.862Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:24:32.862Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f280b57c9ecae7fdb3768d"
+  },
+  "item_name": "Lược vuốt sáp tạo kiểu",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743945909/inventories/1743945907916-l%C3%86%C2%B0%C3%A1%C2%BB%C2%A3t%20vu%C3%A1%C2%BB%C2%91t.jpg.jpg",
+  "item_category": "Dụng cụ tạo kiểu",
+  "quantity": 32,
+  "unit_price": 35000,
+  "supplier": "Mạnh Nguyễn",
+  "createdAt": {
+    "$date": "2025-04-06T13:25:09.337Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:25:09.337Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f280f37c9ecae7fdb37690"
+  },
+  "item_name": " Máy sấy tóc",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743945972/inventories/1743945970319-may%20say%20toc.jpg.jpg",
+  "item_category": "Dụng cụ tạo kiểu",
+  "quantity": 26,
+  "unit_price": 345000,
+  "supplier": "Mạnh Nguyễn",
+  "createdAt": {
+    "$date": "2025-04-06T13:26:11.662Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:26:11.662Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f281667c9ecae7fdb37693"
+  },
+  "item_name": "Máy làm xoăn giả",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743946086/inventories/1743946084009-lam%20xoan.jpg.jpg",
+  "item_category": "Dụng cụ tạo kiểu",
+  "quantity": 24,
+  "unit_price": 240000,
+  "supplier": "Mạnh Nguyễn",
+  "createdAt": {
+    "$date": "2025-04-06T13:28:06.529Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:28:06.529Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f281887c9ecae7fdb37696"
+  },
+  "item_name": "Máy ép phẳng",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743946121/inventories/1743946118872-%C3%83%C2%A9p%20ph%C3%A1%C2%BA%C2%B3ng.jpg.jpg",
+  "item_category": "Dụng cụ tạo kiểu",
+  "quantity": 28,
+  "unit_price": 240000,
+  "supplier": "Mạnh Nguyễn",
+  "createdAt": {
+    "$date": "2025-04-06T13:28:40.958Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:28:40.958Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f282017c9ecae7fdb37699"
+  },
+  "item_name": "Dao cạo cán gỗ",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743946241/inventories/1743946239475-dao%20cao.jpg.jpg",
+  "item_category": "Dụng cụ cắt tóc",
+  "quantity": 36,
+  "unit_price": 30000,
+  "supplier": "Mạnh Nguyễn",
+  "createdAt": {
+    "$date": "2025-04-06T13:30:41.139Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:30:41.139Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f282487c9ecae7fdb3769c"
+  },
+  "item_name": "Gương soi gáy",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743946313/inventories/1743946310572-guong%20soi%20gay.jpg.jpg",
+  "item_category": "Dụng cụ cắt tóc",
+  "quantity": 21,
+  "unit_price": 150000,
+  "supplier": "Mạnh Nguyễn",
+  "createdAt": {
+    "$date": "2025-04-06T13:31:52.979Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:31:52.979Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f282827c9ecae7fdb3769f"
+  },
+  "item_name": " Bộ kẹp tóc mỏ vịt",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743946371/inventories/1743946367967-kep%20toc.jpg.jpg",
+  "item_category": "Dụng cụ cắt tóc",
+  "quantity": 50,
+  "unit_price": 10000,
+  "supplier": "Mạnh Nguyễn",
+  "createdAt": {
+    "$date": "2025-04-06T13:32:50.425Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:32:50.425Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f282ad7c9ecae7fdb376a2"
+  },
+  "item_name": "Lược Cắt Tóc Nam",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743946414/inventories/1743946411868-luoc%20cat%20toc.jpg.jpg",
+  "item_category": "Dụng cụ cắt tóc",
+  "quantity": 42,
+  "unit_price": 50000,
+  "supplier": "Mạnh Nguyễn",
+  "createdAt": {
+    "$date": "2025-04-06T13:33:33.643Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:33:33.643Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f282dd7c9ecae7fdb376a5"
+  },
+  "item_name": "Chổi nhuộm tóc vào hóa chất",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743946462/inventories/1743946459999-choi%20nhuom.jpg.jpg",
+  "item_category": "Dụng cụ cắt tóc",
+  "quantity": 52,
+  "unit_price": 15000,
+  "supplier": "Mạnh Nguyễn",
+  "createdAt": {
+    "$date": "2025-04-06T13:34:21.893Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:34:21.893Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f283587c9ecae7fdb376a8"
+  },
+  "item_name": " Lược vuốt tóc",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743946584/inventories/1743946582324-luoc%20vuot%20toc.jpg.jpg",
+  "item_category": "Dụng cụ cắt tóc",
+  "quantity": 34,
+  "unit_price": 30000,
+  "supplier": "Mạnh Nguyễn",
+  "createdAt": {
+    "$date": "2025-04-06T13:36:24.377Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:36:24.377Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f283997c9ecae7fdb376ab"
+  },
+  "item_name": "Chổi phủi tóc",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743946649/inventories/1743946646947-choi%20phui%20toc.jpg.jpg",
+  "item_category": "Dụng cụ cắt tóc",
+  "quantity": 34,
+  "unit_price": 50000,
+  "supplier": "Mạnh Nguyễn",
+  "createdAt": {
+    "$date": "2025-04-06T13:37:29.019Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:37:29.019Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2846a7c9ecae7fdb376ae"
+  },
+  "item_name": "Thuốc nhuộm đen",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743946858/inventories/1743946856382-nhuom%20toc.jpg.jpg",
+  "item_category": "Hóa chất tóc",
+  "quantity": 26,
+  "unit_price": 219000,
+  "supplier": "Davines Việt Nam",
+  "createdAt": {
+    "$date": "2025-04-06T13:40:58.320Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:40:58.320Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2848e7c9ecae7fdb376b1"
+  },
+  "item_name": "Thuốc nhuộm nâu nhạt",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743946895/inventories/1743946892469-nhuom%20toc.jpg.jpg",
+  "item_category": "Hóa chất tóc",
+  "quantity": 31,
+  "unit_price": 219000,
+  "supplier": "Davines Việt Nam",
+  "createdAt": {
+    "$date": "2025-04-06T13:41:34.833Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:41:34.833Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f284a47c9ecae7fdb376b4"
+  },
+  "item_name": "Thuốc nhuộm vàng be",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743946917/inventories/1743946914567-nhuom%20toc.jpg.jpg",
+  "item_category": "Hóa chất tóc",
+  "quantity": 26,
+  "unit_price": 219000,
+  "supplier": "Davines Việt Nam",
+  "createdAt": {
+    "$date": "2025-04-06T13:41:56.451Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:41:56.451Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f284f07c9ecae7fdb376b7"
+  },
+  "item_name": "Oxy nhuộm 10",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743946992/inventories/1743946990223-oxy10.jpg.jpg",
+  "item_category": "Hóa chất tóc",
+  "quantity": 29,
+  "unit_price": 345000,
+  "supplier": "Davines Việt Nam",
+  "createdAt": {
+    "$date": "2025-04-06T13:43:12.185Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:43:12.185Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2850f7c9ecae7fdb376ba"
+  },
+  "item_name": "Oxy nhuộm 5",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743947023/inventories/1743947020970-oxy5.jpg.jpg",
+  "item_category": "Hóa chất tóc",
+  "quantity": 27,
+  "unit_price": 345000,
+  "supplier": "Davines Việt Nam",
+  "createdAt": {
+    "$date": "2025-04-06T13:43:43.178Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:43:43.178Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f285237c9ecae7fdb376bd"
+  },
+  "item_name": "Oxy nhuộm 20",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743947044/inventories/1743947042478-oxy20.jpg.jpg",
+  "item_category": "Hóa chất tóc",
+  "quantity": 24,
+  "unit_price": 345000,
+  "supplier": "Davines Việt Nam",
+  "createdAt": {
+    "$date": "2025-04-06T13:44:03.997Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:44:03.997Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2853f7c9ecae7fdb376c0"
+  },
+  "item_name": "Oxy nhuộm 30",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743947072/inventories/1743947070342-oxy30.jpg.jpg",
+  "item_category": "Hóa chất tóc",
+  "quantity": 26,
+  "unit_price": 345000,
+  "supplier": "Davines Việt Nam",
+  "createdAt": {
+    "$date": "2025-04-06T13:44:31.846Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:44:31.846Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f285537c9ecae7fdb376c3"
+  },
+  "item_name": "Oxy nhuộm 40",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743947091/inventories/1743947088927-oxy40.jpg.jpg",
+  "item_category": "Hóa chất tóc",
+  "quantity": 27,
+  "unit_price": 345000,
+  "supplier": "Davines Việt Nam",
+  "createdAt": {
+    "$date": "2025-04-06T13:44:51.024Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:44:51.024Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f285ba7c9ecae7fdb376c6"
+  },
+  "item_name": "Sáp vuốt tóc",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743947195/inventories/1743947191970-sap%20vuot%20toc.jpg.jpg",
+  "item_category": "Hóa chất tóc",
+  "quantity": 23,
+  "unit_price": 482000,
+  "supplier": "Davines Việt Nam",
+  "createdAt": {
+    "$date": "2025-04-06T13:46:34.868Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:46:34.868Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f285e37c9ecae7fdb376c9"
+  },
+  "item_name": "Gôm xịt tóc",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743947235/inventories/1743947233932-gom%20xit%20toc.jpg.jpg",
+  "item_category": "Hóa chất tóc",
+  "quantity": 27,
+  "unit_price": 382000,
+  "supplier": "Davines Việt Nam",
+  "createdAt": {
+    "$date": "2025-04-06T13:47:15.268Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:47:15.268Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f286137c9ecae7fdb376cc"
+  },
+  "item_name": "Gel vuốt tóc",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743947284/inventories/1743947281275-gel%20vuot%20toc.jpg.jpg",
+  "item_category": "Hóa chất tóc",
+  "quantity": 22,
+  "unit_price": 399000,
+  "supplier": "Davines Việt Nam",
+  "createdAt": {
+    "$date": "2025-04-06T13:48:03.935Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:48:03.935Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2864a7c9ecae7fdb376cf"
+  },
+  "item_name": "Kem ủ tóc",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743947338/inventories/1743947336404-u%20toc.jpg.jpg",
+  "item_category": "Hóa chất tóc",
+  "quantity": 19,
+  "unit_price": 1412000,
+  "supplier": "Davines Việt Nam",
+  "createdAt": {
+    "$date": "2025-04-06T13:48:58.456Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:48:58.456Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f287667c9ecae7fdb376d2"
+  },
+  "item_name": "Thuốc uốn 1",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743947622/inventories/1743947620479-uon1.jpg.jpg",
+  "item_category": "Hóa chất tóc",
+  "quantity": 26,
+  "unit_price": 150000,
+  "supplier": "Obsidian",
+  "createdAt": {
+    "$date": "2025-04-06T13:53:42.512Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:53:42.512Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2877e7c9ecae7fdb376d5"
+  },
+  "item_name": "Thuốc uốn 2",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743947647/inventories/1743947644123-uon2.jpg.jpg",
+  "item_category": "Hóa chất tóc",
+  "quantity": 28,
+  "unit_price": 150000,
+  "supplier": "Obsidian",
+  "createdAt": {
+    "$date": "2025-04-06T13:54:06.609Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:54:06.609Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f287c27c9ecae7fdb376d8"
+  },
+  "item_name": "Dầu gội",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743947714/inventories/1743947712252-dau%20goi.jpg.jpg",
+  "item_category": "Gội đầu và chăm sóc tóc",
+  "quantity": 28,
+  "unit_price": 842000,
+  "supplier": "Davines Việt Nam",
+  "createdAt": {
+    "$date": "2025-04-06T13:55:14.202Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:55:14.202Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f287e57c9ecae7fdb376db"
+  },
+  "item_name": "Dầu xả",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743947749/inventories/1743947747366-dau%20goi.jpg.jpg",
+  "item_category": "Gội đầu và chăm sóc tóc",
+  "quantity": 28,
+  "unit_price": 1318000,
+  "supplier": "Davines Việt Nam",
+  "createdAt": {
+    "$date": "2025-04-06T13:55:49.355Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:55:49.355Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f288c17c9ecae7fdb376de"
+  },
+  "item_name": "Mũ hấp tóc",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743947970/inventories/1743947967044-mu%20hap%20toc.webp.webp",
+  "item_category": "Gội đầu và chăm sóc tóc",
+  "quantity": 28,
+  "unit_price": 12000,
+  "supplier": "Hami Mart",
+  "createdAt": {
+    "$date": "2025-04-06T13:59:29.665Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:59:29.665Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f289137c9ecae7fdb376e1"
+  },
+  "item_name": "Áo choàng cắt tóc",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743948052/inventories/1743948050426-ao%20choang.jpg.jpg",
+  "item_category": "Dụng cụ cắt tóc",
+  "quantity": 42,
+  "unit_price": 69000,
+  "supplier": "Mạnh Nguyễn",
+  "createdAt": {
+    "$date": "2025-04-06T14:00:51.903Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T14:00:51.903Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2895c7c9ecae7fdb376e4"
+  },
+  "item_name": "Bình xịt",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743948124/inventories/1743948121794-binh%20x%C3%A1%C2%BB%C2%8B.jpg.jpg",
+  "item_category": "Dụng cụ cắt tóc",
+  "quantity": 30,
+  "unit_price": 80000,
+  "supplier": "Mạnh Nguyễn",
+  "createdAt": {
+    "$date": "2025-04-06T14:02:04.219Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T14:02:04.219Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f289b27c9ecae7fdb376e7"
+  },
+  "item_name": "Tấm choàng hóa chất",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743948210/inventories/1743948208158-tam%20choang.jpg.jpg",
+  "item_category": "Dụng cụ cắt tóc",
+  "quantity": 30,
+  "unit_price": 220000,
+  "supplier": "Mạnh Nguyễn",
+  "createdAt": {
+    "$date": "2025-04-06T14:03:30.244Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T14:03:30.244Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f28a267c9ecae7fdb376ea"
+  },
+  "item_name": "Găng tay",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743948326/inventories/1743948324097-gang.jpg.jpg",
+  "item_category": "Dụng cụ cắt tóc",
+  "quantity": 50,
+  "unit_price": 90000,
+  "supplier": "TTGloves",
+  "createdAt": {
+    "$date": "2025-04-06T14:05:26.328Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T14:05:26.328Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f28a747c9ecae7fdb376ed"
+  },
+  "item_name": "Ghế cắt tóc",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743948404/inventories/1743948402126-ghe.jpg.jpg",
+  "item_category": "Nội thất",
+  "quantity": 18,
+  "unit_price": 3600000,
+  "supplier": "Dragon",
+  "createdAt": {
+    "$date": "2025-04-06T14:06:44.507Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T14:06:44.507Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f28ab67c9ecae7fdb376f0"
+  },
+  "item_name": "Ghế sofa chờ",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743948471/inventories/1743948468232-ghe%20cho.jpg.jpg",
+  "item_category": "Nội thất",
+  "quantity": 9,
+  "unit_price": 3600000,
+  "supplier": "Barber",
+  "createdAt": {
+    "$date": "2025-04-06T14:07:50.600Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T14:07:50.600Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f28afc7c9ecae7fdb376f3"
+  },
+  "item_name": "Kệ gương",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743948540/inventories/1743948538479-ke.jpg.jpg",
+  "item_category": "Nội thất",
+  "quantity": 13,
+  "unit_price": 3200000,
+  "supplier": "Barber",
+  "createdAt": {
+    "$date": "2025-04-06T14:09:00.379Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T14:09:00.379Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f28b277c9ecae7fdb376f6"
+  },
+  "item_name": "Xe đẩy",
+  "item_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743948583/inventories/1743948580936-xe%20day.jpg.jpg",
+  "item_category": "Nội thất",
+  "quantity": 10,
+  "unit_price": 650000,
+  "supplier": "Barber",
+  "createdAt": {
+    "$date": "2025-04-06T14:09:43.980Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T14:09:43.980Z"
+  },
+  "__v": 0
+}]
