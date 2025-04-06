@@ -71,6 +71,7 @@ function Account() {
       if (file) {
         const imageUrl = await uploadImage(file, "avatars", dispatch);
         console.log(file)
+        console.log(imageUrl)
         setForm((prev) => ({ ...prev, avatar: imageUrl.img_url }));
       }
 
