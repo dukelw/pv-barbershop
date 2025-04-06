@@ -8,7 +8,7 @@ import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import { createAxios } from "../../createAxios";
 import { MenuItem, Typography } from "@mui/material";
-import { updateUser } from "../../redux/apiRequest";
+import { updateUser, uploadImage } from "../../redux/apiRequest";
 import { toast } from "react-toastify";
 import classNames from "classnames/bind";
 import styles from "./Account.module.scss";
@@ -22,7 +22,6 @@ function Account() {
   const axiosJWT = createAxios(currentUser);
   const userInfor = currentUser?.metadata.user;
   const dispatch = useDispatch();
-  console.log(userInfor)
 
   const normalizeGender = (gender) => (typeof gender === "string" ? gender : "unknown");
 
@@ -34,15 +33,22 @@ function Account() {
     phone: userInfor?.user_phone || "",
     avatar: userInfor?.user_avatar || "",
     gender: normalizeGender(userInfor?.user_gender),
-
   });
 
   const [editable, setEditable] = useState(false);
+  const [file, setFile] = useState(null); // New state for file
   const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "success" });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    if (selectedFile) {
+      setFile(selectedFile);
+    }
   };
 
   const handleToggleEdit = () => {
@@ -51,6 +57,13 @@ function Account() {
 
   const handleSubmit = async () => {
     try {
+      // If file is selected, upload the image first
+      if (file) {
+        const imageUrl = await uploadImage(file, "avatars", dispatch); // Assuming "avatars" is your folder name
+        setForm((prev) => ({ ...prev, avatar: imageUrl.img_url }));
+      }
+
+      // Update user information
       await updateUser(accessToken, userID, form, dispatch, axiosJWT);
       toast.success("Cập nhật thành công");
       setEditable(false);
@@ -70,7 +83,7 @@ function Account() {
           <input
             className={cx("input")}
             type="text"
-            name="name" // sửa lại name
+            name="name"
             value={form.name}
             onChange={handleChange}
             disabled={!editable}
@@ -82,7 +95,7 @@ function Account() {
           <input
             className={cx("input")}
             type="email"
-            name="email" // sửa lại name
+            name="email"
             value={form.email}
             onChange={handleChange}
             disabled={!editable}
@@ -94,7 +107,7 @@ function Account() {
           <input
             className={cx("input")}
             type="text"
-            name="phone" // sửa lại name
+            name="phone"
             value={form.phone}
             onChange={handleChange}
             disabled={!editable}
@@ -106,18 +119,29 @@ function Account() {
           <input
             className={cx("input")}
             type="text"
-            name="avatar" // sửa lại name
+            name="avatar"
             value={form.avatar}
             onChange={handleChange}
             disabled={!editable}
           />
+          {form.avatar && !editable && (
+            <div>
+              <img src={form.avatar} alt="Avatar" width="100" />
+            </div>
+          )}
+          {editable && (
+            <div>
+              <input type="file" onChange={handleFileChange} />
+              {file && <img src={URL.createObjectURL(file)} alt="Avatar Preview" width="100" />}
+            </div>
+          )}
         </div>
 
         <div className={cx("box")}>
           <label className={cx("label")}>Giới tính</label>
           <select
             className={cx("input")}
-            name="gender" // sửa lại name
+            name="gender"
             value={form.gender}
             onChange={handleChange}
             disabled={!editable}
