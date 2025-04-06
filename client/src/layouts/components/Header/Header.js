@@ -75,6 +75,16 @@ function Header() {
                 >
                   Xem lịch cắt tóc
                 </Link>
+                
+              </MenuItem>
+              <MenuItem onClick={handleClose}>
+                <Link
+                  to="/my-bookings"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  Thông tin tài khoản
+                </Link>
+                
               </MenuItem>
               <MenuItem
                 onClick={() => {
