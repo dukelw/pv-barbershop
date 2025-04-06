@@ -33,6 +33,7 @@ function Account() {
     phone: userInfor?.user_phone || "",
     avatar: userInfor?.user_avatar || "",
     gender: normalizeGender(userInfor?.user_gender),
+    
   });
 
   const [editable, setEditable] = useState(false);
