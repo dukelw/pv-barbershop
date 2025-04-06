@@ -76,7 +76,8 @@ function Account() {
     try {
       // If file is selected, upload the image first
       if (file) {
-        const imageUrl = await uploadImage(file, "avatars", dispatch); // Assuming "avatars" is your folder name
+        const imageUrl = await uploadImage(file, "avatars", dispatch);
+        console.log(imageUrl) 
         setForm((prev) => ({ ...prev, avatar: imageUrl.img_url }));
       }
 
