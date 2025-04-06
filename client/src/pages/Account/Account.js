@@ -5,7 +5,10 @@ import { findUser, updateUser, uploadImage } from "../../redux/apiRequest";
 import { toast } from "react-toastify";
 import classNames from "classnames/bind";
 import styles from "./Account.module.scss";
-import { format } from "date-fns";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { format, parse } from "date-fns";
+
 const cx = classNames.bind(styles);
 
 function Account() {
@@ -28,7 +31,7 @@ function Account() {
   });
 
   const [editable, setEditable] = useState(false);
-  const [file, setFile] = useState(null); // State to store file
+  const [file, setFile] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -55,7 +58,7 @@ function Account() {
       userID: userID,
       name: data.metadata.user?.name || "",
       email: data.metadata.user?.email || "",
-      birthday: data.metadata.user?format(new Date(birthday), "yyyy-MM-dd"): "",
+      birthday: birthday ? format(new Date(birthday), "dd-MM-yyyy") : "",
       phone: data.metadata.user?.phone || "",
       avatar: data.metadata.user?.avatar || "",
       gender: normalizeGender(data.metadata.user?.gender),
@@ -77,8 +80,16 @@ function Account() {
         setForm((prev) => ({ ...prev, avatar: imageUrl.img_url }));
       }
 
+      // Chuyển đổi ngày sinh nhập vào (dd-MM-yyyy) thành (yyyy-MM-dd)
+      const birthday = form.birthday ? format(parse(form.birthday, "dd-MM-yyyy", new Date()), "yyyy-MM-dd") : "";
+
       // Update user information
-      await updateUser(accessToken, userID, { form, avatar: imageUrl.img_url, userID: userID }, dispatch, axiosJWT);
+      await updateUser(accessToken, userID, { 
+        ...form, 
+        avatar: imageUrl.img_url, 
+        birthday: birthday, // Sử dụng ngày đã chuyển đổi
+        userID: userID 
+      }, dispatch, axiosJWT);
       await handleGetInfor();
       toast.success("Cập nhật thành công");
       setEditable(false);
@@ -135,12 +146,11 @@ function Account() {
 
         <div className={cx("box")}>
           <label className={cx("label")}>Ngày sinh</label>
-          <input
+          <DatePicker
             className={cx("input")}
-            type="date"
-            name="birthday"
-            value={form.birthday}
-            onChange={handleChange}
+            selected={form.birthday ? parse(form.birthday, "dd-MM-yyyy", new Date()) : null}
+            onChange={(date) => setForm((prev) => ({ ...prev, birthday: format(date, "dd-MM-yyyy") }))}
+            dateFormat="dd-MM-yyyy"
             disabled={!editable}
           />
         </div>
