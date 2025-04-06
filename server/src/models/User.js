@@ -26,9 +26,11 @@ var userSchema = new Schema(
     },
     user_gender: {
       Type: String,
+      default: "male",
     },
     user_phone: {
       Type: String,
+      default: "",
     },
     user_role: {
       type: String,
