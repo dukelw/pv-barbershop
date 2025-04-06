@@ -66,17 +66,18 @@ function Account() {
   }, []);
 
   const handleSubmit = async () => {
+    let imageUrl=""
     try {
       // Upload file if selected
       if (file) {
-        const imageUrl = await uploadImage(file, "service", dispatch);
+        imageUrl = await uploadImage(file, "service", dispatch);
         console.log(file)
         console.log(imageUrl)
         setForm((prev) => ({ ...prev, avatar: imageUrl.img_url }));
       }
 
       // Update user information
-      await updateUser(accessToken, userID, form, dispatch, axiosJWT);
+      await updateUser(accessToken, userID, {form,avatar: imageUrl.img_url}, dispatch, axiosJWT);
       await handleGetInfor();
       toast.success("Cập nhật thành công");
       setEditable(false);
