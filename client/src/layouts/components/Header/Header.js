@@ -79,7 +79,7 @@ function Header() {
               </MenuItem>
               <MenuItem onClick={handleClose}>
                 <Link
-                  to="/my-bookings"
+                  to="/account"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
                   Thông tin tài khoản

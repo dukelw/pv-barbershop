@@ -12,7 +12,7 @@ import NotFound from "../pages/NotFound";
 
 import MainLayout from "../layouts/MainLayout";
 import Empty from "../layouts/Empty";
-
+import Account from "../pages/Account";
 const publicRoutes = [
   { path: config.routes.signin, component: Signin, layout: null },
   { path: config.routes.signup, component: Signup, layout: null },
@@ -43,6 +43,18 @@ const privateRoutes = [
     type: "staff",
     path: config.routes.workbench,
     component: Workbench,
+  },
+  {
+    type: "customer",
+    path: config.routes.account,
+    component: Account,
+    layout: MainLayout,
+  },
+  {
+    type: "customer",
+    path: config.routes.changePassword,
+    component: Account,
+    layout: MainLayout,
   },
 ];
 

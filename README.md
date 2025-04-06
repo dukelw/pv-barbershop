@@ -164,3 +164,6 @@ Make sure to restart your frontend server after setting these environment variab
 - **Customers** can browse available times and book appointments.
 - **Admins** can manage appointments, customer details, inventory, and generate reports through the dashboard.
 - **Receptionist** can manage appointments, customer details, inventory, and generate reports through the dashboard.
+
+
+

@@ -121,6 +121,7 @@ class UserService {
   };
 
   logOut = async (keyStore) => {
+    console.log(keyStore)
     const deletedKey = await keyTokenService.removeKeyByID(keyStore._id);
     return deletedKey;
   };
@@ -246,15 +247,28 @@ class UserService {
     const filter = {
       _id: userID,
     };
+    let bodyUpdate;
+    if(birthday){
+      bodyUpdate = {
+        user_name: name,
+        user_email: email,
+        user_phone: phone,
+        user_gender: gender,
+        user_birthday: new Date(birthday),
+        user_avatar: avatar,
+      };
+    }
+    else {
+      bodyUpdate = {
+        user_name: name,
+        user_email: email,
+        user_phone: phone,
+        user_gender: gender,
+        user_avatar: avatar,
+      };
+    }
 
-    const bodyUpdate = {
-      user_name: name,
-      user_email: email,
-      user_phone: phone,
-      user_gender: gender,
-      user_birthday: new Date(birthday),
-      user_avatar: avatar,
-    };
+    
 
     const updatedUser = await UserModel.findOneAndUpdate(filter, bodyUpdate, {
       new: true,
@@ -266,7 +280,7 @@ class UserService {
 
   changePassword = async ({ email, password, new_password }) => {
     // 1. Check email
-    const foundUser = await findByEmail({ email });
+    const foundUser = await UserModel.findOne({ user_email: email });
     if (!foundUser) throw new BadRequestError("User has not registered");
 
     // 2. Match password

@@ -68,7 +68,6 @@ class UserController {
       message: "Update information successfully",
       metadata: await userService.updateInformation({
         ...req.body,
-        userID: req.user.user_id,
       }),
     }).send(res);
   }

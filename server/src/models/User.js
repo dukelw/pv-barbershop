@@ -25,10 +25,13 @@ var userSchema = new Schema(
       type: Date,
     },
     user_gender: {
-      Type: String,
+      type: String,
+      enum: ["male", "female", "unknown"],
+      default: "unknown",
     },
     user_phone: {
-      Type: String,
+      type: String,
+      default: "",
     },
     user_role: {
       type: String,
