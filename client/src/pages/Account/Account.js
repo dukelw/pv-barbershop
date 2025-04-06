@@ -37,6 +37,8 @@ function Account() {
 
   });
 
+  console.log(userInfor)
+
   const [editable, setEditable] = useState(false);
   const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "success" });
 
