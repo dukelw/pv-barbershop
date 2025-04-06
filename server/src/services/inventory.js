@@ -1,11 +1,12 @@
-const { InventoryModel } = require("../models/Inventory");
+const InventoryModel = require("../models/Inventory");
 const { NotFoundError } = require("../core/error-response");
 
 class InventoryService {
-  async addInventoryItem({ name, category, quantity, unit_price, supplier }) {
+  async addInventoryItem({ item_name, item_image, item_category, quantity, unit_price, supplier, }) {
     const newItem = await InventoryModel.create({
-      item_name: name,
-      item_category: category,
+      item_name,
+      item_image,
+      item_category,
       quantity,
       unit_price,
       supplier,

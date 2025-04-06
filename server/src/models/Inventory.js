@@ -6,6 +6,7 @@ const COLLECTION_NAME = "Inventories";
 const inventorySchema = new Schema(
   {
     item_name: { type: String, required: true },
+    item_image: {type: String},
     item_category: { type: String, required: true }, // Ví dụ: "sáp vuốt tóc", "dầu gội"
     quantity: { type: Number, required: true, default: 0 },
     unit_price: { type: Number, required: true },
