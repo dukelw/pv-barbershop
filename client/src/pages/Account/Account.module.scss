@@ -82,7 +82,6 @@
       .box {
         display: flex;
         flex-direction: column;
-        align-items: center; // căn giữa theo chiều ngang
 
         .label {
           font-weight: 550;
@@ -122,15 +121,23 @@
         border-radius: 12px;
         font-weight: bold;
         text-transform: uppercase;
+        
       }
     }
     .avatar {
         width: 120px;
         height: 120px;
-        border-radius: 50%;        // ✅ Làm tròn hình ảnh
-        object-fit: cover;         // ✅ Cắt ảnh cho vừa khung tròn
-        border: 2px solid #ccc;    // (tuỳ chọn) viền nhẹ cho đẹp
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);  // (tuỳ chọn) đổ bóng nhẹ
+        border-radius: 50%;        
+        object-fit: cover;         
+        border: 2px solid #ccc;   
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);     
+
       }
+    .avatar-container
+    {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
       
   }
