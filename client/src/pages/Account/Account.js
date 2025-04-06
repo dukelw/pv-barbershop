@@ -8,14 +8,12 @@ import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import { createAxios } from "../../createAxios";
 import { MenuItem, Typography } from "@mui/material";
-
+import { updateUser } from "../../redux/apiRequest";
+import { toast } from "react-toastify";
 import classNames from "classnames/bind";
 import styles from "./Account.module.scss";
-import { updateUser } from "../../redux/apiRequest";
-import {toast} from "react-toastify"
 
 const cx = classNames.bind(styles);
-
 
 function Account() {
   const currentUser = useSelector((state) => state.user.signin.currentUser);
@@ -24,7 +22,7 @@ function Account() {
   const axiosJWT = createAxios(currentUser);
   const userInfor = currentUser?.metadata.user;
   const dispatch = useDispatch();
-  
+
   const normalizeGender = (gender) => (typeof gender === "string" ? gender : "unknown");
 
   const [form, setForm] = useState({
@@ -34,10 +32,8 @@ function Account() {
     birthday: userInfor?.user_birthday || "",
     phone: userInfor?.user_phone || "",
     avatar: userInfor?.user_avatar || "",
-
+    gender: normalizeGender(userInfor?.user_gender),
   });
-
-  console.log(userInfor)
 
   const [editable, setEditable] = useState(false);
   const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "success" });
@@ -53,7 +49,7 @@ function Account() {
 
   const handleSubmit = async () => {
     try {
-      await updateUser(accessToken, userID, form, dispatch, axiosJWT)
+      await updateUser(accessToken, userID, form, dispatch, axiosJWT);
       toast.success("Cập nhật thành công");
       setEditable(false);
     } catch (err) {
@@ -72,7 +68,7 @@ function Account() {
           <input
             className={cx("input")}
             type="text"
-            name="user_name"
+            name="name" // sửa lại name
             value={form.name}
             onChange={handleChange}
             disabled={!editable}
@@ -84,7 +80,7 @@ function Account() {
           <input
             className={cx("input")}
             type="email"
-            name="user_email"
+            name="email" // sửa lại name
             value={form.email}
             onChange={handleChange}
             disabled={!editable}
@@ -96,7 +92,7 @@ function Account() {
           <input
             className={cx("input")}
             type="text"
-            name="user_phone"
+            name="phone" // sửa lại name
             value={form.phone}
             onChange={handleChange}
             disabled={!editable}
@@ -108,7 +104,7 @@ function Account() {
           <input
             className={cx("input")}
             type="text"
-            name="user_avatar"
+            name="avatar" // sửa lại name
             value={form.avatar}
             onChange={handleChange}
             disabled={!editable}
@@ -119,7 +115,7 @@ function Account() {
           <label className={cx("label")}>Giới tính</label>
           <select
             className={cx("input")}
-            name="user_gender"
+            name="gender" // sửa lại name
             value={form.gender}
             onChange={handleChange}
             disabled={!editable}
