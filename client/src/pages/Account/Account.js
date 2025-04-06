@@ -104,9 +104,10 @@ function Account() {
       <div className={cx("title")}>Thông tin tài khoản</div>
 
       <form className={cx("form")}>
-        <div className={cx("box")}>
-          <img src={userInfor?.avatar} alt="Avatar" />
+        <div>
+            <img src={form.avatar} alt="Avatar" className={cx("avatar")} />
         </div>
+
 
         <div className={cx("box")}>
           <label className={cx("label")}>Họ và tên</label>
