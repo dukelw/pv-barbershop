@@ -69,7 +69,7 @@ function Account() {
     try {
       // Upload file if selected
       if (file) {
-        const imageUrl = await uploadImage(file, "avatars", dispatch);
+        const imageUrl = await uploadImage(file, "service", dispatch);
         console.log(file)
         console.log(imageUrl)
         setForm((prev) => ({ ...prev, avatar: imageUrl.img_url }));
