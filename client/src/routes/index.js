@@ -51,6 +51,12 @@ const privateRoutes = [
     component: Account,
     layout: MainLayout,
   },
+  {
+    type: "customer",
+    path: config.routes.changePassword,
+    component: Account,
+    layout: MainLayout,
+  },
 ];
 
 export { publicRoutes, privateRoutes };

@@ -6,6 +6,7 @@ const routes = {
   workbench: "/workbench",
   logout: "/logout",
   account: "/account",
+  changePassword: "/changePassword",
   home: "/",
   notFound: "*",
 };
