@@ -246,15 +246,27 @@ class UserService {
     const filter = {
       _id: userID,
     };
+    if(birthday){
+      const bodyUpdate = {
+        user_name: name,
+        user_email: email,
+        user_phone: phone,
+        user_gender: gender,
+        user_birthday: new Date(birthday),
+        user_avatar: avatar,
+      };
+    }
+    else {
+      const bodyUpdate = {
+        user_name: name,
+        user_email: email,
+        user_phone: phone,
+        user_gender: gender,
+        user_avatar: avatar,
+      };
+    }
 
-    const bodyUpdate = {
-      user_name: name,
-      user_email: email,
-      user_phone: phone,
-      user_gender: gender,
-      user_birthday: new Date(birthday),
-      user_avatar: avatar,
-    };
+    
 
     const updatedUser = await UserModel.findOneAndUpdate(filter, bodyUpdate, {
       new: true,
