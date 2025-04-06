@@ -16,7 +16,7 @@ import MuiAlert from "@mui/material/Alert";
 const cx = classNames.bind(styles);
 
 function Account() {
- <h1 style={{color:"black", fontSize:"90px", marginTop:"200px"}}>Account</h1> 
+ return <h1 style={{color:"black", fontSize:"90px"}}>Account</h1> 
 }
 
 export default Account;
