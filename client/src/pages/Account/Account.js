@@ -55,7 +55,7 @@ function Account() {
       userID: userID,
       name: data.metadata.user?.name || "",
       email: data.metadata.user?.email || "",
-      birthday: data.metadata.user?format(new Date(birthday), "dd-MM-yyyy"): "",
+      birthday: data.metadata.user?format(new Date(birthday), "yyyy-MM-dd"): "",
       phone: data.metadata.user?.phone || "",
       avatar: data.metadata.user?.avatar || "",
       gender: normalizeGender(data.metadata.user?.gender),
