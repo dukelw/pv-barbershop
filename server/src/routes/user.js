@@ -11,7 +11,7 @@ router.post("/signup", asyncHandler(userController.signup));
 router.get("/find/:id", asyncHandler(userController.find));
 router.get("/find-barber", asyncHandler(userController.findAllBarber));
 
-router.use(authentication);
+// router.use(authentication);
 router.post("/logout", asyncHandler(userController.logout));
 router.post("/add-favourite", asyncHandler(userController.addToFavouriteList));
 router.post("/change-password", asyncHandler(userController.changePassword));
