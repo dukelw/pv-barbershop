@@ -49,7 +49,34 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      
+      :global {
+        .react-datepicker-wrapper,
+        .react-datepicker__input-container,
+        .react-datepicker__input-container input {
+          width: 100%;
+        }
   
+        .react-datepicker__input-container input {
+          padding: 10px;
+          background-color: var(--white);
+          border: 1px solid var(--white);
+          border-radius: 12px;
+          outline: none;
+          color: var(--black);
+          transition: border 0.2s;
+  
+          &:hover,
+          &:focus {
+            border-color: #aaa;
+          }
+  
+          &:disabled {
+            background-color: #eee;
+            color: #555;
+            cursor: not-allowed;
+          }
+        }
       .box {
         display: flex;
         flex-direction: column;
@@ -95,33 +122,4 @@
       }
     }
   }
-// Tùy chỉnh giao diện của DatePicker input
-:global {
-    .react-datepicker-wrapper,
-    .react-datepicker__input-container,
-    .react-datepicker__input-container input {
-      width: 100%;
-    }
-  
-    .react-datepicker__input-container input {
-      padding: 10px;
-      background-color: var(--white);
-      border: 1px solid var(--white);
-      border-radius: 12px;
-      outline: none;
-      color: var(--black);
-      transition: border 0.2s;
-  
-      &:hover,
-      &:focus {
-        border-color: #aaa;
-      }
-  
-      &:disabled {
-        background-color: #eee;
-        color: #555;
-        cursor: not-allowed;
-      }
-    }
-  }
-  
+}
