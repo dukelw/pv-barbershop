@@ -14,8 +14,8 @@ import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import { createAxios } from "../../createAxios";
 import {
-  MenuItem,
   Alert,
+  MenuItem,
   Typography,
 } from "@mui/material";
 
@@ -27,10 +27,8 @@ function Account() {
 
   const userInfor = currentUser?.metadata.user;
 
-  // Convert gender value if it's object
   const normalizeGender = (gender) => {
     if (typeof gender === "string") return gender;
-    if (gender === null || typeof gender !== "object") return "unknown";
     return "unknown";
   };
 
@@ -42,11 +40,16 @@ function Account() {
     user_avatar: userInfor?.user_avatar || "",
   });
 
+  const [editable, setEditable] = useState(false); // trạng thái: đang xem hay chỉnh sửa
   const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "success" });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleToggleEdit = () => {
+    setEditable(true);
   };
 
   const handleSubmit = async () => {
@@ -61,6 +64,7 @@ function Account() {
         }
       );
       setSnackbar({ open: true, message: "Cập nhật thành công", severity: "success" });
+      setEditable(false); // quay lại trạng thái chỉ hiển thị
     } catch (err) {
       console.error(err);
       setSnackbar({ open: true, message: "Cập nhật thất bại", severity: "error" });
@@ -80,6 +84,7 @@ function Account() {
           value={form.user_name}
           onChange={handleChange}
           fullWidth
+          disabled={!editable}
         />
 
         <TextField
@@ -88,6 +93,7 @@ function Account() {
           value={form.user_email}
           onChange={handleChange}
           fullWidth
+          disabled={!editable}
         />
 
         <TextField
@@ -96,6 +102,7 @@ function Account() {
           value={form.user_phone}
           onChange={handleChange}
           fullWidth
+          disabled={!editable}
         />
 
         <TextField
@@ -104,6 +111,7 @@ function Account() {
           value={form.user_avatar}
           onChange={handleChange}
           fullWidth
+          disabled={!editable}
         />
 
         <TextField
@@ -113,15 +121,22 @@ function Account() {
           value={form.user_gender}
           onChange={handleChange}
           fullWidth
+          disabled={!editable}
         >
           <MenuItem value="male">Nam</MenuItem>
           <MenuItem value="female">Nữ</MenuItem>
           <MenuItem value="unknown">Không rõ</MenuItem>
         </TextField>
 
-        <Button variant="contained" color="primary" onClick={handleSubmit}>
-          Cập nhật
-        </Button>
+        {!editable ? (
+          <Button variant="outlined" onClick={handleToggleEdit}>
+            Cập nhật
+          </Button>
+        ) : (
+          <Button variant="contained" color="primary" onClick={handleSubmit}>
+            Lưu
+          </Button>
+        )}
       </Box>
 
       <Snackbar
