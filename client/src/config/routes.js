@@ -5,6 +5,7 @@ const routes = {
   updateBooking: "/update-appointment/:appointmentID",
   workbench: "/workbench",
   logout: "/logout",
+  account: "/account",
   home: "/",
   notFound: "*",
 };
