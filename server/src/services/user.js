@@ -121,6 +121,7 @@ class UserService {
   };
 
   logOut = async (keyStore) => {
+    console.log(keyStore)
     const deletedKey = await keyTokenService.removeKeyByID(keyStore._id);
     return deletedKey;
   };
