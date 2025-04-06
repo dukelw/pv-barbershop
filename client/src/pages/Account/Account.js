@@ -1,36 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import Checkbox from "@mui/material/Checkbox";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import { useDispatch, useSelector } from "react-redux";
-import Cookies from "js-cookie";
-import classNames from "classnames/bind";
-import styles from "./Account.module.scss";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import { createAxios } from "../../createAxios";
-import {
-  Alert,
-  MenuItem,
-  Typography,
-} from "@mui/material";
+import { MenuItem, Typography } from "@mui/material";
+
+import classNames from "classnames/bind";
+import styles from "./Account.module.scss";
+
+const cx = classNames.bind(styles);
 
 function Account() {
   const currentUser = useSelector((state) => state.user.signin.currentUser);
   const accessToken = currentUser?.metadata.tokens.accessToken;
   const userID = currentUser?.metadata.user._id;
   const axiosJWT = createAxios(currentUser);
-
   const userInfor = currentUser?.metadata.user;
 
-  const normalizeGender = (gender) => {
-    if (typeof gender === "string") return gender;
-    return "unknown";
-  };
+  const normalizeGender = (gender) => (typeof gender === "string" ? gender : "unknown");
 
   const [form, setForm] = useState({
     user_name: userInfor?.user_name || "",
@@ -40,7 +31,7 @@ function Account() {
     user_avatar: userInfor?.user_avatar || "",
   });
 
-  const [editable, setEditable] = useState(false); // trạng thái: đang xem hay chỉnh sửa
+  const [editable, setEditable] = useState(false);
   const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "success" });
 
   const handleChange = (e) => {
@@ -54,7 +45,7 @@ function Account() {
 
   const handleSubmit = async () => {
     try {
-      const res = await axiosJWT.put(
+      await axiosJWT.put(
         `/api/users/${userID}`,
         { ...form },
         {
@@ -64,7 +55,7 @@ function Account() {
         }
       );
       setSnackbar({ open: true, message: "Cập nhật thành công", severity: "success" });
-      setEditable(false); // quay lại trạng thái chỉ hiển thị
+      setEditable(false);
     } catch (err) {
       console.error(err);
       setSnackbar({ open: true, message: "Cập nhật thất bại", severity: "error" });
@@ -72,83 +63,91 @@ function Account() {
   };
 
   return (
-    <Container maxWidth="sm" sx={{ mt: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Thông tin tài khoản
-      </Typography>
+    <div className={cx("container")}>
+      <div className={cx("title")}>Thông tin tài khoản</div>
 
-      <Box display="flex" flexDirection="column" gap={2}>
-        <TextField
-          label="Họ và tên"
-          name="user_name"
-          value={form.user_name}
-          onChange={handleChange}
-          fullWidth
-          disabled={!editable}
-        />
+      <form className={cx("form")}>
+        <div className={cx("box")}>
+          <label className={cx("label")}>Họ và tên</label>
+          <input
+            className={cx("input")}
+            type="text"
+            name="user_name"
+            value={form.user_name}
+            onChange={handleChange}
+            disabled={!editable}
+          />
+        </div>
 
-        <TextField
-          label="Email"
-          name="user_email"
-          value={form.user_email}
-          onChange={handleChange}
-          fullWidth
-          disabled={!editable}
-        />
+        <div className={cx("box")}>
+          <label className={cx("label")}>Email</label>
+          <input
+            className={cx("input")}
+            type="email"
+            name="user_email"
+            value={form.user_email}
+            onChange={handleChange}
+            disabled={!editable}
+          />
+        </div>
 
-        <TextField
-          label="Số điện thoại"
-          name="user_phone"
-          value={form.user_phone}
-          onChange={handleChange}
-          fullWidth
-          disabled={!editable}
-        />
+        <div className={cx("box")}>
+          <label className={cx("label")}>Số điện thoại</label>
+          <input
+            className={cx("input")}
+            type="text"
+            name="user_phone"
+            value={form.user_phone}
+            onChange={handleChange}
+            disabled={!editable}
+          />
+        </div>
 
-        <TextField
-          label="Avatar URL"
-          name="user_avatar"
-          value={form.user_avatar}
-          onChange={handleChange}
-          fullWidth
-          disabled={!editable}
-        />
+        <div className={cx("box")}>
+          <label className={cx("label")}>Avatar URL</label>
+          <input
+            className={cx("input")}
+            type="text"
+            name="user_avatar"
+            value={form.user_avatar}
+            onChange={handleChange}
+            disabled={!editable}
+          />
+        </div>
 
-        <TextField
-          select
-          label="Giới tính"
-          name="user_gender"
-          value={form.user_gender}
-          onChange={handleChange}
-          fullWidth
-          disabled={!editable}
+        <div className={cx("box")}>
+          <label className={cx("label")}>Giới tính</label>
+          <select
+            className={cx("input")}
+            name="user_gender"
+            value={form.user_gender}
+            onChange={handleChange}
+            disabled={!editable}
+          >
+            <option value="male">Nam</option>
+            <option value="female">Nữ</option>
+            <option value="unknown">Không rõ</option>
+          </select>
+        </div>
+
+        <button
+          type="button"
+          onClick={!editable ? handleToggleEdit : handleSubmit}
         >
-          <MenuItem value="male">Nam</MenuItem>
-          <MenuItem value="female">Nữ</MenuItem>
-          <MenuItem value="unknown">Không rõ</MenuItem>
-        </TextField>
-
-        {!editable ? (
-          <Button variant="outlined" onClick={handleToggleEdit}>
-            Cập nhật
-          </Button>
-        ) : (
-          <Button variant="contained" color="primary" onClick={handleSubmit}>
-            Lưu
-          </Button>
-        )}
-      </Box>
+          {!editable ? "Cập nhật" : "Lưu"}
+        </button>
+      </form>
 
       <Snackbar
         open={snackbar.open}
         autoHideDuration={3000}
         onClose={() => setSnackbar({ ...snackbar, open: false })}
       >
-        <Alert severity={snackbar.severity} variant="filled">
+        <MuiAlert severity={snackbar.severity} variant="filled">
           {snackbar.message}
-        </Alert>
+        </MuiAlert>
       </Snackbar>
-    </Container>
+    </div>
   );
 }
 
