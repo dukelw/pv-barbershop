@@ -1,17 +1,45 @@
-const { AppointmentModel } = require("../models/Appointment");
-const { NotFoundError, BadRequestError } = require("../core/error-response");
+const AppointmentModel = require("../models/Appointment");
+const { NotFoundError } = require("../core/error-response");
 
 class AppointmentService {
-  async createAppointment({ customer, barber, appointment, service, time }) {
+  async createAppointment({
+    customer,
+    barber,
+    service,
+    start,
+    end,
+    customer_name,
+    phone_number,
+    notes,
+  }) {
+    if (!Array.isArray(service) || service.length === 0) {
+      throw new BadRequestError("At least one service must be selected.");
+    }
+
     const newAppointment = await AppointmentModel.create({
       customer,
       barber,
-      appointment,
       service,
-      appointment_time: time,
+      appointment_start: start,
+      appointment_end: end,
+      customer_name,
+      phone_number,
+      notes,
     });
 
     return newAppointment;
+  }
+
+  async getAppointment(appointmentID) {
+    return await AppointmentModel.findOne({ _id: appointmentID }).populate(
+      "barber"
+    );
+  }
+
+  async getAllAppointments() {
+    return await AppointmentModel.find()
+      .populate("service barber customer")
+      .sort({ appointment_start: -1 });
   }
 
   async getAppointmentsByUser(userID) {
@@ -24,6 +52,39 @@ class AppointmentService {
     return await AppointmentModel.find({ barber: barberID }).populate(
       "service customer"
     );
+  }
+
+  async updateAppointment({
+    _id,
+    customer,
+    barber,
+    service,
+    appointment_start,
+    appointment_end,
+    customer_name,
+    phone_number,
+    notes,
+    status,
+  }) {
+    const updatedAppointment = await AppointmentModel.findByIdAndUpdate(
+      _id,
+      {
+        customer,
+        barber,
+        service,
+        appointment_start,
+        appointment_end,
+        customer_name,
+        phone_number,
+        notes,
+        status,
+      },
+      { new: true }
+    ).populate("service barber customer");
+
+    if (!updatedAppointment) throw new NotFoundError("Appointment not found");
+
+    return updatedAppointment;
   }
 
   async updateAppointmentStatus(appointmentID, status) {
