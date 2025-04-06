@@ -353,7 +353,7 @@ export const uploadImage = async (file, folderName, dispatch) => {
   dispatch(uploadImageStart());
   try {
     const res = await axios.post(
-      `${REACT_APP_BASE_URL}upload/answer-image`,
+      `${REACT_APP_BASE_URL}upload/image`,
       formData,
       {
         headers: {
