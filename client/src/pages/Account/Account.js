@@ -22,6 +22,7 @@ function Account() {
   const axiosJWT = createAxios(currentUser);
   const userInfor = currentUser?.metadata.user;
   const dispatch = useDispatch();
+  console.log(userInfor)
 
   const normalizeGender = (gender) => (typeof gender === "string" ? gender : "unknown");
 
@@ -33,7 +34,7 @@ function Account() {
     phone: userInfor?.user_phone || "",
     avatar: userInfor?.user_avatar || "",
     gender: normalizeGender(userInfor?.user_gender),
-    
+
   });
 
   const [editable, setEditable] = useState(false);
