@@ -158,12 +158,14 @@ function Account() {
         </div>
 
         <div className={cx("box")}>
-          <label className={cx("label")}>Avatar</label>
-          {form.avatar && !editable && (
+          {editable && <label className={cx("label")}>Avatar</label>}
+          {file && editable && (
             <div className={cx("avatar-container")}>
-              <img src={form.avatar} alt="Avatar" className={cx("preview-avatar")} />
+              <img src={URL.createObjectURL(file)} alt="Avatar" className={cx("preview-avatar")} />
             </div>
-          )}
+          )
+          }
+
           {editable && (
             <input
               type="file"
