@@ -20,7 +20,7 @@ function Account() {
   const accessToken = currentUser?.metadata.tokens.accessToken;
   const userID = currentUser?.metadata.user._id;
   const axiosJWT = createAxios(currentUser);
-  const userInfor = useSelector((state) => state.user.signin.currentUser);
+  const userInfor = useSelector((state) => stateuser.find.foundUser.metadata.user);
   const dispatch = useDispatch();
 
   const normalizeGender = (gender) => (typeof gender === "string" ? gender : "unknown");
