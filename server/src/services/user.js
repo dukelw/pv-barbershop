@@ -266,7 +266,7 @@ class UserService {
 
   changePassword = async ({ email, password, new_password }) => {
     // 1. Check email
-    const foundUser = await findByEmail({ email });
+    const foundUser = await UserModel.findOne({ user_email: email });
     if (!foundUser) throw new BadRequestError("User has not registered");
 
     // 2. Match password
