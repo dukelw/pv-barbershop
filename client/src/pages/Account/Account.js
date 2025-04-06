@@ -147,7 +147,7 @@ function Account() {
         <div className={cx("box")}>
           <label className={cx("label")}>Ngày sinh</label>
           <DatePicker
-            className={cx("input")}
+            className={cx("input", "datepicker")}
             selected={form.birthday ? parse(form.birthday, "dd-MM-yyyy", new Date()) : null}
             onChange={(date) => setForm((prev) => ({ ...prev, birthday: format(date, "dd-MM-yyyy") }))}
             dateFormat="dd-MM-yyyy"

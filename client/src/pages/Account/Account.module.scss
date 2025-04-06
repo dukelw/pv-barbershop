@@ -52,12 +52,12 @@
         
       :global {
         .react-datepicker-wrapper,
-        .react-datepicker__input-container,
-        .react-datepicker__input-container input {
+        .,
+        . input {
           width: 100%;
         }
   
-        .react-datepicker__input-container input {
+        . input {
           padding: 10px;
           background-color: var(--white);
           border: 1px solid var(--white);
