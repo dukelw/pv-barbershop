@@ -5,7 +5,7 @@ import { findUser, updateUser, uploadImage } from "../../redux/apiRequest";
 import { toast } from "react-toastify";
 import classNames from "classnames/bind";
 import styles from "./Account.module.scss";
-
+import { format } from "date-fns";
 const cx = classNames.bind(styles);
 
 function Account() {
