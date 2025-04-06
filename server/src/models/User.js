@@ -26,7 +26,8 @@ var userSchema = new Schema(
     },
     user_gender: {
       Type: String,
-      default: "male",
+      enum: ["male", "female", "unknown"],
+      default: "unknown",
     },
     user_phone: {
       Type: String,
