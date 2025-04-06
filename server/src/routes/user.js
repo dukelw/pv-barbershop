@@ -9,6 +9,7 @@ router.post("/other-signup", asyncHandler(userController.signupAnotherWay));
 router.post("/signin", asyncHandler(userController.signin));
 router.post("/signup", asyncHandler(userController.signup));
 router.get("/find/:id", asyncHandler(userController.find));
+router.get("/find-barber", asyncHandler(userController.findAllBarber));
 
 router.use(authentication);
 router.post("/logout", asyncHandler(userController.logout));

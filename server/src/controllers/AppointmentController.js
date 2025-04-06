@@ -9,6 +9,21 @@ class AppointmentController {
     }).send(res);
   }
 
+  async get(req, res, next) {
+    const appointmentID = req.params.id
+    new SuccessResponse({
+      message: "Get appointment",
+      metadata: await appointmentService.getAppointment(appointmentID),
+    }).send(res);
+  }
+
+  async getAll(req, res, next) {
+    new SuccessResponse({
+      message: "All appointments",
+      metadata: await appointmentService.getAllAppointments(),
+    }).send(res);
+  }
+
   async getByUser(req, res, next) {
     new SuccessResponse({
       message: "User's appointments",
@@ -26,7 +41,12 @@ class AppointmentController {
       ),
     }).send(res);
   }
-
+  async update(req, res, next) {
+    new SuccessResponse({
+      message: "Appointment updated",
+      metadata: await appointmentService.updateAppointment(req.body),
+    }).send(res);
+  }
   async updateStatus(req, res, next) {
     new SuccessResponse({
       message: "Appointment status updated",

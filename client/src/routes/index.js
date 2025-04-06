@@ -5,11 +5,13 @@ import HomePage from "../pages/HomePage";
 import Signin from "../pages/Signin";
 import Signup from "../pages/Signup";
 import Booking from "../pages/Booking";
+import UpdateBooking from "../pages/UpdateBooking";
 import Workbench from "../pages/Workbench";
 import Logout from "../pages/Logout";
 import NotFound from "../pages/NotFound";
 
 import MainLayout from "../layouts/MainLayout";
+import Empty from "../layouts/Empty";
 
 const publicRoutes = [
   { path: config.routes.signin, component: Signin, layout: null },
@@ -30,6 +32,12 @@ const privateRoutes = [
     type: "receptionist",
     path: config.routes.workbench,
     component: Workbench,
+  },
+  {
+    type: "receptionist",
+    path: config.routes.updateBooking,
+    component: UpdateBooking,
+    layout: Empty,
   },
   {
     type: "staff",

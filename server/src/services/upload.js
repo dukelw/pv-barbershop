@@ -4,7 +4,7 @@ const uploadImageFromUrl = async () => {
   try {
     const urlImage =
       "https://e7.pngegg.com/pngimages/458/39/png-clipart-mobile-banking-computer-icons-bank-service-logo.png";
-    const folderName = "toeic/answers";
+    const folderName = "pvbarbershop";
     const newFileName = "demo";
 
     const result = await cloudinary.uploader.upload(urlImage, {
@@ -20,7 +20,7 @@ const uploadImageFromUrl = async () => {
 
 const uploadImageFromLocal = async ({
   path,
-  folderName = "toeic/answers",
+  folderName = "pvbarbershop",
   name = "image",
 }) => {
   try {
