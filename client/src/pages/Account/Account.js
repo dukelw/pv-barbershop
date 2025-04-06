@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -11,10 +11,11 @@ import { MenuItem, Typography } from "@mui/material";
 
 import classNames from "classnames/bind";
 import styles from "./Account.module.scss";
-import { updateInformation } from "../../../../server/src/controllers/UserController";
 import { updateUser } from "../../redux/apiRequest";
+import {toast} from "react-toastify"
 
 const cx = classNames.bind(styles);
+
 
 function Account() {
   const currentUser = useSelector((state) => state.user.signin.currentUser);
@@ -22,15 +23,18 @@ function Account() {
   const userID = currentUser?.metadata.user._id;
   const axiosJWT = createAxios(currentUser);
   const userInfor = currentUser?.metadata.user;
-
+  const dispatch = useDispatch();
+  
   const normalizeGender = (gender) => (typeof gender === "string" ? gender : "unknown");
 
   const [form, setForm] = useState({
-    user_name: userInfor?.user_name || "",
-    user_email: userInfor?.user_email || "",
-    user_gender: normalizeGender(userInfor?.user_gender),
-    user_phone: userInfor?.user_phone || "",
-    user_avatar: userInfor?.user_avatar || "",
+    userID: userID,
+    name: userInfor?.user_name || "",
+    email: userInfor?.user_email || "",
+    birthday: userInfor?.user_birthday || "",
+    phone: userInfor?.user_phone || "",
+    avatar: userInfor?.user_avatar || "",
+
   });
 
   const [editable, setEditable] = useState(false);
@@ -47,12 +51,12 @@ function Account() {
 
   const handleSubmit = async () => {
     try {
-      updateUser()
-      setSnackbar({ open: true, message: "Cập nhật thành công", severity: "success" });
+      await updateUser(accessToken, userID, form, dispatch, axiosJWT)
+      toast.success("Cập nhật thành công");
       setEditable(false);
     } catch (err) {
       console.error(err);
-      setSnackbar({ open: true, message: "Cập nhật thất bại", severity: "error" });
+      toast.error("Cập nhật thất bại");
     }
   };
 
