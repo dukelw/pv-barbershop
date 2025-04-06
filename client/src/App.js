@@ -6,6 +6,9 @@ import { useSelector } from "react-redux";
 import io from "socket.io-client";
 import DefaultLayout from "./layouts/DefaultLayout/DefaultLayout";
 import { createTheme, ThemeProvider } from "@mui/material";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const theme = createTheme();
 
 function App() {
@@ -137,6 +140,18 @@ function App() {
               }
             })}
         </Routes>
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
       </div>
     </ThemeProvider>
   );

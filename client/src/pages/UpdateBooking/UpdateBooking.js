@@ -6,14 +6,17 @@ import {
   Checkbox,
   Divider,
   Typography,
+  Card,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import classNames from "classnames/bind";
-import styles from "./Booking.module.scss";
+import styles from "./UpdateBooking.module.scss";
 import {
   createAppointment,
   findAllFreeBarber,
   getAllServices,
+  getAppointment,
+  updateAppointment,
 } from "../../redux/apiRequest";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
@@ -23,13 +26,15 @@ const cx = classNames.bind(styles);
 
 const availableTimes = Array.from({ length: 7 }, (_, i) => `${8 + i * 2}:00`);
 
-function Booking() {
+function UpdateBooking() {
+  const { appointmentID } = useParams();
   const currentUser = useSelector((state) => state.user.signin.currentUser);
   const accessToken = currentUser?.metadata.tokens.accessToken;
   const userID = currentUser?.metadata.user._id;
   const dispatch = useDispatch();
   const [allServices, setServices] = useState([]);
   const [endTime, setEndTime] = useState("");
+  const [currentBarber, setCurrentBarber] = useState({});
   const [barbers, setBarbers] = useState([]);
   const [formData, setFormData] = useState({
     phone: "",
@@ -92,31 +97,35 @@ function Booking() {
     });
 
     const appointment = {
+      _id: appointmentID,
       customer: currentUser ? userID : null,
       barber: formData.technician === "" ? null : formData.technician,
       service: formData.services,
-      start: fullDateTime,
+      appointment_start: fullDateTime,
       customer_name: formData.name,
       phone_number: formData.phone,
       notes: formData.note,
-      end: endTime,
+      appointment_end: endTime,
     };
-    const data = await createAppointment(appointment, dispatch);
+    const data = await updateAppointment(accessToken, appointment, dispatch);
     if (data) {
-      toast.success("Đặt lịch thành công! Vào Lịch sử đặt lịch để kiểm tra.");
+      toast.success("Cập nhật thành công! Vào Lịch sử đặt lịch để kiểm tra.");
+      setTimeout(() => {
+        setFormData({
+          phone: "",
+          name: "",
+          guests: 1,
+          technician: "",
+          services: [],
+          date: "",
+          time: "",
+          note: "",
+        });
 
-      setFormData({
-        phone: "",
-        name: "",
-        guests: 1,
-        technician: "",
-        services: [],
-        date: "",
-        time: "",
-        note: "",
-      });
-
-      setEndTime("");
+        setEndTime("");
+        window.location.href =
+          process.env.REACT_APP_DASHBOARD_URL + "appointments";
+      }, 1000);
     }
   };
 
@@ -137,14 +146,38 @@ function Booking() {
     }
   };
 
+  const handleGetBooking = async () => {
+    const data = await getAppointment(appointmentID, dispatch);
+    console.log(data.metadata);
+    const appointmentStart = moment(data?.metadata.appointment_start);
+
+    const appointmentDate = appointmentStart.format("YYYY-MM-DD");
+    const appointmentTime = appointmentStart.format("H:mm");
+
+    setFormData({
+      phone: data?.metadata.phone_number,
+      name: data?.metadata.customer_name,
+      guests: 1,
+      technician: data?.metadata.barber._id,
+      services: data?.metadata.service,
+      date: appointmentDate,
+      time: appointmentTime,
+      note: data?.metadata.notes,
+    });
+
+    setEndTime(data?.metadata.appointment_end);
+    setCurrentBarber(data?.metadata.barber);
+  };
+
   useEffect(() => {
+    handleGetBooking();
     handleGetService();
     handleGetBarber();
   }, []);
 
   useEffect(() => {
     handleGetBarber();
-  }, [endTime]);
+  }, [endTime, formData.date, formData.time]);
 
   useEffect(() => {
     handleChangeEndTime(formData.services);
@@ -152,7 +185,7 @@ function Booking() {
 
   return (
     <div className={cx("container")}>
-      <h1 className={cx("title")}>Đặt Lịch</h1>
+      <h1 className={cx("title")}>Chỉnh sửa Lịch</h1>
       <Divider
         sx={{ my: 2, bgcolor: "black", height: 2, width: "800px", mt: 0 }}
       />
@@ -229,6 +262,31 @@ function Booking() {
             Kết thúc dự kiến: {moment(endTime).format("DD-MM-YYYY HH:mm")}
           </Typography>
         )}
+        {currentBarber && (
+          <Box sx={{ mt: 2 }}>
+            <Card
+              key={currentBarber._id}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                mb: 2,
+                padding: "0px 12px",
+                borderRadius: "16px",
+                fontSize: "14px",
+              }}
+            >
+              <p style={{ marginRight: "12px" }}>Thợ hiện tại:</p>
+              <img
+                src={currentBarber.user_avatar}
+                alt={currentBarber.user_name}
+                width="40"
+                height="40"
+                style={{ borderRadius: "50%", marginRight: "10px" }}
+              />
+              <Typography>{currentBarber.user_name}</Typography>
+            </Card>
+          </Box>
+        )}
         <Box mb={2} className={cx("box")}>
           <label className={cx("label")}>Yêu Cầu Thợ</label>
           <select
@@ -277,4 +335,4 @@ function Booking() {
   );
 }
 
-export default Booking;
+export default UpdateBooking;
