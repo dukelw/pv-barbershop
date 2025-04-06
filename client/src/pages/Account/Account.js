@@ -48,12 +48,14 @@ function Account() {
 
   const handleGetInfor = async () => {
     const data = await findUser(userID, dispatch);
+    const birthday = data.metadata.user?.birthday;
+
     setUserInfor(data.metadata.user);
     setForm({
       userID: userID,
       name: data.metadata.user?.name || "",
       email: data.metadata.user?.email || "",
-      birthday: data.metadata.user?.birthday || "",
+      birthday: data.metadata.user?format(new Date(birthday), "dd-MM-yyyy"): "",
       phone: data.metadata.user?.phone || "",
       avatar: data.metadata.user?.avatar || "",
       gender: normalizeGender(data.metadata.user?.gender),
