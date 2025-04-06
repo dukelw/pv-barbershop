@@ -30,7 +30,6 @@ function Account() {
   const [editable, setEditable] = useState(false);
   const [file, setFile] = useState(null); // State to store file
 
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
@@ -66,18 +65,18 @@ function Account() {
   }, []);
 
   const handleSubmit = async () => {
-    let imageUrl=""
+    let imageUrl = "";
     try {
       // Upload file if selected
       if (file) {
         imageUrl = await uploadImage(file, "service", dispatch);
-        console.log(file)
-        console.log(imageUrl)
+        console.log(file);
+        console.log(imageUrl);
         setForm((prev) => ({ ...prev, avatar: imageUrl.img_url }));
       }
 
       // Update user information
-      await updateUser(accessToken, userID, {form,avatar: imageUrl.img_url, userID: userID}, dispatch, axiosJWT);
+      await updateUser(accessToken, userID, { form, avatar: imageUrl.img_url, userID: userID }, dispatch, axiosJWT);
       await handleGetInfor();
       toast.success("Cập nhật thành công");
       setEditable(false);
@@ -92,10 +91,8 @@ function Account() {
       <div className={cx("title")}>Thông tin tài khoản</div>
 
       <form className={cx("form")}>
-      <div className={cx("box")}>
-          <img src={userInfor?.avatar}>
-        
-          </img>
+        <div className={cx("box")}>
+          <img src={userInfor?.avatar} alt="Avatar" />
         </div>
 
         <div className={cx("box")}>
@@ -129,6 +126,18 @@ function Account() {
             type="text"
             name="phone"
             value={form.phone}
+            onChange={handleChange}
+            disabled={!editable}
+          />
+        </div>
+
+        <div className={cx("box")}>
+          <label className={cx("label")}>Ngày sinh</label>
+          <input
+            className={cx("input")}
+            type="date"
+            name="birthday"
+            value={form.birthday}
             onChange={handleChange}
             disabled={!editable}
           />
@@ -175,4 +184,5 @@ function Account() {
     </div>
   );
 }
+
 export default Account;
