@@ -246,8 +246,9 @@ class UserService {
     const filter = {
       _id: userID,
     };
+    let bodyUpdate;
     if(birthday){
-      const bodyUpdate = {
+      bodyUpdate = {
         user_name: name,
         user_email: email,
         user_phone: phone,
@@ -257,7 +258,7 @@ class UserService {
       };
     }
     else {
-      const bodyUpdate = {
+      bodyUpdate = {
         user_name: name,
         user_email: email,
         user_phone: phone,
