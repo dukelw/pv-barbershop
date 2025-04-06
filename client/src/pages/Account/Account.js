@@ -160,8 +160,8 @@ function Account() {
         <div className={cx("box")}>
           <label className={cx("label")}>Avatar</label>
           {form.avatar && !editable && (
-            <div>
-              <img src={form.avatar} alt="Avatar" width="100" />
+            <div className={cx("avatar-container")}>
+              <img src={form.avatar} alt="Avatar" className={cx("avatar")} />
             </div>
           )}
           {editable && (
