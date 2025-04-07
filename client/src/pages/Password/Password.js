@@ -57,7 +57,7 @@ function Password() {
     }
 
     try {
-      console.log(form.password)
+      console.log(userEmail)
       const res = await changePassword(
         accessToken,
         userID,
