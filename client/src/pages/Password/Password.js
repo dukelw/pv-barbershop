@@ -5,25 +5,29 @@ import { changePassword } from "../../redux/apiRequest";
 import { toast } from "react-toastify";
 import classNames from "classnames/bind";
 import styles from "./Password.module.scss";
+// Nếu muốn dùng icon:
 import { Password as PasswordIcon } from "@mui/icons-material";
 
 const cx = classNames.bind(styles);
 
 function Password() {
-  // Lấy thông tin user + token từ Redux
+  // Lấy thông tin user + token từ Redux (hoặc chỗ khác, tuỳ cấu trúc dự án)
   const currentUser = useSelector((state) => state.user.signin.currentUser);
   const accessToken = currentUser?.metadata.tokens.accessToken;
   const userID = currentUser?.metadata.user._id;
 
-  // Khởi tạo axiosJWT
+  // Tạo axiosJWT
   const axiosJWT = createAxios(currentUser);
-
   const dispatch = useDispatch();
+
+  // Lấy email trực tiếp từ Redux để gửi lên server (không cho người dùng nhập)
+  const userEmail = currentUser?.metadata.user?.email || "";
 
   // State quản lý dữ liệu form
   const [form, setForm] = useState({
-    oldPassword: "",
-    newPassword: "",
+    // API yêu cầu: "password" là mật khẩu cũ, "new_password" là mật khẩu mới
+    password: "",
+    new_password: "",
     confirmPassword: "",
   });
 
@@ -41,25 +45,28 @@ function Password() {
     e.preventDefault();
 
     // Kiểm tra đầy đủ trường
-    if (!form.oldPassword || !form.newPassword || !form.confirmPassword) {
+    if (!form.password || !form.new_password || !form.confirmPassword) {
       toast.error("Vui lòng điền đầy đủ thông tin!");
       return;
     }
 
-    // Kiểm tra mật khẩu mới và xác nhận
-    if (form.newPassword !== form.confirmPassword) {
+    // Kiểm tra khớp mật khẩu mới
+    if (form.new_password !== form.confirmPassword) {
       toast.error("Xác nhận mật khẩu mới không trùng khớp!");
       return;
     }
 
     try {
       // Gửi request đổi mật khẩu
+      // Giả sử backend cần "email", "password", "new_password"
+      // Ta gửi email từ currentUser (không để người dùng tự nhập)
       const res = await changePassword(
         accessToken,
         userID,
         {
-          oldPassword: form.oldPassword,
-          newPassword: form.newPassword,
+          email: userEmail,
+          password: form.password,
+          new_password: form.new_password,
         },
         dispatch,
         axiosJWT
@@ -69,8 +76,8 @@ function Password() {
       if (res && res.metadata) {
         toast.success("Đổi mật khẩu thành công!");
         setForm({
-          oldPassword: "",
-          newPassword: "",
+          password: "",
+          new_password: "",
           confirmPassword: "",
         });
       } else {
@@ -84,15 +91,17 @@ function Password() {
   return (
     <div className={cx("change-password-container")}>
       <h2>
+        <PasswordIcon />
         Đổi mật khẩu
       </h2>
+
       <form className={cx("form")} onSubmit={handleSubmit}>
         <div className={cx("form-group")}>
           <label>Mật khẩu hiện tại</label>
           <input
             type="password"
-            name="oldPassword"
-            value={form.oldPassword}
+            name="password"
+            value={form.password}
             onChange={handleChange}
             placeholder="Nhập mật khẩu hiện tại"
           />
@@ -102,8 +111,8 @@ function Password() {
           <label>Mật khẩu mới</label>
           <input
             type="password"
-            name="newPassword"
-            value={form.newPassword}
+            name="new_password"
+            value={form.new_password}
             onChange={handleChange}
             placeholder="Nhập mật khẩu mới"
           />
