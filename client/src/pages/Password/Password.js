@@ -84,7 +84,7 @@ function Password() {
   return (
     <div className={cx("change-password-container")}>
       <h2>
-        <PasswordIcon /> Đổi mật khẩu
+        Đổi mật khẩu
       </h2>
       <form className={cx("form")} onSubmit={handleSubmit}>
         <div className={cx("form-group")}>
