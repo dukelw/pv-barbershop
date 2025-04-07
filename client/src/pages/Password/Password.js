@@ -68,10 +68,10 @@ function Password() {
           confirmPassword: "",
         });
       } else {
-        toast.error("Đổi mật khẩu thất bại!");
+        toast.error("Mật khẩu không chính xác!");
       }
     } catch (error) {
-      toast.error("Đổi mật khẩu thất bại!");
+      toast.error("Mật khẩu không chính xác!");
     }
   };
 
