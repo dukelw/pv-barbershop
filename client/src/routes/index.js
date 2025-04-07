@@ -13,6 +13,7 @@ import NotFound from "../pages/NotFound";
 import MainLayout from "../layouts/MainLayout";
 import Empty from "../layouts/Empty";
 import Account from "../pages/Account";
+import { Password } from "@mui/icons-material";
 const publicRoutes = [
   { path: config.routes.signin, component: Signin, layout: null },
   { path: config.routes.signup, component: Signup, layout: null },
@@ -53,7 +54,7 @@ const privateRoutes = [
   {
     type: "customer",
     path: config.routes.changePassword,
-    component: Account,
+    component: Password,
     layout: MainLayout,
   },
 ];

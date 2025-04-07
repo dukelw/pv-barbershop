@@ -5,10 +5,11 @@ import { changePassword } from "../../redux/apiRequest";
 import { toast } from "react-toastify";
 import classNames from "classnames/bind";
 import styles from "./Password.module.scss";
+import { Password as PasswordIcon } from "@mui/icons-material";
 
 const cx = classNames.bind(styles);
 
-function ChangePasswordForm() {
+function Password() {
   // Lấy thông tin user + token từ Redux
   const currentUser = useSelector((state) => state.user.signin.currentUser);
   const accessToken = currentUser?.metadata.tokens.accessToken;
@@ -124,4 +125,4 @@ function ChangePasswordForm() {
   );
 }
 
-export default ChangePasswordForm;
+export default Password;
