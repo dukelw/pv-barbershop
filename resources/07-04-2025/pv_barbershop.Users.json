@@ -68,4 +68,42 @@
     "$date": "2025-04-06T15:18:45.323Z"
   },
   "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f3e541c64356388d2db8e3"
+  },
+  "user_name": "Phuong Tuan",
+  "user_email": "tuan@gmail.com",
+  "user_avatar": "https://photo-zmp3.zadn.vn/avatars/0/3/3/7/0337e4cc5a05cdcc93b5d65762aea241.jpg",
+  "user_password": "$2b$10$pEELLlKI1vICIexzog2hNOmO8Q77UbF5BuHQU0p79wuMKDXPo7aa2",
+  "user_gender": "unknown",
+  "user_phone": "",
+  "user_role": "staff",
+  "createdAt": {
+    "$date": "2025-04-07T14:46:25.708Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-07T14:46:25.708Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f3e700c64356388d2db947"
+  },
+  "user_name": "Bá Giả Ai",
+  "user_email": "ai@gmail.com",
+  "user_avatar": "https://i.pinimg.com/736x/63/2d/04/632d048703fae719fb1e8e3ea43939d5.jpg",
+  "user_password": "$2b$10$/X1zXogxRbabTaJLOujjveSh3iO9bbX7J3yeWBg0mWmdIzUFuIfbS",
+  "user_gender": "unknown",
+  "user_phone": "",
+  "user_role": "staff",
+  "createdAt": {
+    "$date": "2025-04-07T14:53:52.197Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-07T14:53:52.197Z"
+  },
+  "__v": 0
 }]
