@@ -71,7 +71,6 @@ function Password() {
         axiosJWT
       );
 
-      // Nếu server trả về kết quả thành công
       if (res && res.metadata) {
         toast.success("Đổi mật khẩu thành công!");
         setForm({
