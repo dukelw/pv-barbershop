@@ -21,7 +21,7 @@ function Password() {
   const dispatch = useDispatch();
 
   // Lấy email trực tiếp từ Redux để gửi lên server (không cho người dùng nhập)
-  const userEmail = currentUser?.metadata.user?.email || "";
+  const userEmail = currentUser?.metadata.user?.user_email || "";
 
   // State quản lý dữ liệu form
   const [form, setForm] = useState({
