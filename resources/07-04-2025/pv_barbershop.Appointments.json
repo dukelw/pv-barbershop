@@ -1,0 +1,195 @@
+[{
+  "_id": {
+    "$oid": "67f21f4652d86b9aae93dd52"
+  },
+  "customer": null,
+  "customer_name": "Duke",
+  "phone_number": 345444190,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    },
+    {
+      "$oid": "67f0024636accc91b1163380"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-04T03:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-04T04:05:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "No mention.",
+  "createdAt": {
+    "$date": "2025-04-06T06:29:26.963Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T07:01:51.707Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2220933e982184b3c6196"
+  },
+  "customer": {
+    "$oid": "67ee5299beb270d6ab2def8b"
+  },
+  "customer_name": "King Crimson",
+  "phone_number": 345444190,
+  "barber": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    },
+    {
+      "$oid": "67f0024636accc91b1163380"
+    },
+    {
+      "$oid": "67f0026236accc91b1163382"
+    },
+    {
+      "$oid": "67f0033236accc91b116338b"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-04T01:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-04T03:55:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "Hello",
+  "createdAt": {
+    "$date": "2025-04-06T06:41:13.556Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T08:16:06.026Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2345594b4c17c63072e55"
+  },
+  "customer": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "customer_name": "Lewis",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    },
+    {
+      "$oid": "67f0024636accc91b1163380"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-09T01:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-09T02:05:00.000Z"
+  },
+  "status": "completed",
+  "notes": "Note",
+  "createdAt": {
+    "$date": "2025-04-06T07:59:17.847Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-07T10:11:53.440Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744019287/schedules/1744019284440-image_processing20230602-7-ruxxod.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "67f3a3ddd15f8b5e2cdcfaf6"
+  },
+  "customer": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "customer_name": "The Vi",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    },
+    {
+      "$oid": "67f0024636accc91b1163380"
+    },
+    {
+      "$oid": "67f0026236accc91b1163382"
+    },
+    {
+      "$oid": "67f0033236accc91b116338b"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-12T05:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-12T07:55:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "Cắt cho cẩn thận nhé.",
+  "createdAt": {
+    "$date": "2025-04-07T10:07:25.264Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-07T10:17:10.467Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744021030/schedules/1744021027295-91835b04-dd48-4ef2-84fb-af91fc337b23.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "67f3a7a504d84fec73b698c4"
+  },
+  "customer": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "customer_name": "Dang Khoa",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f0026236accc91b1163382"
+    },
+    {
+      "$oid": "67f004a936accc91b1163393"
+    },
+    {
+      "$oid": "67f004e236accc91b1163395"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-22T05:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-22T06:45:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "Vinh làm mới chịu",
+  "createdAt": {
+    "$date": "2025-04-07T10:23:33.524Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-07T10:24:07.055Z"
+  },
+  "__v": 0
+}]
