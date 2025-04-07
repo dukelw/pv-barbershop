@@ -1,0 +1,71 @@
+[{
+  "_id": {
+    "$oid": "67ee5299beb270d6ab2def8b"
+  },
+  "user_name": "Le Phan The Vi",
+  "user_email": "thevi16102004@gmail.com",
+  "user_avatar": "https://i.pinimg.com/736x/24/bb/45/24bb45907d45cb66ed1dcbd986387402.jpg",
+  "user_password": "$2b$10$PJTXGhLhHqFf55NKM/Ve3.smYu/SpcCgJMAsieWNSZwftQ/l8lUWu",
+  "user_gender": "male",
+  "user_role": "receptionist",
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2025-04-03T09:19:21.038Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-03T09:19:21.038Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "user_name": "Quang Vinh",
+  "user_email": "vinh@gmail.com",
+  "user_avatar": "https://minhtuanmobile.com/uploads/blog/wuthering-waves-2-1-cach-build-phoebe-thanh-dps-chinh-sieu-manh-250214043234.jpg",
+  "user_password": "$2b$10$5/jj73IcKzcwt0BuniD6COUHzzfw.2wUSBSSL3sr9ayfSSueYJ25i",
+  "user_gender": "male",
+  "user_role": "staff",
+  "createdAt": {
+    "$date": "2025-04-03T15:32:54.538Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-03T15:32:54.538Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "user_name": "Tuấn Phương",
+  "user_email": "phuong@gmail.com",
+  "user_avatar": "https://pbs.twimg.com/profile_images/1856286778124111872/aqqCRaRE_400x400.jpg",
+  "user_password": "$2b$10$aMOdPOM95tmLD9Cq.fxpFe/9XGOWBMNsrnv6AhV/jzq3OT03YIzQm",
+  "user_role": "staff",
+  "createdAt": {
+    "$date": "2025-04-05T18:15:28.347Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-05T18:15:28.347Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f29b55d7a5ece461881119"
+  },
+  "user_name": "The Vi",
+  "user_email": "vi@gmail.com",
+  "user_avatar": "",
+  "user_password": "$2b$10$Wv/4A.iBIIjj0tF8/TWSM.KKncl.a/oXTpnkgVOSvBwRqjJI7o8UG",
+  "user_role": "customer",
+  "createdAt": {
+    "$date": "2025-04-06T15:18:45.323Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T15:18:45.323Z"
+  },
+  "__v": 0
+}]
