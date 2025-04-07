@@ -192,4 +192,255 @@
     "$date": "2025-04-07T10:24:07.055Z"
   },
   "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f3de4dc64356388d2db854"
+  },
+  "customer": {
+    "$oid": "67ee5299beb270d6ab2def8b"
+  },
+  "customer_name": "Lê Phan Thảo Anh",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    },
+    {
+      "$oid": "67f0024636accc91b1163380"
+    },
+    {
+      "$oid": "67f0026236accc91b1163382"
+    },
+    {
+      "$oid": "67f0033236accc91b116338b"
+    },
+    {
+      "$oid": "67f0036336accc91b116338d"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-09T01:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-09T05:10:00.000Z"
+  },
+  "status": "pending",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-07T14:16:45.170Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-07T14:16:45.170Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f3e380c64356388d2db8c1"
+  },
+  "customer": {
+    "$oid": "67ee5299beb270d6ab2def8b"
+  },
+  "customer_name": "Lê Phan Thế Vĩ",
+  "phone_number": 345444190,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    },
+    {
+      "$oid": "67f0024636accc91b1163380"
+    },
+    {
+      "$oid": "67f004e236accc91b1163395"
+    },
+    {
+      "$oid": "67f0051136accc91b1163397"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-09T05:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-09T07:20:00.000Z"
+  },
+  "status": "pending",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-07T14:38:56.408Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-07T14:38:56.408Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f3e5a7c64356388d2db8fa"
+  },
+  "customer": null,
+  "customer_name": "Nguyen Dang Khoa",
+  "phone_number": 708283732,
+  "barber": {
+    "$oid": "67f3e541c64356388d2db8e3"
+  },
+  "service": [
+    {
+      "$oid": "67f0024636accc91b1163380"
+    },
+    {
+      "$oid": "67f0026236accc91b1163382"
+    },
+    {
+      "$oid": "67f0036336accc91b116338d"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-09T07:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-09T09:20:00.000Z"
+  },
+  "status": "pending",
+  "notes": "Thợ này có con tên Sol à?",
+  "createdAt": {
+    "$date": "2025-04-07T14:48:07.385Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-07T14:48:07.385Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f3e61ec64356388d2db915"
+  },
+  "customer": {
+    "$oid": "67ee5299beb270d6ab2def8b"
+  },
+  "customer_name": "Đỗ Quyên",
+  "phone_number": 345444190,
+  "barber": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "service": [
+    {
+      "$oid": "67f0024636accc91b1163380"
+    },
+    {
+      "$oid": "67f0026236accc91b1163382"
+    },
+    {
+      "$oid": "67f003c736accc91b116338f"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-09T07:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-09T09:05:00.000Z"
+  },
+  "status": "pending",
+  "notes": "Cắt tóc cho chồng",
+  "createdAt": {
+    "$date": "2025-04-07T14:50:06.043Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-07T14:50:06.043Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f3e68dc64356388d2db926"
+  },
+  "customer": {
+    "$oid": "67ee5299beb270d6ab2def8b"
+  },
+  "customer_name": "Đỗ Đạt",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67f3e541c64356388d2db8e3"
+  },
+  "service": [
+    {
+      "$oid": "67f0024636accc91b1163380"
+    },
+    {
+      "$oid": "67f0026236accc91b1163382"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-09T01:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-09T02:05:00.000Z"
+  },
+  "status": "pending",
+  "notes": "Anh này có vợ tên Thiên An à.",
+  "createdAt": {
+    "$date": "2025-04-07T14:51:57.538Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-07T15:30:52.245Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744039853/schedules/1744039848934-image_processing20230602-7-ruxxod.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "67f3e6e5c64356388d2db941"
+  },
+  "customer": {
+    "$oid": "67ee5299beb270d6ab2def8b"
+  },
+  "customer_name": "Tủ lạnh Samsung",
+  "phone_number": 456152783,
+  "barber": {
+    "$oid": "67f3e700c64356388d2db947"
+  },
+  "service": [
+    {
+      "$oid": "67f0033236accc91b116338b"
+    },
+    {
+      "$oid": "67f0036336accc91b116338d"
+    },
+    {
+      "$oid": "67f0051136accc91b1163397"
+    },
+    {
+      "$oid": "67f004e236accc91b1163395"
+    },
+    {
+      "$oid": "67f004a936accc91b1163393"
+    },
+    {
+      "$oid": "67f0040136accc91b1163391"
+    },
+    {
+      "$oid": "67f003c736accc91b116338f"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-09T07:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-09T13:05:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "Hớt tóc cạnh tranh thằng Panasonic",
+  "createdAt": {
+    "$date": "2025-04-07T14:53:25.827Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-07T14:55:38.598Z"
+  },
+  "__v": 0
 }]

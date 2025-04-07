@@ -52,14 +52,25 @@ class UserController {
     }).send(res);
   }
 
-  async findAllBarber(req, res, next) {
+  async findAllFreeBarber(req, res, next) {
     const keySearch = req.query.key;
     const timeStart = req.query.startTime;
     const timeEnd = req.query.endTime;
     console.log("controller time", timeStart, timeEnd);
     new SuccessResponse({
       message: "Find user successfully",
-      metadata: await userService.findAllBarber(keySearch, timeStart, timeEnd),
+      metadata: await userService.findAllFreeBarber(
+        keySearch,
+        timeStart,
+        timeEnd
+      ),
+    }).send(res);
+  }
+
+  async findAllBarber(req, res, next) {
+    new SuccessResponse({
+      message: "Find all barber successfully",
+      metadata: await userService.findAllBarber(),
     }).send(res);
   }
 

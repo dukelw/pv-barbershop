@@ -339,6 +339,17 @@ export const findAllFreeBarber = async (
   }
 };
 
+export const findAllBarber = async (dispatch) => {
+  dispatch(findAllUsersStart());
+  try {
+    const res = await axios.get(`${REACT_APP_BASE_URL}user/barber`);
+    dispatch(findAllUsersSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    dispatch(findAllUsersFailure());
+  }
+};
+
 export const banUser = async (
   accessToken,
   userID,

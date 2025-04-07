@@ -121,7 +121,7 @@ class UserService {
   };
 
   logOut = async (keyStore) => {
-    console.log(keyStore)
+    console.log(keyStore);
     const deletedKey = await keyTokenService.removeKeyByID(keyStore._id);
     return deletedKey;
   };
@@ -199,8 +199,15 @@ class UserService {
     return foundUsers;
   };
 
-  findAllBarber = async (keySearch, timeStart, timeEnd) => {
-    // Bước 1: Tìm các barber (staff)
+  findAllBarber = async () => {
+    let foundUsers;
+    const query = { user_role: "staff" };
+
+    foundUsers = await UserModel.find(query);
+    return foundUsers;
+  };
+
+  findAllFreeBarber = async (keySearch, timeStart, timeEnd) => {
     let foundUsers;
     const query = { user_role: "staff" };
 
@@ -210,21 +217,17 @@ class UserService {
 
     foundUsers = await UserModel.find(query);
 
-    // Nếu có cả timeStart và timeEnd thì lọc ra những barber không bận
     console.log("starttime", timeStart, "endtime", timeEnd);
     if (timeStart && timeEnd) {
-      // Bước 2: Tìm các appointment trong khoảng thời gian
       const busyAppointments = await AppointmentModel.find({
         appointment_start: { $lt: new Date(timeEnd) },
         appointment_end: { $gt: new Date(timeStart) },
       });
 
-      // Bước 3: Lấy danh sách barber._id từ những appointment đó
       const busyBarberIds = busyAppointments
         .filter((a) => a.barber && a.barber._id)
         .map((a) => a.barber._id.toString());
 
-      // Bước 4: Lọc ra những barber không nằm trong danh sách bận
       foundUsers = foundUsers.filter(
         (barber) => !busyBarberIds.includes(barber._id.toString())
       );
@@ -248,7 +251,7 @@ class UserService {
       _id: userID,
     };
     let bodyUpdate;
-    if(birthday){
+    if (birthday) {
       bodyUpdate = {
         user_name: name,
         user_email: email,
@@ -257,8 +260,7 @@ class UserService {
         user_birthday: new Date(birthday),
         user_avatar: avatar,
       };
-    }
-    else {
+    } else {
       bodyUpdate = {
         user_name: name,
         user_email: email,
@@ -267,8 +269,6 @@ class UserService {
         user_avatar: avatar,
       };
     }
-
-    
 
     const updatedUser = await UserModel.findOneAndUpdate(filter, bodyUpdate, {
       new: true,
