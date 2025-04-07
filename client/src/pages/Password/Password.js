@@ -42,6 +42,7 @@ function Password() {
 
   // Hàm submit khi người dùng bấm nút "Đổi mật khẩu"
   const handleSubmit = async (e) => {
+    console.log("currentUser:", currentUser);
     e.preventDefault();
 
     // Kiểm tra đầy đủ trường
