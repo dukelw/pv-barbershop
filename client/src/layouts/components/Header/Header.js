@@ -86,6 +86,15 @@ function Header() {
                 </Link>
                 
               </MenuItem>
+              <MenuItem onClick={handleClose}>
+                <Link
+                  to="/account"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  Đổi mật khẩu
+                </Link>
+                
+              </MenuItem>
               <MenuItem
                 onClick={() => {
                   handleClose();
