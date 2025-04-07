@@ -16,39 +16,28 @@ function Account() {
   const accessToken = currentUser?.metadata.tokens.accessToken;
   const userID = currentUser?.metadata.user._id;
   const axiosJWT = createAxios(currentUser);
-  const [userInfor, setUserInfor] = useState({});
+
   const dispatch = useDispatch();
+
+  // Hàm để chuẩn hoá giá trị gender
   const normalizeGender = (gender) => (typeof gender === "string" ? gender : "unknown");
 
-  const [form, setForm] = useState({
-    userID: userID,
-    name: userInfor?.user_name || "",
-    email: userInfor?.user_email || "",
-    birthday: userInfor?.user_birthday || "",
-    phone: userInfor?.user_phone || "",
-    avatar: userInfor?.user_avatar || "",
-    gender: normalizeGender(userInfor?.user_gender),
-  });
-
+  const [userInfor, setUserInfor] = useState({});
   const [editable, setEditable] = useState(false);
   const [file, setFile] = useState(null);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
-  };
+  // State chứa toàn bộ thông tin cần hiển thị + cập nhật
+  const [form, setForm] = useState({
+    userID: userID,
+    name: "",
+    email: "",
+    birthday: "",
+    phone: "",
+    avatar: "",
+    gender: "unknown",
+  });
 
-  const handleFileChange = (e) => {
-    const selectedFile = e.target.files[0];
-    if (selectedFile) {
-      setFile(selectedFile);
-    }
-  };
-
-  const handleToggleEdit = () => {
-    setEditable(true);
-  };
-
+  // Lấy thông tin user từ server
   const handleGetInfor = async () => {
     const data = await findUser(userID, dispatch);
     const birthday = data.metadata.user?.birthday;
@@ -69,27 +58,49 @@ function Account() {
     handleGetInfor();
   }, []);
 
+  // Cập nhật giá trị trong form
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // Chọn file avatar
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    if (selectedFile) {
+      setFile(selectedFile);
+    }
+  };
+
+  // Bật chế độ cho phép chỉnh sửa (trừ Email)
+  const handleToggleEdit = () => {
+    setEditable(true);
+  };
+
+  // Gửi thông tin cập nhật lên server
   const handleSubmit = async () => {
     let imageUrl = "";
     try {
-      // Upload file if selected
+      // Upload file nếu có
       if (file) {
         imageUrl = await uploadImage(file, "service", dispatch);
-        console.log(file);
-        console.log(imageUrl);
-        setForm((prev) => ({ ...prev, avatar: imageUrl.img_url }));
       }
 
-      // Chuyển đổi ngày sinh nhập vào (dd-MM-yyyy) thành (yyyy-MM-dd)
-      const birthday = form.birthday ? format(parse(form.birthday, "dd-MM-yyyy", new Date()), "yyyy-MM-dd") : "";
+      const birthday = form.birthday
+        ? format(parse(form.birthday, "dd-MM-yyyy", new Date()), "yyyy-MM-dd")
+        : "";
 
-      // Update user information
-      await updateUser(accessToken, userID, { 
-        ...form, 
-        avatar: imageUrl.img_url, 
-        birthday: birthday, // Sử dụng ngày đã chuyển đổi
-        userID: userID 
-      }, dispatch, axiosJWT);
+      const updateData = {
+        userID: userID,
+        name: form.name,
+        birthday: birthday,
+        phone: form.phone,
+        avatar: imageUrl.img_url || form.avatar,
+        gender: form.gender,
+      };
+
+      await updateUser(accessToken, userID, updateData, dispatch, axiosJWT);
+
       await handleGetInfor();
       toast.success("Cập nhật thành công");
       setEditable(false);
@@ -105,9 +116,8 @@ function Account() {
 
       <form className={cx("form")}>
         <div className={cx("avatar-container")}>
-            <img src={form.avatar} alt="Avatar" className={cx("avatar")} />
+          <img src={form.avatar} alt="Avatar" className={cx("avatar")} />
         </div>
-
 
         <div className={cx("box")}>
           <label className={cx("label")}>Họ và tên</label>
@@ -121,6 +131,10 @@ function Account() {
           />
         </div>
 
+        {/* 
+          Email chỉ hiển thị, KHÔNG BAO GIỜ CHO PHÉP EDIT 
+          disabled luôn là true để ngăn chỉnh sửa từ giao diện
+        */}
         <div className={cx("box")}>
           <label className={cx("label")}>Email</label>
           <input
@@ -128,8 +142,8 @@ function Account() {
             type="email"
             name="email"
             value={form.email}
-            onChange={handleChange}
-            disabled={!editable}
+            onChange={() => {}}
+            disabled
           />
         </div>
 
@@ -149,33 +163,36 @@ function Account() {
           <label className={cx("label")}>Ngày sinh</label>
           <DatePicker
             className={cx("input", "datepicker")}
-            selected={form.birthday ? parse(form.birthday, "dd-MM-yyyy", new Date()) : null}
-            onChange={(date) => setForm((prev) => ({ ...prev, birthday: format(date, "dd-MM-yyyy") }))}
+            selected={
+              form.birthday ? parse(form.birthday, "dd-MM-yyyy", new Date()) : null
+            }
+            onChange={(date) =>
+              setForm((prev) => ({
+                ...prev,
+                birthday: format(date, "dd-MM-yyyy"),
+              }))
+            }
             dateFormat="dd-MM-yyyy"
             disabled={!editable}
-            
           />
         </div>
 
-        {editable && 
+        {editable && (
           <div className={cx("box")}>
             <label className={cx("label")}>Avatar</label>
-            {file && editable && (
+            {file && (
               <div className={cx("avatar-container")}>
-                <img src={URL.createObjectURL(file)} alt="Avatar" className={cx("preview-avatar")} />
+                <img
+                  src={URL.createObjectURL(file)}
+                  alt="Avatar"
+                  className={cx("preview-avatar")}
+                />
               </div>
-            )
-            }
-
-            {editable && (
-              <input
-                type="file"
-                onChange={handleFileChange}
-                accept="image/*"
-              />
             )}
+
+            <input type="file" onChange={handleFileChange} accept="image/*" />
           </div>
-        }
+        )}
 
         <div className={cx("box")}>
           <label className={cx("label")}>Giới tính</label>
@@ -191,7 +208,7 @@ function Account() {
             <option value="unknown">Không rõ</option>
           </select>
         </div>
-      
+
         <div className={cx("box")}>
           <button
             className={cx("submit-button")}
@@ -201,7 +218,6 @@ function Account() {
             {!editable ? "Cập nhật" : "Lưu"}
           </button>
         </div>
-        
       </form>
     </div>
   );
