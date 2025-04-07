@@ -86,12 +86,10 @@ function Account() {
         imageUrl = await uploadImage(file, "service", dispatch);
       }
 
-      // Chuyển đổi birthday trong form sang "yyyy-MM-dd"
       const birthday = form.birthday
         ? format(parse(form.birthday, "dd-MM-yyyy", new Date()), "yyyy-MM-dd")
         : "";
 
-      // Tạo object chứa các field được phép cập nhật (KHÔNG GỒM email)
       const updateData = {
         userID: userID,
         name: form.name,
@@ -101,7 +99,6 @@ function Account() {
         gender: form.gender,
       };
 
-      // Gửi request cập nhật, cố tình KHÔNG gửi email để user không thể cập nhật email
       await updateUser(accessToken, userID, updateData, dispatch, axiosJWT);
 
       await handleGetInfor();
