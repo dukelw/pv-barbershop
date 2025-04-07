@@ -88,7 +88,7 @@ function Header() {
               </MenuItem>
               <MenuItem onClick={handleClose}>
                 <Link
-                  to="/account"
+                  to="/changePassword"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
                   Đổi mật khẩu
