@@ -90,7 +90,6 @@ function Password() {
   return (
     <div className={cx("change-password-container")}>
       <h2>
-        <PasswordIcon />
         Đổi mật khẩu
       </h2>
 
