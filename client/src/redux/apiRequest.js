@@ -113,11 +113,30 @@ import {
   deleteAppointmentFailure,
   deleteAppointmentStart,
   deleteAppointmentSuccess,
+  findAllAppointmentsFailure,
+  findAllAppointmentsStart,
+  findAllAppointmentsSuccess,
   updateAppointmentFailure,
   updateAppointmentStart,
   updateAppointmentSuccess,
 } from "./appointmentSlice";
-import { createInventoryFailure, createInventoryStart, createInventorySuccess, deleteInventoryFailure, deleteInventoryStart, deleteInventorySuccess, getAllInventorysFailure, getAllInventorysStart, getAllInventorysSuccess, getInventoryFailure, getInventoryStart, getInventorySuccess, updateInventoryFailure, updateInventoryStart, updateInventorySuccess } from './inventorySlice';
+import {
+  createInventoryFailure,
+  createInventoryStart,
+  createInventorySuccess,
+  deleteInventoryFailure,
+  deleteInventoryStart,
+  deleteInventorySuccess,
+  getAllInventorysFailure,
+  getAllInventorysStart,
+  getAllInventorysSuccess,
+  getInventoryFailure,
+  getInventoryStart,
+  getInventorySuccess,
+  updateInventoryFailure,
+  updateInventoryStart,
+  updateInventorySuccess,
+} from "./inventorySlice";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -889,6 +908,42 @@ export const getAllAppointments = async (dispatch) => {
   }
 };
 
+export const getAllAppointmentsOfBarber = async (barberID, dispatch) => {
+  dispatch(findAllAppointmentsStart());
+  try {
+    const res = await axios.get(
+      `${REACT_APP_BASE_URL}appointment/barber/${barberID}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    dispatch(findAllAppointmentsSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    dispatch(findAllAppointmentsFailure());
+  }
+};
+
+export const getAllAppointmentsOfUser = async (userPhone, dispatch) => {
+  dispatch(findAllAppointmentsStart());
+  try {
+    const res = await axios.get(
+      `${REACT_APP_BASE_URL}appointment/user/${userPhone}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    dispatch(findAllAppointmentsSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    dispatch(findAllAppointmentsFailure());
+  }
+};
+
 export const createAppointment = async (appointment, dispatch) => {
   dispatch(createAppointmentStart());
   try {
@@ -952,6 +1007,30 @@ export const updateAppointmentStatus = async (
   }
 };
 
+export const updateAppointmentProof = async (
+  accessToken,
+  appointmentID,
+  proof,
+  dispatch
+) => {
+  dispatch(updateAppointmentStart());
+  try {
+    const res = await axios.put(
+      `${REACT_APP_BASE_URL}appointment/${appointmentID}/proof`,
+      { complete_picture: proof },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `${accessToken}`,
+        },
+      }
+    );
+    dispatch(updateAppointmentSuccess(res.data));
+  } catch (error) {
+    dispatch(updateAppointmentFailure());
+  }
+};
+
 export const deleteAppointment = async (accessToken, ID, dispatch) => {
   dispatch(deleteAppointmentStart());
   try {
@@ -981,13 +1060,13 @@ export const getInventory = async (ID, dispatch) => {
   try {
     const res = await axios.get(`${REACT_APP_BASE_URL}inventory/${ID}`, {
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     });
     dispatch(getInventorySuccess(res.data));
     return res.data;
   } catch (error) {
-    console.error('Error fetching inventory:', error);
+    console.error("Error fetching inventory:", error);
     dispatch(getInventoryFailure());
   }
 };
@@ -997,7 +1076,7 @@ export const getAllInventories = async (dispatch) => {
   try {
     const res = await axios.get(`${REACT_APP_BASE_URL}inventory/all`, {
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     });
     dispatch(getAllInventorysSuccess(res.data));
@@ -1008,15 +1087,25 @@ export const getAllInventories = async (dispatch) => {
   }
 };
 
-export const createInventory = async (accessToken, inventory, dispatch, navigate, axiosJWT) => {
+export const createInventory = async (
+  accessToken,
+  inventory,
+  dispatch,
+  navigate,
+  axiosJWT
+) => {
   dispatch(createInventoryStart());
   try {
-    const res = await axiosJWT.post(`${REACT_APP_BASE_URL}inventory/add`, inventory, {
-      headers: {
-        'Content-Type': 'application/json',
-        authorization: `${accessToken}`,
-      },
-    });
+    const res = await axiosJWT.post(
+      `${REACT_APP_BASE_URL}inventory/add`,
+      inventory,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `${accessToken}`,
+        },
+      }
+    );
     dispatch(createInventorySuccess(res.data));
     return res.data;
   } catch (error) {
@@ -1024,15 +1113,25 @@ export const createInventory = async (accessToken, inventory, dispatch, navigate
   }
 };
 
-export const updateInventory = async (accessToken, inventory, dispatch, navigate, axiosJWT) => {
+export const updateInventory = async (
+  accessToken,
+  inventory,
+  dispatch,
+  navigate,
+  axiosJWT
+) => {
   dispatch(updateInventoryStart());
   try {
-    const res = await axiosJWT.put(`${REACT_APP_BASE_URL}inventory/${inventory.inventory_id}`, inventory, {
-      headers: {
-        'Content-Type': 'application/json',
-        authorization: `${accessToken}`,
-      },
-    });
+    const res = await axiosJWT.put(
+      `${REACT_APP_BASE_URL}inventory/${inventory.inventory_id}`,
+      inventory,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `${accessToken}`,
+        },
+      }
+    );
     dispatch(updateInventorySuccess(res.data));
   } catch (error) {
     dispatch(updateInventoryFailure());
@@ -1047,7 +1146,7 @@ export const deleteInventory = async (accessToken, ID, dispatch, axiosJWT) => {
       {},
       {
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
           authorization: `${accessToken}`,
         },
       }
