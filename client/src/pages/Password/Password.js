@@ -57,9 +57,7 @@ function Password() {
     }
 
     try {
-      // Gửi request đổi mật khẩu
-      // Giả sử backend cần "email", "password", "new_password"
-      // Ta gửi email từ currentUser (không để người dùng tự nhập)
+      console.log(userEmail)
       const res = await changePassword(
         accessToken,
         userID,
