@@ -14,6 +14,7 @@ function Password() {
   const currentUser = useSelector((state) => state.user.signin.currentUser);
   const accessToken = currentUser?.metadata.tokens.accessToken;
   const userID = currentUser?.metadata.user._id;
+
   // Khởi tạo axiosJWT
   const axiosJWT = createAxios(currentUser);
 
@@ -44,6 +45,7 @@ function Password() {
       toast.error("Vui lòng điền đầy đủ thông tin!");
       return;
     }
+
     // Kiểm tra mật khẩu mới và xác nhận
     if (form.newPassword !== form.confirmPassword) {
       toast.error("Xác nhận mật khẩu mới không trùng khớp!");
@@ -72,7 +74,6 @@ function Password() {
           confirmPassword: "",
         });
       } else {
-        // Xử lý khi server trả về lỗi
         toast.error("Đổi mật khẩu thất bại!");
       }
     } catch (error) {
@@ -82,7 +83,9 @@ function Password() {
 
   return (
     <div className={cx("change-password-container")}>
-      <h2>Đổi mật khẩu</h2>
+      <h2>
+        <PasswordIcon /> Đổi mật khẩu
+      </h2>
       <form className={cx("form")} onSubmit={handleSubmit}>
         <div className={cx("form-group")}>
           <label>Mật khẩu hiện tại</label>
