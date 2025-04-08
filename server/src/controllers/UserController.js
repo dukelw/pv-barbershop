@@ -74,6 +74,14 @@ class UserController {
     }).send(res);
   }
 
+  async findAll(req, res, next) {
+    new SuccessResponse({
+      message: "Find all barber successfully",
+      metadata: await userService.findAll(),
+    }).send(res);
+  }
+
+
   async updateInformation(req, res, next) {
     new SuccessResponse({
       message: "Update information successfully",
@@ -85,11 +93,12 @@ class UserController {
 
   async delete(req, res, next) {
     const deleteID = req.params.id;
+    const userID = req.params.userID;
     new SuccessResponse({
       message: "Delete user successfully",
       metadata: await userService.delete({
         deleteID,
-        userID: req.user.user_id,
+        userID,
       }),
     }).send(res);
   }
@@ -98,6 +107,13 @@ class UserController {
     new SuccessResponse({
       message: "Change password successfully",
       metadata: await userService.changePassword(req.body),
+    }).send(res);
+  }
+
+  async createAccount(req, res, next) {
+    new SuccessResponse({
+      message: "Change password successfully",
+      metadata: await userService.createAccount(req.body),
     }).send(res);
   }
 }
