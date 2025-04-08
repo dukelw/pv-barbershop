@@ -195,7 +195,7 @@ class UserService {
     } else {
       foundUsers = await UserModel.find();
     }
-
+    console.log(foundUsers);
     return foundUsers;
   };
 
@@ -302,13 +302,77 @@ class UserService {
 
   delete = async ({ deleteID, userID }) => {
     const foundUser = await UserModel.findById(userID);
-    if (!foundUser.isAdmin) throw new NotFoundError("Authorization failure");
+    if (!foundUser.user_role === "admin" || !foundUser.user_role === "receptionist") throw new NotFoundError("Authorization failure");
 
     const deleteUser = await UserModel.findById(deleteID);
     if (!foundUser) throw new NotFoundError("User not found");
 
     const result = await UserModel.deleteOne({ _id: deleteUser._id });
     return result;
+  };
+
+  createAccount = async ({ user_name, user_email, user_avatar, user_role, user_gender }) => {
+    const password = "123456";
+    // Step 1: Check the existence of email
+    const foundUser = await UserModel.findOne({ user_email: user_email }).lean();
+    if (foundUser) throw new BadRequestError("User is already registered");
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = await UserModel.create({
+      user_name: user_name,
+      user_email: user_email,
+      user_password: hashedPassword,
+      user_avatar: user_avatar,
+      user_role: user_role,
+      user_gender: user_gender,
+    });
+
+    if (newUser) {
+      // Create privateKey, publicKey
+      const privateKey = crypto.randomBytes(64).toString("hex");
+      const publicKey = crypto.randomBytes(64).toString("hex");
+
+      const keyStore = await keyTokenService.createKeyToken({
+        user_id: newUser._id,
+        public_key: publicKey,
+        private_key: privateKey,
+      });
+
+      if (!keyStore) {
+        return {
+          code: "400",
+          message: "keyStore error",
+        };
+      }
+
+      // Create pair of token
+      const tokens = await generatePairOfToken(
+        { user_id: newUser._id, user_email },
+        publicKey,
+        privateKey
+      );
+
+      return {
+        code: 201,
+        metadata: {
+          user: getInfoData({
+            fields: [
+              "_id",
+              "user_name",
+              "user_email",
+              "user_avatar",
+              "user_role",
+            ],
+            object: newUser,
+          }),
+          tokens,
+        },
+      };
+    }
+    return {
+      code: 200,
+      metadata: null,
+    };
   };
 }
 
