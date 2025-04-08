@@ -30,7 +30,12 @@ class AppointmentService {
     return newAppointment;
   }
 
-  async getAppointment(appointmentID) {
+  async getAppointment(appointmentID, populate) {
+    if (populate) {
+      return await AppointmentModel.findOne({
+        _id: appointmentID,
+      }).populate("barber service");
+    }
     return await AppointmentModel.findOne({ _id: appointmentID }).populate(
       "barber"
     );

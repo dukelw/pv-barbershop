@@ -11,9 +11,10 @@ class AppointmentController {
 
   async get(req, res, next) {
     const appointmentID = req.params.id;
+    const populate = req.query.populate
     new SuccessResponse({
       message: "Get appointment",
-      metadata: await appointmentService.getAppointment(appointmentID),
+      metadata: await appointmentService.getAppointment(appointmentID, populate),
     }).send(res);
   }
 

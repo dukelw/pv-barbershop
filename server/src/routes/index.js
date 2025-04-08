@@ -6,10 +6,12 @@ const invoiceRouter = require("./invoice");
 const inventoryRouter = require("./inventory");
 const reviewRouter = require("./review");
 const appointmentRouter = require("./appointment");
+const paymentRouter = require("./payment");
 const sliderRouter = require("./slider");
 
 function route(app) {
   app.use("/api/v1/user/", userRouter);
+  app.use("/api/v1/payment/", paymentRouter);
   app.use("/api/v1/upload/", uploadRouter);
   app.use("/api/v1/service/", serviceRouter);
   app.use("/api/v1/invoice/", invoiceRouter);
