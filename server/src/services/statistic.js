@@ -1,6 +1,6 @@
 const ReviewModel = require("../models/Review");
 const InvoiceModel = require("../models/Invoice");
-const UserModel = require("../models/User");
+const AppointmentModel = require("../models/Appointment");
 const { NotFoundError, BadRequestError } = require("../core/error-response");
 const mongoose = require("mongoose");
 
@@ -272,6 +272,61 @@ class StatisticService {
     });
 
     return fullYearIncome;
+  }
+
+  async getAppointmentOfSystem({ start, end }) {
+    const matchQuery = {
+      status: "completed",
+    };
+
+    if (start && end) {
+      matchQuery.appointment_start = {
+        $gte: new Date(start),
+        $lt: new Date(end),
+      };
+    }
+
+    const total = await AppointmentModel.countDocuments(matchQuery);
+    return total;
+  }
+
+  async getAppointmentSystemByMonthInYear(year) {
+    const start = new Date(`${year}-01-01`);
+    const end = new Date(`${year + 1}-01-01`);
+
+    const result = await AppointmentModel.aggregate([
+      {
+        $match: {
+          appointment_start: { $gte: start, $lt: end },
+          status: "completed",
+        },
+      },
+      {
+        $group: {
+          _id: { $month: "$appointment_start" },
+          count: { $sum: 1 },
+        },
+      },
+      {
+        $project: {
+          month: "$_id",
+          count: 1,
+          _id: 0,
+        },
+      },
+      { $sort: { month: 1 } },
+    ]);
+
+    const fullYear = Array.from({ length: 12 }, (_, i) => {
+      const month = i + 1;
+      const found = result.find((r) => r.month === month);
+      return {
+        month,
+        count: found ? found.count : 0,
+      };
+    });
+
+    return fullYear;
   }
 }
 
