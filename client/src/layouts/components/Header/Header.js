@@ -81,7 +81,7 @@ function Header() {
               </MenuItem>
               <MenuItem onClick={handleClose}>
                 <Link
-                  to="/account"
+                  to={`/account/${userID}`}
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
                   Thông tin tài khoản
@@ -89,7 +89,7 @@ function Header() {
               </MenuItem>
               <MenuItem onClick={handleClose}>
                 <Link
-                  to="/changePassword"
+                  to={`/change-password/${userID}`}
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
                   Đổi mật khẩu

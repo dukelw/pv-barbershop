@@ -23,6 +23,8 @@ const publicRoutes = [
   { path: config.routes.notFound, component: NotFound, layout: null },
   { path: config.routes.about, component: About, layout: MainLayout },
   { path: config.routes.logout, component: Logout, layout: null },
+  { path: config.routes.account, component: Account, layout: MainLayout},
+  { path: config.routes.changePassword, component: Password, layout: MainLayout},
 ];
 
 const privateRoutes = [
@@ -47,18 +49,7 @@ const privateRoutes = [
     path: config.routes.workbench,
     component: Workbench,
   },
-  {
-    type: "customer",
-    path: config.routes.account,
-    component: Account,
-    layout: MainLayout,
-  },
-  {
-    type: "customer",
-    path: config.routes.changePassword,
-    component: Password,
-    layout: MainLayout,
-  },
+  
 ];
 
 export { publicRoutes, privateRoutes };
