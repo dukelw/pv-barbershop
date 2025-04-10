@@ -4,6 +4,7 @@ import styles from "./HomePage.module.scss";
 import PricingTable from "../../components/PricingTable";
 import ServiceSlide from "../../components/ServiceSlide";
 import LookBook from "../../components/LookBook";
+import Review from "../../components/Review";
 const cx = classNames.bind(styles);
 
 function HomePage() {
@@ -29,6 +30,9 @@ function HomePage() {
       </section>
       <section className={cx("lookbook")}>
         <LookBook />
+      </section>
+      <section className={cx("review")}>
+        <Review />
       </section>
     </div>
   );

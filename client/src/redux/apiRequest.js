@@ -212,8 +212,11 @@ export const signin = async (user, dispatch, navigate) => {
     const role = res.data.metadata.user.user_role;
     if (role === "customer") {
       navigate("/");
-    } else {
-      window.location.href = "http://localhost:3039";
+    } else if (role === "staff") {
+      window.location.href = `${process.env.REACT_APP_DASHBOARD_URL}baber-dashboard`;
+    } 
+    else {
+      window.location.href = `${process.env.REACT_APP_DASHBOARD_URL}`;
     }
   } catch (error) {
     dispatch(userSigninFailure());
@@ -1325,9 +1328,25 @@ export const getReview = async (ID, dispatch) => {
 export const getAllReviews = async (dispatch) => {
   dispatch(getAllReviewsStart());
   try {
-    const res = await axios.get(`${REACT_APP_BASE_URL}review}`, {
+    const res = await axios.get(`${REACT_APP_BASE_URL}review`, {
       headers: {
         "Content-Type": "application/json",
+      },
+    });
+    dispatch(getAllReviewsSuccess(res.data));
+    console.log(res);
+    return res.data.metadata;
+  } catch (error) {
+    dispatch(getAllReviewsFailure());
+  }
+};
+
+export const getAllReviewsOfBarber = async (barberID, dispatch) => {
+  dispatch(getAllReviewsStart());
+  try {
+    const res = await axios.get(`${REACT_APP_BASE_URL}review/barber/${barberID}`, {
+      headers: {
+        'Content-Type': 'application/json',
       },
     });
     dispatch(getAllReviewsSuccess(res.data));
