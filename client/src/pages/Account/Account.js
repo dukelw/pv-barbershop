@@ -8,13 +8,14 @@ import styles from "./Account.module.scss";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { format, parse } from "date-fns";
+import { useParams } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
 function Account() {
   const currentUser = useSelector((state) => state.user.signin.currentUser);
   const accessToken = currentUser?.metadata.tokens.accessToken;
-  const userID = currentUser?.metadata.user._id;
+  const {userID} = useParams()
   const axiosJWT = createAxios(currentUser);
 
   const dispatch = useDispatch();

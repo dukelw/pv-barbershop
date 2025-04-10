@@ -77,6 +77,22 @@ function MainHeader() {
                     Xem lịch cắt tóc
                   </Link>
                 </MenuItem>
+                <MenuItem onClick={handleClose}>
+                <Link
+                  to={`/account/${userID}`}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  Thông tin tài khoản
+                </Link>
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                  <Link
+                    to={`/change-password/${userID}`}
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    Đổi mật khẩu
+                  </Link>
+                </MenuItem>
                 <MenuItem
                   onClick={() => {
                     handleClose();
