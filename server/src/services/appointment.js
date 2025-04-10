@@ -30,7 +30,12 @@ class AppointmentService {
     return newAppointment;
   }
 
-  async getAppointment(appointmentID) {
+  async getAppointment(appointmentID, populate) {
+    if (populate) {
+      return await AppointmentModel.findOne({
+        _id: appointmentID,
+      }).populate("barber service");
+    }
     return await AppointmentModel.findOne({ _id: appointmentID }).populate(
       "barber"
     );
@@ -49,9 +54,10 @@ class AppointmentService {
   }
 
   async getAppointmentsForBarber(barberID) {
-    return await AppointmentModel.find({ barber: barberID }).populate(
-      "service customer"
-    );
+    return await AppointmentModel.find({
+      barber: barberID,
+      status: { $ne: "pending" },
+    }).populate("service customer");
   }
 
   async updateAppointment({
@@ -91,6 +97,17 @@ class AppointmentService {
     const updatedAppointment = await AppointmentModel.findByIdAndUpdate(
       appointmentID,
       { status },
+      { new: true }
+    );
+
+    if (!updatedAppointment) throw new NotFoundError("Appointment not found");
+    return updatedAppointment;
+  }
+
+  async updateAppointmentProof(appointmentID, complete_picture) {
+    const updatedAppointment = await AppointmentModel.findByIdAndUpdate(
+      appointmentID,
+      { complete_picture },
       { new: true }
     );
 

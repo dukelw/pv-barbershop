@@ -9,6 +9,13 @@ class ReviewController {
     }).send(res);
   }
 
+  async getAll(req, res, next) {
+    new SuccessResponse({
+      message: "All's reviews",
+      metadata: await reviewService.getAllReviews(),
+    }).send(res);
+  }
+
   async getByBarber(req, res, next) {
     new SuccessResponse({
       message: "Barber's reviews",
@@ -16,12 +23,12 @@ class ReviewController {
     }).send(res);
   }
 
-  async getByService(req, res, next) {
-    new SuccessResponse({
-      message: "Service's reviews",
-      metadata: await reviewService.getReviewsByService(req.params.serviceId),
-    }).send(res);
-  }
+  // async getByService(req, res, next) {
+  //   new SuccessResponse({
+  //     message: "Service's reviews",
+  //     metadata: await reviewService.getReviewsByService(req.params.serviceId),
+  //   }).send(res);
+  // }
 }
 
 module.exports = new ReviewController();

@@ -147,7 +147,7 @@ function UpdateBooking() {
   };
 
   const handleGetBooking = async () => {
-    const data = await getAppointment(appointmentID, dispatch);
+    const data = await getAppointment(appointmentID, dispatch, false);
     console.log(data.metadata);
     const appointmentStart = moment(data?.metadata.appointment_start);
 

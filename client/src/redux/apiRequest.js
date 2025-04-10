@@ -113,11 +113,78 @@ import {
   deleteAppointmentFailure,
   deleteAppointmentStart,
   deleteAppointmentSuccess,
+  findAllAppointmentsFailure,
+  findAllAppointmentsStart,
+  findAllAppointmentsSuccess,
   updateAppointmentFailure,
   updateAppointmentStart,
   updateAppointmentSuccess,
 } from "./appointmentSlice";
-import { createInventoryFailure, createInventoryStart, createInventorySuccess, deleteInventoryFailure, deleteInventoryStart, deleteInventorySuccess, getAllInventorysFailure, getAllInventorysStart, getAllInventorysSuccess, getInventoryFailure, getInventoryStart, getInventorySuccess, updateInventoryFailure, updateInventoryStart, updateInventorySuccess } from './inventorySlice';
+import {
+  createInventoryFailure,
+  createInventoryStart,
+  createInventorySuccess,
+  deleteInventoryFailure,
+  deleteInventoryStart,
+  deleteInventorySuccess,
+  getAllInventorysFailure,
+  getAllInventorysStart,
+  getAllInventorysSuccess,
+  getInventoryFailure,
+  getInventoryStart,
+  getInventorySuccess,
+  updateInventoryFailure,
+  updateInventoryStart,
+  updateInventorySuccess,
+} from "./inventorySlice";
+import {
+  createInvoiceFailure,
+  createInvoiceStart,
+  createInvoiceSuccess,
+  getAllInvoicesFailure,
+  getAllInvoicesStart,
+  getAllInvoicesSuccess,
+  getInvoiceFailure,
+  getInvoiceStart,
+  getInvoiceSuccess,
+  updateInvoiceFailure,
+  updateInvoiceStart,
+  updateInvoiceSuccess,
+} from "./invoiceSlice";
+import {
+  createReviewFailure,
+  createReviewStart,
+  createReviewSuccess,
+  getAllReviewsFailure,
+  getAllReviewsStart,
+  getAllReviewsSuccess,
+  getReviewFailure,
+  getReviewStart,
+  getReviewSuccess,
+} from "./reviewSlice";
+import {
+  getBarberIncomeFailure,
+  getBarberIncomeStart,
+  getBarberIncomeSuccess,
+  getBarberRatingFailure,
+  getBarberRatingStart,
+  getBarberRatingSuccess,
+  getBarbersIncomeFailure,
+  getBarbersIncomeStart,
+  getBarbersIncomeSuccess,
+  getBarbersRatingFailure,
+  getBarbersRatingStart,
+  getBarbersRatingSuccess,
+  getSystemIncomeFailure,
+  getSystemIncomeInDurationFailure,
+  getSystemIncomeInDurationStart,
+  getSystemIncomeInDurationSuccess,
+  getSystemIncomeInMonthFailure,
+  getSystemIncomeInMonthStart,
+  getSystemIncomeInMonthSuccess,
+  getSystemIncomeStart,
+  getSystemIncomeSuccess,
+} from "./statisticSlice";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -320,6 +387,17 @@ export const findAllFreeBarber = async (
   }
 };
 
+export const findAllBarber = async (dispatch) => {
+  dispatch(findAllUsersStart());
+  try {
+    const res = await axios.get(`${REACT_APP_BASE_URL}user/barber`);
+    dispatch(findAllUsersSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    dispatch(findAllUsersFailure());
+  }
+};
+
 export const banUser = async (
   accessToken,
   userID,
@@ -354,7 +432,7 @@ export const uploadImage = async (file, folderName, dispatch) => {
   dispatch(uploadImageStart());
   try {
     const res = await axios.post(
-      `${REACT_APP_BASE_URL}upload/answer-image`,
+      `${REACT_APP_BASE_URL}upload/image`,
       formData,
       {
         headers: {
@@ -858,14 +936,17 @@ export const deleteService = async (accessToken, ID, dispatch, axiosJWT) => {
 
 // Start appointment
 
-export const getAppointment = async (ID, dispatch) => {
+export const getAppointment = async (ID, dispatch, populate) => {
   dispatch(getServiceStart());
   try {
-    const res = await axios.get(`${REACT_APP_BASE_URL}appointment/${ID}`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await axios.get(
+      `${REACT_APP_BASE_URL}appointment/${ID}?populate=${populate}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     dispatch(getServiceSuccess(res.data));
     return res.data;
   } catch (error) {
@@ -886,6 +967,42 @@ export const getAllAppointments = async (dispatch) => {
     return res.data;
   } catch (error) {
     dispatch(getAllServicesFailure());
+  }
+};
+
+export const getAllAppointmentsOfBarber = async (barberID, dispatch) => {
+  dispatch(findAllAppointmentsStart());
+  try {
+    const res = await axios.get(
+      `${REACT_APP_BASE_URL}appointment/barber/${barberID}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    dispatch(findAllAppointmentsSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    dispatch(findAllAppointmentsFailure());
+  }
+};
+
+export const getAllAppointmentsOfUser = async (userPhone, dispatch) => {
+  dispatch(findAllAppointmentsStart());
+  try {
+    const res = await axios.get(
+      `${REACT_APP_BASE_URL}appointment/user/${userPhone}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    dispatch(findAllAppointmentsSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    dispatch(findAllAppointmentsFailure());
   }
 };
 
@@ -952,6 +1069,30 @@ export const updateAppointmentStatus = async (
   }
 };
 
+export const updateAppointmentProof = async (
+  accessToken,
+  appointmentID,
+  proof,
+  dispatch
+) => {
+  dispatch(updateAppointmentStart());
+  try {
+    const res = await axios.put(
+      `${REACT_APP_BASE_URL}appointment/${appointmentID}/proof`,
+      { complete_picture: proof },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `${accessToken}`,
+        },
+      }
+    );
+    dispatch(updateAppointmentSuccess(res.data));
+  } catch (error) {
+    dispatch(updateAppointmentFailure());
+  }
+};
+
 export const deleteAppointment = async (accessToken, ID, dispatch) => {
   dispatch(deleteAppointmentStart());
   try {
@@ -981,13 +1122,14 @@ export const getInventory = async (ID, dispatch) => {
   try {
     const res = await axios.get(`${REACT_APP_BASE_URL}inventory/${ID}`, {
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     });
     dispatch(getInventorySuccess(res.data));
     return res.data;
   } catch (error) {
-    console.error('Error fetching inventory:', error);
+
+    console.error("Error fetching inventory:", error);
     dispatch(getInventoryFailure());
   }
 };
@@ -997,7 +1139,8 @@ export const getAllInventories = async (dispatch) => {
   try {
     const res = await axios.get(`${REACT_APP_BASE_URL}inventory/all`, {
       headers: {
-        'Content-Type': 'application/json',
+
+        "Content-Type": "application/json",
       },
     });
     dispatch(getAllInventorysSuccess(res.data));
@@ -1008,15 +1151,26 @@ export const getAllInventories = async (dispatch) => {
   }
 };
 
-export const createInventory = async (accessToken, inventory, dispatch, navigate, axiosJWT) => {
+
+export const createInventory = async (
+  accessToken,
+  inventory,
+  dispatch,
+  navigate,
+  axiosJWT
+) => {
   dispatch(createInventoryStart());
   try {
-    const res = await axiosJWT.post(`${REACT_APP_BASE_URL}inventory/add`, inventory, {
-      headers: {
-        'Content-Type': 'application/json',
-        authorization: `${accessToken}`,
-      },
-    });
+    const res = await axiosJWT.post(
+      `${REACT_APP_BASE_URL}inventory/add`,
+      inventory,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `${accessToken}`,
+        },
+      }
+    );
     dispatch(createInventorySuccess(res.data));
     return res.data;
   } catch (error) {
@@ -1024,15 +1178,25 @@ export const createInventory = async (accessToken, inventory, dispatch, navigate
   }
 };
 
-export const updateInventory = async (accessToken, inventory, dispatch, navigate, axiosJWT) => {
+export const updateInventory = async (
+  accessToken,
+  inventory,
+  dispatch,
+  navigate,
+  axiosJWT
+) => {
   dispatch(updateInventoryStart());
   try {
-    const res = await axiosJWT.put(`${REACT_APP_BASE_URL}inventory/${inventory.inventory_id}`, inventory, {
-      headers: {
-        'Content-Type': 'application/json',
-        authorization: `${accessToken}`,
-      },
-    });
+    const res = await axiosJWT.put(
+      `${REACT_APP_BASE_URL}inventory/${inventory.inventory_id}`,
+      inventory,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `${accessToken}`,
+        },
+      }
+    );
     dispatch(updateInventorySuccess(res.data));
   } catch (error) {
     dispatch(updateInventoryFailure());
@@ -1047,7 +1211,7 @@ export const deleteInventory = async (accessToken, ID, dispatch, axiosJWT) => {
       {},
       {
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
           authorization: `${accessToken}`,
         },
       }
@@ -1059,4 +1223,297 @@ export const deleteInventory = async (accessToken, ID, dispatch, axiosJWT) => {
   }
 };
 
+
 // End inventory
+
+// Start invoice
+
+export const getInvoice = async (ID, dispatch) => {
+  dispatch(getInvoiceStart());
+  try {
+    const res = await axios.get(`${REACT_APP_BASE_URL}invoice/${ID}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    dispatch(getInvoiceSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    console.error("Error fetching inventory:", error);
+    dispatch(getInvoiceFailure());
+  }
+};
+
+export const getAllInvoices = async (populate, dispatch) => {
+  dispatch(getAllInvoicesStart());
+  try {
+    const res = await axios.get(
+      `${REACT_APP_BASE_URL}invoice/?populate=${populate}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    dispatch(getAllInvoicesSuccess(res.data));
+    console.log(res);
+    return res.data.metadata;
+  } catch (error) {
+    dispatch(getAllInvoicesFailure());
+  }
+};
+
+export const createInvoice = async (accessToken, invoice, dispatch) => {
+  dispatch(createInvoiceStart());
+  try {
+    const res = await axios.post(
+      `${REACT_APP_BASE_URL}invoice/create`,
+      invoice,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `${accessToken}`,
+        },
+      }
+    );
+    dispatch(createInvoiceSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    dispatch(createInvoiceFailure());
+  }
+};
+
+export const updateInvoice = async (accessToken, invoice, dispatch) => {
+  dispatch(updateInvoiceStart());
+  try {
+    const res = await axios.put(
+      `${REACT_APP_BASE_URL}invoice/${invoice.invoice_id}`,
+      invoice,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `${accessToken}`,
+        },
+      }
+    );
+    dispatch(updateInvoiceSuccess(res.data));
+  } catch (error) {
+    dispatch(updateInvoiceFailure());
+  }
+};
+
+// End invoice
+
+// Start review
+
+export const getReview = async (ID, dispatch) => {
+  dispatch(getReviewStart());
+  try {
+    const res = await axios.get(`${REACT_APP_BASE_URL}review/${ID}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    dispatch(getReviewSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    console.error("Error fetching inventory:", error);
+    dispatch(getReviewFailure());
+  }
+};
+
+export const getAllReviews = async (dispatch) => {
+  dispatch(getAllReviewsStart());
+  try {
+    const res = await axios.get(`${REACT_APP_BASE_URL}review}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    dispatch(getAllReviewsSuccess(res.data));
+    console.log(res);
+    return res.data.metadata;
+  } catch (error) {
+    dispatch(getAllReviewsFailure());
+  }
+};
+
+export const createReview = async (accessToken, review, dispatch) => {
+  dispatch(createReviewStart());
+  try {
+    const res = await axios.post(`${REACT_APP_BASE_URL}review/create`, review, {
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `${accessToken}`,
+      },
+    });
+    dispatch(createReviewSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    dispatch(createReviewFailure());
+  }
+};
+
+// End review
+
+// Start statistic
+
+export const getIncomeOfSystemThisMonth = async (dispatch) => {
+  dispatch(getSystemIncomeInMonthStart());
+  try {
+    const res = await axios.get(
+      `${REACT_APP_BASE_URL}statistic/system/income/month`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    dispatch(getSystemIncomeInMonthSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    console.error("Error fetching statistic:", error);
+    dispatch(getSystemIncomeInMonthFailure());
+  }
+};
+
+export const getIncomeOfSystemInDuration = async (start, end, dispatch) => {
+  dispatch(getSystemIncomeInDurationStart());
+  try {
+    // Example: statistic/system/income?start=2025-04-01&end=2025-05-01
+    const res = await axios.get(
+      `${REACT_APP_BASE_URL}statistic/system/income?start=${start}&end=${end}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    dispatch(getSystemIncomeInDurationSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    console.error("Error fetching statistic:", error);
+    dispatch(getSystemIncomeInDurationFailure());
+  }
+};
+
+export const getIncomeOfSystemInYear = async (year, dispatch) => {
+  dispatch(getSystemIncomeStart());
+  try {
+    // Example: statistic/system/income/year?year=2025
+    const res = await axios.get(
+      `${REACT_APP_BASE_URL}statistic/system/income/year?year=${year}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    dispatch(getSystemIncomeSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    console.error("Error fetching statistic:", error);
+    dispatch(getSystemIncomeFailure());
+  }
+};
+
+export const getIncomeOfBarberInYear = async (barberID, year, dispatch) => {
+  dispatch(getBarberIncomeStart());
+  try {
+    // Example: statistic/barber/67f3e541c64356388d2db8e3/income/year?year=2025
+    const res = await axios.get(
+      `${REACT_APP_BASE_URL}statistic/barber/${barberID}/income/year?year=${year}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    dispatch(getBarberIncomeSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    console.error("Error fetching statistic:", error);
+    dispatch(getBarberIncomeFailure());
+  }
+};
+
+export const getIncomeOfBarberInMonth = async (barberID, dispatch) => {
+  dispatch(getBarberIncomeStart());
+  try {
+    // Example: statistic/barber/67f3e541c64356388d2db8e3/income/month
+    const res = await axios.get(
+      `${REACT_APP_BASE_URL}statistic/barber/${barberID}/income/month`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    dispatch(getBarberIncomeSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    console.error("Error fetching statistic:", error);
+    dispatch(getBarberIncomeFailure());
+  }
+};
+
+export const getIncomeOfBarbersInMonth = async (dispatch) => {
+  dispatch(getBarbersIncomeStart());
+  try {
+    const res = await axios.get(
+      `${REACT_APP_BASE_URL}statistic/barbers/income/month`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    dispatch(getBarbersIncomeSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    console.error("Error fetching statistic:", error);
+    dispatch(getBarbersIncomeFailure());
+  }
+};
+
+export const getRatingOfBarber = async (barberID, dispatch) => {
+  dispatch(getBarberRatingStart());
+  try {
+    // Example: statistic/barber/67eeaa265782c6cb88812688/rating
+    const res = await axios.get(
+      `${REACT_APP_BASE_URL}statistic/barber/${barberID}/rating`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    dispatch(getBarberRatingSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    console.error("Error fetching statistic:", error);
+    dispatch(getBarberRatingFailure());
+  }
+};
+
+export const getRatingsOfBarber = async (dispatch) => {
+  dispatch(getBarbersRatingStart());
+  try {
+    // Example: statistic/barbers/rating
+    const res = await axios.get(
+      `${REACT_APP_BASE_URL}statistic/barbers/rating`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    dispatch(getBarbersRatingSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    console.error("Error fetching statistic:", error);
+    dispatch(getBarbersRatingFailure());
+  }
+};
+
+// End statistic

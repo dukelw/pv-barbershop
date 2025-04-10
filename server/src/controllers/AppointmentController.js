@@ -10,10 +10,11 @@ class AppointmentController {
   }
 
   async get(req, res, next) {
-    const appointmentID = req.params.id
+    const appointmentID = req.params.id;
+    const populate = req.query.populate
     new SuccessResponse({
       message: "Get appointment",
-      metadata: await appointmentService.getAppointment(appointmentID),
+      metadata: await appointmentService.getAppointment(appointmentID, populate),
     }).send(res);
   }
 
@@ -28,7 +29,7 @@ class AppointmentController {
     new SuccessResponse({
       message: "User's appointments",
       metadata: await appointmentService.getAppointmentsByUser(
-        req.user.user_id
+        req.params.userPhone
       ),
     }).send(res);
   }
@@ -53,6 +54,16 @@ class AppointmentController {
       metadata: await appointmentService.updateAppointmentStatus(
         req.params.id,
         req.body.status
+      ),
+    }).send(res);
+  }
+
+  async updateProof(req, res, next) {
+    new SuccessResponse({
+      message: "Appointment proof updated",
+      metadata: await appointmentService.updateAppointmentProof(
+        req.params.id,
+        req.body.complete_picture
       ),
     }).send(res);
   }

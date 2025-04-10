@@ -121,6 +121,7 @@ class UserService {
   };
 
   logOut = async (keyStore) => {
+    console.log(keyStore);
     const deletedKey = await keyTokenService.removeKeyByID(keyStore._id);
     return deletedKey;
   };
@@ -194,12 +195,19 @@ class UserService {
     } else {
       foundUsers = await UserModel.find();
     }
-
+    console.log(foundUsers);
     return foundUsers;
   };
 
-  findAllBarber = async (keySearch, timeStart, timeEnd) => {
-    // Bước 1: Tìm các barber (staff)
+  findAllBarber = async () => {
+    let foundUsers;
+    const query = { user_role: "staff" };
+
+    foundUsers = await UserModel.find(query);
+    return foundUsers;
+  };
+
+  findAllFreeBarber = async (keySearch, timeStart, timeEnd) => {
     let foundUsers;
     const query = { user_role: "staff" };
 
@@ -209,21 +217,17 @@ class UserService {
 
     foundUsers = await UserModel.find(query);
 
-    // Nếu có cả timeStart và timeEnd thì lọc ra những barber không bận
     console.log("starttime", timeStart, "endtime", timeEnd);
     if (timeStart && timeEnd) {
-      // Bước 2: Tìm các appointment trong khoảng thời gian
       const busyAppointments = await AppointmentModel.find({
         appointment_start: { $lt: new Date(timeEnd) },
         appointment_end: { $gt: new Date(timeStart) },
       });
 
-      // Bước 3: Lấy danh sách barber._id từ những appointment đó
       const busyBarberIds = busyAppointments
         .filter((a) => a.barber && a.barber._id)
         .map((a) => a.barber._id.toString());
 
-      // Bước 4: Lọc ra những barber không nằm trong danh sách bận
       foundUsers = foundUsers.filter(
         (barber) => !busyBarberIds.includes(barber._id.toString())
       );
@@ -247,7 +251,7 @@ class UserService {
       _id: userID,
     };
     let bodyUpdate;
-    if(birthday){
+    if (birthday) {
       bodyUpdate = {
         user_name: name,
         user_email: email,
@@ -256,8 +260,7 @@ class UserService {
         user_birthday: new Date(birthday),
         user_avatar: avatar,
       };
-    }
-    else {
+    } else {
       bodyUpdate = {
         user_name: name,
         user_email: email,
@@ -266,8 +269,6 @@ class UserService {
         user_avatar: avatar,
       };
     }
-
-    
 
     const updatedUser = await UserModel.findOneAndUpdate(filter, bodyUpdate, {
       new: true,
@@ -301,13 +302,77 @@ class UserService {
 
   delete = async ({ deleteID, userID }) => {
     const foundUser = await UserModel.findById(userID);
-    if (!foundUser.isAdmin) throw new NotFoundError("Authorization failure");
+    if (!foundUser.user_role === "admin" || !foundUser.user_role === "receptionist") throw new NotFoundError("Authorization failure");
 
     const deleteUser = await UserModel.findById(deleteID);
     if (!foundUser) throw new NotFoundError("User not found");
 
     const result = await UserModel.deleteOne({ _id: deleteUser._id });
     return result;
+  };
+
+  createAccount = async ({ user_name, user_email, user_avatar, user_role, user_gender }) => {
+    const password = "123456";
+    // Step 1: Check the existence of email
+    const foundUser = await UserModel.findOne({ user_email: user_email }).lean();
+    if (foundUser) throw new BadRequestError("User is already registered");
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = await UserModel.create({
+      user_name: user_name,
+      user_email: user_email,
+      user_password: hashedPassword,
+      user_avatar: user_avatar,
+      user_role: user_role,
+      user_gender: user_gender,
+    });
+
+    if (newUser) {
+      // Create privateKey, publicKey
+      const privateKey = crypto.randomBytes(64).toString("hex");
+      const publicKey = crypto.randomBytes(64).toString("hex");
+
+      const keyStore = await keyTokenService.createKeyToken({
+        user_id: newUser._id,
+        public_key: publicKey,
+        private_key: privateKey,
+      });
+
+      if (!keyStore) {
+        return {
+          code: "400",
+          message: "keyStore error",
+        };
+      }
+
+      // Create pair of token
+      const tokens = await generatePairOfToken(
+        { user_id: newUser._id, user_email },
+        publicKey,
+        privateKey
+      );
+
+      return {
+        code: 201,
+        metadata: {
+          user: getInfoData({
+            fields: [
+              "_id",
+              "user_name",
+              "user_email",
+              "user_avatar",
+              "user_role",
+            ],
+            object: newUser,
+          }),
+          tokens,
+        },
+      };
+    }
+    return {
+      code: 200,
+      metadata: null,
+    };
   };
 }
 

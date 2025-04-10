@@ -1,20 +1,11 @@
-const { InvoiceModel } = require("../models/Invoice");
+const InvoiceModel = require("../models/Invoice");
 const { NotFoundError, BadRequestError } = require("../core/error-response");
 
 class InvoiceService {
-  async createInvoice({
-    customer,
-    barber,
-    services,
-    total_amount,
-    payment_method,
-  }) {
+  async createInvoice({ appointment_id, total_amount, payment_method }) {
     const newInvoice = await InvoiceModel.create({
-      customer,
-      barber,
-      services,
+      appointment: appointment_id,
       total_amount,
-      payment_status: "pending",
       payment_method,
     });
 
@@ -22,9 +13,23 @@ class InvoiceService {
   }
 
   async getInvoicesByUser(userID) {
-    return await InvoiceModel.find({ customer: userID }).populate(
-      "services.service barber"
-    );
+    return await InvoiceModel.find()
+      .populate({
+        path: "appointment",
+        match: { customer: userID },
+        populate: [
+          { path: "barber", select: "user_name user_avatar" },
+          { path: "service" },
+        ],
+      })
+      .then((invoices) => invoices.filter((inv) => inv.appointment !== null));
+  }
+
+  async getAllInvoices(populate) {
+    if (populate) {
+      return await InvoiceModel.find().populate("appointment");
+    }
+    return await InvoiceModel.find();
   }
 
   async updateInvoiceStatus(invoiceID, status) {

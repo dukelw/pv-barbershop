@@ -1,0 +1,102 @@
+[{
+  "_id": {
+    "$oid": "67f4dc03d48cb422d3f61ad4"
+  },
+  "appointment": {
+    "$oid": "67f3a3ddd15f8b5e2cdcfaf6"
+  },
+  "total_amount": 569000,
+  "payment_method": "cash",
+  "createdAt": {
+    "$date": "2025-04-08T08:19:15.309Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-08T08:19:15.309Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f4dd1cd48cb422d3f61ae6"
+  },
+  "appointment": {
+    "$oid": "67f2345594b4c17c63072e55"
+  },
+  "total_amount": 190000,
+  "payment_method": "momo",
+  "createdAt": {
+    "$date": "2025-04-08T08:23:56.788Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-08T08:23:56.788Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f585ef04e16a605f7b002f"
+  },
+  "appointment": {
+    "$oid": "67f3e68dc64356388d2db926"
+  },
+  "total_amount": 170000,
+  "payment_method": "cash",
+  "createdAt": {
+    "$date": "2025-04-08T20:24:15.448Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-08T20:24:15.448Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f586fc04e16a605f7b007a"
+  },
+  "appointment": {
+    "$oid": "67f5868504e16a605f7b0050"
+  },
+  "total_amount": 329000,
+  "payment_method": "cash",
+  "createdAt": {
+    "$date": "2025-04-08T20:28:44.442Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-08T20:28:44.442Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f68ce27e3b59b9e05d92f4"
+  },
+  "appointment": {
+    "$oid": "67f5877904e16a605f7b00ae"
+  },
+  "total_amount": 35000,
+  "payment_method": "momo",
+  "createdAt": {
+    "$date": "2025-04-09T15:06:11.040Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-09T15:06:11.040Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f79b30365b5de45c239240"
+  },
+  "appointment": {
+    "$oid": "67f79b0b365b5de45c239220"
+  },
+  "total_amount": 55000,
+  "payment_method": "cash",
+  "createdAt": {
+    "$date": "2025-04-10T10:19:28.403Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-10T10:19:28.403Z"
+  },
+  "__v": 0
+}]

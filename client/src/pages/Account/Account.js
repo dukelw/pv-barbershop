@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Container from "@mui/material/Container";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
-import Snackbar from "@mui/material/Snackbar";
-import MuiAlert from "@mui/material/Alert";
 import { createAxios } from "../../createAxios";
-import { MenuItem, Typography } from "@mui/material";
 import { findUser, updateUser, uploadImage } from "../../redux/apiRequest";
 import { toast } from "react-toastify";
 import classNames from "classnames/bind";
 import styles from "./Account.module.scss";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { format, parse } from "date-fns";
 
 const cx = classNames.bind(styles);
 
@@ -20,31 +16,55 @@ function Account() {
   const accessToken = currentUser?.metadata.tokens.accessToken;
   const userID = currentUser?.metadata.user._id;
   const axiosJWT = createAxios(currentUser);
-  const userInfor = useSelector((state) => state.user.signin.currentUser);
+
   const dispatch = useDispatch();
 
+  // Hàm để chuẩn hoá giá trị gender
   const normalizeGender = (gender) => (typeof gender === "string" ? gender : "unknown");
 
+  const [userInfor, setUserInfor] = useState({});
+  const [editable, setEditable] = useState(false);
+  const [file, setFile] = useState(null);
+
+  // State chứa toàn bộ thông tin cần hiển thị + cập nhật
   const [form, setForm] = useState({
     userID: userID,
-    name: userInfor?.user_name || "",
-    email: userInfor?.user_email || "",
-    birthday: userInfor?.user_birthday || "",
-    phone: userInfor?.user_phone || "",
-    avatar: userInfor?.user_avatar || "",
-    gender: normalizeGender(userInfor?.user_gender),
+    name: "",
+    email: "",
+    birthday: "",
+    phone: "",
+    avatar: "",
+    gender: "unknown",
   });
 
-  const [editable, setEditable] = useState(false);
-  const [file, setFile] = useState(null); // New state for file
+  // Lấy thông tin user từ server
+  const handleGetInfor = async () => {
+    const data = await findUser(userID, dispatch);
+    const birthday = data.metadata.user?.birthday;
 
-  const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "success" });
+    setUserInfor(data.metadata.user);
+    setForm({
+      userID: userID,
+      name: data.metadata.user?.name || "",
+      email: data.metadata.user?.email || "",
+      birthday: birthday ? format(new Date(birthday), "dd-MM-yyyy") : "",
+      phone: data.metadata.user?.phone || "",
+      avatar: data.metadata.user?.avatar || "",
+      gender: normalizeGender(data.metadata.user?.gender),
+    });
+  };
 
+  useEffect(() => {
+    handleGetInfor();
+  }, []);
+
+  // Cập nhật giá trị trong form
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
+  // Chọn file avatar
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
     if (selectedFile) {
@@ -52,28 +72,35 @@ function Account() {
     }
   };
 
+  // Bật chế độ cho phép chỉnh sửa (trừ Email)
   const handleToggleEdit = () => {
     setEditable(true);
   };
-  console.log(userInfor)
-  const handleGetInfor = async() => {
-    const data = await findUser(userID, dispatch)
-    console.log(data.metadata)
-  };
 
-  useEffect(()=>{
-    handleGetInfor()
-  },[])
+  // Gửi thông tin cập nhật lên server
   const handleSubmit = async () => {
+    let imageUrl = "";
     try {
-      // If file is selected, upload the image first
+      // Upload file nếu có
       if (file) {
-        const imageUrl = await uploadImage(file, "avatars", dispatch); // Assuming "avatars" is your folder name
-        setForm((prev) => ({ ...prev, avatar: imageUrl.img_url }));
+        imageUrl = await uploadImage(file, "service", dispatch);
       }
 
-      // Update user information
-      await updateUser(accessToken, userID, form, dispatch, axiosJWT);
+      const birthday = form.birthday
+        ? format(parse(form.birthday, "dd-MM-yyyy", new Date()), "yyyy-MM-dd")
+        : "";
+
+      const updateData = {
+        userID: userID,
+        name: form.name,
+        birthday: birthday,
+        phone: form.phone,
+        avatar: imageUrl.img_url || form.avatar,
+        gender: form.gender,
+      };
+
+      await updateUser(accessToken, userID, updateData, dispatch, axiosJWT);
+
       await handleGetInfor();
       toast.success("Cập nhật thành công");
       setEditable(false);
@@ -88,6 +115,10 @@ function Account() {
       <div className={cx("title")}>Thông tin tài khoản</div>
 
       <form className={cx("form")}>
+        <div className={cx("avatar-container")}>
+          <img src={form.avatar} alt="Avatar" className={cx("avatar")} />
+        </div>
+
         <div className={cx("box")}>
           <label className={cx("label")}>Họ và tên</label>
           <input
@@ -100,6 +131,10 @@ function Account() {
           />
         </div>
 
+        {/* 
+          Email chỉ hiển thị, KHÔNG BAO GIỜ CHO PHÉP EDIT 
+          disabled luôn là true để ngăn chỉnh sửa từ giao diện
+        */}
         <div className={cx("box")}>
           <label className={cx("label")}>Email</label>
           <input
@@ -107,8 +142,8 @@ function Account() {
             type="email"
             name="email"
             value={form.email}
-            onChange={handleChange}
-            disabled={!editable}
+            onChange={() => {}}
+            disabled
           />
         </div>
 
@@ -125,27 +160,39 @@ function Account() {
         </div>
 
         <div className={cx("box")}>
-          <label className={cx("label")}>Avatar URL</label>
-          <input
-            className={cx("input")}
-            type="text"
-            name="avatar"
-            value={form.avatar}
-            onChange={handleChange}
+          <label className={cx("label")}>Ngày sinh</label>
+          <DatePicker
+            className={cx("input", "datepicker")}
+            selected={
+              form.birthday ? parse(form.birthday, "dd-MM-yyyy", new Date()) : null
+            }
+            onChange={(date) =>
+              setForm((prev) => ({
+                ...prev,
+                birthday: format(date, "dd-MM-yyyy"),
+              }))
+            }
+            dateFormat="dd-MM-yyyy"
             disabled={!editable}
           />
-          {form.avatar && !editable && (
-            <div>
-              <img src={form.avatar} alt="Avatar" width="100" />
-            </div>
-          )}
-          {editable && (
-            <div>
-              <input type="file" onChange={handleFileChange} />
-              {file && <img src={URL.createObjectURL(file)} alt="Avatar Preview" width="100" />}
-            </div>
-          )}
         </div>
+
+        {editable && (
+          <div className={cx("box")}>
+            <label className={cx("label")}>Avatar</label>
+            {file && (
+              <div className={cx("avatar-container")}>
+                <img
+                  src={URL.createObjectURL(file)}
+                  alt="Avatar"
+                  className={cx("preview-avatar")}
+                />
+              </div>
+            )}
+
+            <input type="file" onChange={handleFileChange} accept="image/*" />
+          </div>
+        )}
 
         <div className={cx("box")}>
           <label className={cx("label")}>Giới tính</label>
@@ -162,23 +209,16 @@ function Account() {
           </select>
         </div>
 
-        <button
-          type="button"
-          onClick={!editable ? handleToggleEdit : handleSubmit}
-        >
-          {!editable ? "Cập nhật" : "Lưu"}
-        </button>
+        <div className={cx("box")}>
+          <button
+            className={cx("submit-button")}
+            type="button"
+            onClick={!editable ? handleToggleEdit : handleSubmit}
+          >
+            {!editable ? "Cập nhật" : "Lưu"}
+          </button>
+        </div>
       </form>
-
-      <Snackbar
-        open={snackbar.open}
-        autoHideDuration={3000}
-        onClose={() => setSnackbar({ ...snackbar, open: false })}
-      >
-        <MuiAlert severity={snackbar.severity} variant="filled">
-          {snackbar.message}
-        </MuiAlert>
-      </Snackbar>
     </div>
   );
 }

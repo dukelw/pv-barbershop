@@ -13,7 +13,6 @@ import NotFound from "../pages/NotFound";
 import MainLayout from "../layouts/MainLayout";
 import Empty from "../layouts/Empty";
 import Account from "../pages/Account";
-
 import Password from "../pages/Password";
 
 import { Password as PasswordIcon } from "@mui/icons-material";

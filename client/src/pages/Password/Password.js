@@ -13,10 +13,11 @@ function Password() {
   const currentUser = useSelector((state) => state.user.signin.currentUser);
   const accessToken = currentUser?.metadata.tokens.accessToken;
   const userID = currentUser?.metadata.user._id;
-  const userEmail = currentUser?.metadata.user?.user_email || "";
-
   const axiosJWT = createAxios(currentUser);
   const dispatch = useDispatch();
+
+
+  const userEmail = currentUser?.metadata.user?.user_email || "";
 
   const [form, setForm] = useState({
     password: "",
@@ -37,6 +38,7 @@ function Password() {
   };
 
   const handleSubmit = async (e) => {
+
     e.preventDefault();
 
     if (!form.password || !form.new_password || !form.confirmPassword) {
@@ -50,6 +52,7 @@ function Password() {
     }
 
     try {
+
       const res = await changePassword(
         accessToken,
         userID,
@@ -80,7 +83,6 @@ function Password() {
   return (
     <div className={cx("change-password-container")}>
       <h2>Đổi mật khẩu</h2>
-
       <form className={cx("form")} onSubmit={handleSubmit}>
         {/* Mật khẩu hiện tại */}
         <div className={cx("form-group")}>
@@ -101,7 +103,7 @@ function Password() {
             </span>
           </div>
         </div>
-
+  
         {/* Mật khẩu mới */}
         <div className={cx("form-group")}>
           <label>Mật khẩu mới</label>
@@ -121,7 +123,7 @@ function Password() {
             </span>
           </div>
         </div>
-
+  
         {/* Xác nhận mật khẩu mới */}
         <div className={cx("form-group")}>
           <label>Xác nhận mật khẩu mới</label>
@@ -143,13 +145,8 @@ function Password() {
             </span>
           </div>
         </div>
-
-        <button type="submit" className={cx("submit-button")}>
-          Đổi mật khẩu
-        </button>
       </form>
     </div>
-  );
+  );  
 }
-
 export default Password;
