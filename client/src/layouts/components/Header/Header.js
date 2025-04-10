@@ -39,6 +39,9 @@ function Header() {
         <li>
           <Link to={"/service"}>Dịch vụ</Link>
         </li>
+        <li>
+          <Link to={"/about"}>Dịch vụ</Link>
+        </li>
         {!currentUser ? (
           <li style={{ visibility: "hidden" }}>
             <Link to={"/"}>Dịch vụ</Link>
