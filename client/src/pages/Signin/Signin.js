@@ -13,12 +13,16 @@ import styles from "./Signin.module.scss";
 import { signin } from "../../redux/apiRequest";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
+import { FiEye, FiEyeOff } from "react-icons/fi"; 
+import { toast } from "react-toastify";
+
 
 const cx = classNames.bind(styles);
 
 function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -29,8 +33,7 @@ function Signin() {
     event.preventDefault();
 
     if (!email || !password) {
-      setErrorMessage("Vui lòng nhập đầy đủ thông tin.");
-      setOpenSnackbar(true);
+      toast.error("Vui lòng nhập đầy đủ thông tin");
       return;
     }
 
@@ -46,8 +49,7 @@ function Signin() {
 
     const result = await signin(user, dispatch, navigate);
     if (result === false) {
-      setErrorMessage("Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin.");
-      setOpenSnackbar(true); // Open snackbar if sign-in fails
+      toast.error("Đăng nhập thất bại! Vui lòng kiểm tra lại thông tin!");
     }
   };
 
@@ -74,13 +76,12 @@ function Signin() {
             />
           </Link>
         </div>
+
         <div className={cx("right-part")}>
           <h1 className={cx("title")}>Đăng nhập</h1>
-          <form
-            onSubmit={handleSubmit}
-            className={cx("form")}
-            style={{ color: "white" }}
-          >
+
+          <form onSubmit={handleSubmit} className={cx("form")}>
+            {/* Email */}
             <Box mb={1}>
               <label style={{ color: "white" }}>Email</label>
               <input
@@ -88,9 +89,6 @@ function Signin() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                onMouseOver={(e) => (e.target.style.borderColor = "black")}
-                onMouseOut={(e) => (e.target.style.borderColor = "white")}
-                onFocus={(e) => (e.target.style.borderColor = "white")}
               />
               {!email && openSnackbar && (
                 <p style={{ color: "red", fontSize: "12px" }}>
@@ -99,20 +97,23 @@ function Signin() {
               )}
             </Box>
 
+            {/* Mật khẩu với icon */}
             <Box mb={1}>
-              <label
-                style={{
-                  color: "white",
-                }}
-              >
-                Mật khẩu
-              </label>
-              <input
-                className={cx("input")}
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
+              <label style={{ color: "white" }}>Mật khẩu</label>
+              <div className={cx("input-wrapper")}>
+                <input
+                  className={cx("input")}
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <span
+                  className={cx("toggle-password")}
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <FiEyeOff /> : <FiEye />}
+                </span>
+              </div>
               {!password && openSnackbar && (
                 <p style={{ color: "red", fontSize: "12px" }}>
                   Vui lòng nhập mật khẩu
@@ -120,11 +121,10 @@ function Signin() {
               )}
             </Box>
 
+            {/* Ghi nhớ */}
             <Box>
               <FormControlLabel
-                sx={{
-                  marginBottom: "0px",
-                }}
+                sx={{ marginBottom: "0px" }}
                 control={
                   <Checkbox
                     checked={rememberMe}
@@ -138,12 +138,14 @@ function Signin() {
                   />
                 }
                 label={
-                  <span style={{ color: "white", margon: "0px" }}>
+                  <span style={{ color: "white", margin: "0px" }}>
                     Ghi nhớ đăng nhập
                   </span>
                 }
               />
             </Box>
+
+            {/* Nút đăng nhập */}
             <Box mb={2} sx={{ textAlign: "center" }}>
               <Button
                 sx={{
@@ -162,8 +164,10 @@ function Signin() {
                 Đăng nhập
               </Button>
             </Box>
+
+            {/* Đăng ký */}
             <Box mb={1}>
-              Chưa có tài khoản
+              Chưa có tài khoản?
               <Link
                 to="/signup"
                 style={{

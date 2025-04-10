@@ -6,6 +6,7 @@ import notificationReducer from "./notificationSlice";
 import appointmentReducer from "./appointmentSlice";
 import sliderReducer from "./sliderSlice";
 import serviceReducer from "./serviceSlice";
+
 import inventoryReducer from "./inventorySlice";
 import invoiceReducer from "./invoiceSlice";
 import reviewReducer from "./reviewSlice";

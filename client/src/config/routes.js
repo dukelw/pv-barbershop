@@ -7,6 +7,7 @@ const routes = {
   logout: "/logout",
   account: "/account",
   changePassword: "/changePassword",
+  about: "/about",
   home: "/",
   notFound: "*",
 };

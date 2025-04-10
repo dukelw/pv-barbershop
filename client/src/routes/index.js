@@ -14,14 +14,15 @@ import MainLayout from "../layouts/MainLayout";
 import Empty from "../layouts/Empty";
 import Account from "../pages/Account";
 import Password from "../pages/Password";
-
 import { Password as PasswordIcon } from "@mui/icons-material";
+import About from "../pages/About";
 const publicRoutes = [
   { path: config.routes.signin, component: Signin, layout: null },
   { path: config.routes.signup, component: Signup, layout: null },
   { path: config.routes.booking, component: Booking, layout: MainLayout },
   { path: config.routes.home, component: HomePage },
   { path: config.routes.notFound, component: NotFound, layout: null },
+  {path: config.routes.about, component: About, layout: MainLayout },
   { path: config.routes.logout, component: Logout, layout: null },
 ];
 

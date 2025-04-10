@@ -1128,6 +1128,7 @@ export const getInventory = async (ID, dispatch) => {
     dispatch(getInventorySuccess(res.data));
     return res.data;
   } catch (error) {
+
     console.error("Error fetching inventory:", error);
     dispatch(getInventoryFailure());
   }
@@ -1138,6 +1139,7 @@ export const getAllInventories = async (dispatch) => {
   try {
     const res = await axios.get(`${REACT_APP_BASE_URL}inventory/all`, {
       headers: {
+
         "Content-Type": "application/json",
       },
     });
@@ -1148,6 +1150,7 @@ export const getAllInventories = async (dispatch) => {
     dispatch(getAllInventorysFailure());
   }
 };
+
 
 export const createInventory = async (
   accessToken,
@@ -1219,6 +1222,7 @@ export const deleteInventory = async (accessToken, ID, dispatch, axiosJWT) => {
     return false;
   }
 };
+
 
 // End inventory
 

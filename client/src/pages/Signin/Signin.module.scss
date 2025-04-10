@@ -25,6 +25,7 @@
     color: var(--white);
 
     .input {
+      box-sizing: border-box;
       margin-top: 4px;
       width: 100%;
       padding: 10px;
@@ -53,4 +54,29 @@
       object-fit: cover;
     }
   }
+  .input-wrapper {
+    position: relative;
+    width: 100%;
+  
+    .input {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  
+    .toggle-password {
+      position: absolute;
+      top: 55%;
+      right: 12px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      line-height: 0;
+      font-size: 14px;
+      color: #666;
+      transition: color 0.2s;
+  
+      &:hover {
+        color: var(--yellow);
+      }
+    }
+  }  
 }
