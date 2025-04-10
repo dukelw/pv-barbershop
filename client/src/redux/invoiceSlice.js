@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const invoiceSlide = createSlice({
-  name: 'invoice',
+  name: "invoice",
   initialState: {
     get: {
       invoice: null,
@@ -72,17 +72,6 @@ const invoiceSlide = createSlice({
     updateInvoiceFailure: (state) => {
       state.update.isFetching = false;
       state.update.error = true;
-    },
-    deleteInvoiceStart: (state) => {
-      state.delete.isFetching = true;
-    },
-    deleteInvoiceSuccess: (state) => {
-      state.delete.isFetching = false;
-      state.delete.error = false;
-    },
-    deleteInvoiceFailure: (state) => {
-      state.delete.isFetching = false;
-      state.delete.error = true;
     },
   },
 });

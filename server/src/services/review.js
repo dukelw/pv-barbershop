@@ -1,8 +1,13 @@
-const { ReviewModel } = require("../models/Review");
+const ReviewModel = require("../models/Review");
 const { NotFoundError, BadRequestError } = require("../core/error-response");
 
 class ReviewService {
   async createReview({ customer, barber, service, rating, comment }) {
+    console.log(customer, barber, service, rating, comment);
+    if (!customer || !barber || !service?.length || !rating) {
+      throw new BadRequestError("Missing required information.");
+    }
+
     const newReview = await ReviewModel.create({
       customer,
       barber,
@@ -14,16 +19,21 @@ class ReviewService {
     return newReview;
   }
 
-  async getReviewsByBarber(barberID) {
-    return await ReviewModel.find({ barber: barberID }).populate(
-      "customer service"
-    );
+  async getAllReviews() {
+    const reviews = await ReviewModel.find().populate("barber service");
+    return reviews;
   }
 
-  async getReviewsByService(serviceID) {
-    return await ReviewModel.find({ service: serviceID }).populate(
-      "customer barber"
+  async getReviewsByBarber(barberID) {
+    if (!barberID) throw new BadRequestError("Barber ID not found.");
+
+    const reviews = await ReviewModel.find({ barber: barberID }).populate(
+      "service"
     );
+    if (!reviews.length)
+      throw new NotFoundError("Have not get any review yet.");
+
+    return reviews;
   }
 }
 

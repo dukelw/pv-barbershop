@@ -8,6 +8,8 @@ import sliderReducer from "./sliderSlice";
 import serviceReducer from "./serviceSlice";
 import inventoryReducer from "./inventorySlice";
 import invoiceReducer from "./invoiceSlice";
+import reviewReducer from "./reviewSlice";
+import statisticReducer from "./statisticSlice";
 
 import {
   persistStore,
@@ -37,6 +39,8 @@ const rootReducer = combineReducers({
   service: serviceReducer,
   inventory: inventoryReducer,
   invoice: invoiceReducer,
+  review: reviewReducer,
+  statistic: statisticReducer,
 });
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

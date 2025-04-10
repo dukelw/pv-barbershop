@@ -16,6 +16,13 @@ class InvoiceController {
     }).send(res);
   }
 
+  async getAll(req, res, next) {
+    new SuccessResponse({
+      message: "All's invoices",
+      metadata: await invoiceService.getAllInvoices(req.query.populate),
+    }).send(res);
+  }
+
   async updateStatus(req, res, next) {
     new SuccessResponse({
       message: "Invoice status updated",
