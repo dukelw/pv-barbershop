@@ -25,6 +25,13 @@ class InvoiceService {
       .then((invoices) => invoices.filter((inv) => inv.appointment !== null));
   }
 
+  async getAllInvoices(populate) {
+    if (populate) {
+      return await InvoiceModel.find().populate("appointment");
+    }
+    return await InvoiceModel.find();
+  }
+
   async updateInvoiceStatus(invoiceID, status) {
     const updatedInvoice = await InvoiceModel.findByIdAndUpdate(
       invoiceID,
