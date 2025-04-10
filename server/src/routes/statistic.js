@@ -48,4 +48,14 @@ router.get(
   asyncHandler(statisticController.getIncomeSystemByMonthInYear)
 );
 
+router.get(
+  "/system/appointment",
+  asyncHandler(statisticController.getAppointmentOfSystem)
+);
+
+router.get(
+  "/system/appointment/year",
+  asyncHandler(statisticController.getAppointmentSystemByMonthInYear)
+);
+
 module.exports = router;

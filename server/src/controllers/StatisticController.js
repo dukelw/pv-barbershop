@@ -111,6 +111,31 @@ class StatisticController {
       metadata,
     }).send(res);
   }
+
+  async getAppointmentOfSystem(req, res, next) {
+    const { start, end } = req.query;
+    if (!start || !end) throw new BadRequestError("Missing date range.");
+
+    const metadata = await statisticService.getAppointmentOfSystem({ start, end });
+    new SuccessResponse({
+      message: "System appointment in given time range",
+      metadata,
+    }).send(res);
+  }
+
+  async getAppointmentSystemByMonthInYear(req, res, next) {
+    const { year } = req.query;
+    if (!year) throw new BadRequestError("Missing year.");
+
+    const metadata = await statisticService.getAppointmentSystemByMonthInYear(
+      parseInt(year)
+    );
+
+    new SuccessResponse({
+      message: `System appointment by month in ${year}`,
+      metadata,
+    }).send(res);
+  }
 }
 
 module.exports = new StatisticController();

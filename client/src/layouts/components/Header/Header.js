@@ -40,15 +40,8 @@ function Header() {
           <Link to={"/service"}>Dịch vụ</Link>
         </li>
         <li>
-          <Link to={"/about"}>Dịch vụ</Link>
+          <Link to={"/about"}>Câu chuyện</Link>
         </li>
-        {!currentUser ? (
-          <li style={{ visibility: "hidden" }}>
-            <Link to={"/"}>Dịch vụ</Link>
-          </li>
-        ) : (
-          <></>
-        )}
       </div>
       <div className={cx("logo")}>
         <Link to={"/"}>
@@ -59,6 +52,13 @@ function Header() {
         </Link>
       </div>
       <div className={cx("right-nav")}>
+        {currentUser ? (
+          <li style={{ visibility: "hidden" }}>
+            <Link to={"/"}>Khoảng trắng cân</Link>
+          </li>
+        ) : (
+          <></>
+        )}
         <li>
           <Link to={"/barber"}>Nhân sự</Link>
         </li>
@@ -78,7 +78,6 @@ function Header() {
                 >
                   Xem lịch cắt tóc
                 </Link>
-                
               </MenuItem>
               <MenuItem onClick={handleClose}>
                 <Link
@@ -87,7 +86,6 @@ function Header() {
                 >
                   Thông tin tài khoản
                 </Link>
-                
               </MenuItem>
               <MenuItem onClick={handleClose}>
                 <Link
@@ -96,7 +94,6 @@ function Header() {
                 >
                   Đổi mật khẩu
                 </Link>
-                
               </MenuItem>
               <MenuItem
                 onClick={() => {
