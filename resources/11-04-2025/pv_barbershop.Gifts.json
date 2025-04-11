@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "67f8c9221ee82b0d14233e0c"
+  },
+  "name": "Backpack",
+  "description": "Just barber backpack",
+  "image": "https://res.cloudinary.com/lewisshop/image/upload/v1744362653/gifts/1744362648115-Screenshot%202025-04-08%20152544.png.png",
+  "required_points": 800,
+  "quantity": 9,
+  "is_active": true,
+  "createdAt": {
+    "$date": "2025-04-11T07:47:46.918Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-11T10:10:59.774Z"
+  },
+  "__v": 0,
+  "end_date": {
+    "$date": "2025-09-01T00:00:00.000Z"
+  },
+  "start_date": {
+    "$date": "2025-01-01T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67f8ca5c7e00586558ac2585"
+  },
+  "name": "T-Shirt",
+  "description": "Just T-Shirt",
+  "image": "https://res.cloudinary.com/lewisshop/image/upload/v1744363048/gifts/1744363043400-image_processing20230602-7-ruxxod.jpg.jpg",
+  "required_points": 1000,
+  "quantity": 49,
+  "is_active": true,
+  "start_date": {
+    "$date": "2025-01-01T00:00:00.000Z"
+  },
+  "end_date": {
+    "$date": "2025-09-27T21:04:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2025-04-11T07:53:00.348Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-11T10:06:01.574Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f8de5d5725d0394afbd134"
+  },
+  "name": "Hat",
+  "description": "Just a hat",
+  "image": "https://res.cloudinary.com/lewisshop/image/upload/v1744363101/gifts/1744363097149-91835b04-dd48-4ef2-84fb-af91fc337b23.jpg.jpg",
+  "required_points": 200,
+  "quantity": 300,
+  "is_active": true,
+  "start_date": {
+    "$date": "2025-05-02T17:19:00.000Z"
+  },
+  "end_date": {
+    "$date": "2025-12-03T19:19:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2025-04-11T09:18:21.666Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-11T09:18:21.666Z"
+  },
+  "__v": 0
+}]

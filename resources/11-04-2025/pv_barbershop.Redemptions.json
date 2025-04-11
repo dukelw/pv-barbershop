@@ -1,0 +1,66 @@
+[{
+  "_id": {
+    "$oid": "67f8cc9bae1fd4958b851a50"
+  },
+  "user": {
+    "$oid": "67f29b55d7a5ece461881119"
+  },
+  "gift": {
+    "$oid": "67f8c9491ee82b0d14233e0e"
+  },
+  "points_used": 400,
+  "redeemed_at": {
+    "$date": "2025-04-11T08:02:35.882Z"
+  },
+  "createdAt": {
+    "$date": "2025-04-11T08:02:35.885Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-11T08:02:35.885Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f8e989f7118b8c690804ed"
+  },
+  "user": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "gift": {
+    "$oid": "67f8ca5c7e00586558ac2585"
+  },
+  "points_used": 1000,
+  "redeemed_at": {
+    "$date": "2025-04-11T10:06:01.625Z"
+  },
+  "createdAt": {
+    "$date": "2025-04-11T10:06:01.625Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-11T10:06:01.625Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f8eab3f7118b8c69080508"
+  },
+  "user": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "gift": {
+    "$oid": "67f8c9221ee82b0d14233e0c"
+  },
+  "points_used": 800,
+  "redeemed_at": {
+    "$date": "2025-04-11T10:10:59.846Z"
+  },
+  "createdAt": {
+    "$date": "2025-04-11T10:10:59.850Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-11T10:10:59.850Z"
+  },
+  "__v": 0
+}]

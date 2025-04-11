@@ -14,6 +14,7 @@ router.get("/find-barber", asyncHandler(userController.findAllFreeBarber));
 router.get("/barber", asyncHandler(userController.findAllBarber));
 router.get("/", asyncHandler(userController.findAll));
 router.delete("/:id/:userID", asyncHandler(userController.delete));
+router.put("/point", asyncHandler(userController.updatePoint));
 
 router.use(authentication);
 router.post("/logout", asyncHandler(userController.logout));

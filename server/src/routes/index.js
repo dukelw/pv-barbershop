@@ -9,6 +9,7 @@ const appointmentRouter = require("./appointment");
 const paymentRouter = require("./payment");
 const sliderRouter = require("./slider");
 const statisticRouter = require("./statistic");
+const giftRouter = require("./gift");
 
 function route(app) {
   app.use("/api/v1/user/", userRouter);
@@ -21,6 +22,7 @@ function route(app) {
   app.use("/api/v1/appointment/", appointmentRouter);
   app.use("/api/v1/slider/", sliderRouter);
   app.use("/api/v1/statistic/", statisticRouter);
+  app.use("/api/v1/gift/", giftRouter);
   app.use("/", siteRouter);
 }
 

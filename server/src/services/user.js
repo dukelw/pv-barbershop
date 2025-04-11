@@ -113,6 +113,7 @@ class UserService {
           "user_phone",
           "user_gender",
           "user_role",
+          "user_point",
         ],
         object: foundUser,
       }),
@@ -179,6 +180,7 @@ class UserService {
       phone: foundUser.user_phone,
       gender: foundUser.user_gender,
       createdAt: foundUser.createdAt,
+      point: foundUser.user_point,
     };
     return {
       user,
@@ -278,6 +280,15 @@ class UserService {
     return updatedUser;
   };
 
+  updatePoint = async ({ userID, point }) => {
+    const updatedUser = await UserModel.findByIdAndUpdate(
+      userID,
+      { $inc: { user_point: point } }, // point > 0 là cộng, point < 0 là trừ
+      { new: true }
+    );
+    return updatedUser;
+  };
+
   changePassword = async ({ email, password, new_password }) => {
     // 1. Check email
     const foundUser = await UserModel.findOne({ user_email: email });
@@ -302,7 +313,11 @@ class UserService {
 
   delete = async ({ deleteID, userID }) => {
     const foundUser = await UserModel.findById(userID);
-    if (!foundUser.user_role === "admin" || !foundUser.user_role === "receptionist") throw new NotFoundError("Authorization failure");
+    if (
+      !foundUser.user_role === "admin" ||
+      !foundUser.user_role === "receptionist"
+    )
+      throw new NotFoundError("Authorization failure");
 
     const deleteUser = await UserModel.findById(deleteID);
     if (!foundUser) throw new NotFoundError("User not found");
@@ -311,10 +326,18 @@ class UserService {
     return result;
   };
 
-  createAccount = async ({ user_name, user_email, user_avatar, user_role, user_gender }) => {
+  createAccount = async ({
+    user_name,
+    user_email,
+    user_avatar,
+    user_role,
+    user_gender,
+  }) => {
     const password = "123456";
     // Step 1: Check the existence of email
-    const foundUser = await UserModel.findOne({ user_email: user_email }).lean();
+    const foundUser = await UserModel.findOne({
+      user_email: user_email,
+    }).lean();
     if (foundUser) throw new BadRequestError("User is already registered");
 
     const hashedPassword = await bcrypt.hash(password, 10);

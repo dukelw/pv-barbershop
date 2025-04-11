@@ -8,6 +8,7 @@ const routes = {
   account: "/account/:userID",
   changePassword: "/change-password/:userID",
   about: "/about",
+  gift: "/gifts",
   home: "/",
   notFound: "*",
 };
