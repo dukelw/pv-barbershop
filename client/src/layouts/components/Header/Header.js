@@ -81,6 +81,14 @@ function Header() {
               </MenuItem>
               <MenuItem onClick={handleClose}>
                 <Link
+                  to="/gifts"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  Đổi thưởng
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={handleClose}>
+                <Link
                   to={`/account/${userID}`}
                   style={{ textDecoration: "none", color: "inherit" }}
                 >

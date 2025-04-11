@@ -81,13 +81,19 @@ class UserController {
     }).send(res);
   }
 
-
   async updateInformation(req, res, next) {
     new SuccessResponse({
       message: "Update information successfully",
       metadata: await userService.updateInformation({
         ...req.body,
       }),
+    }).send(res);
+  }
+
+  async updatePoint(req, res, next) {
+    new SuccessResponse({
+      message: "Update point successfully",
+      metadata: await userService.updatePoint(req.body),
     }).send(res);
   }
 

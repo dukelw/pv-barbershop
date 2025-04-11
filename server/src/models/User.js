@@ -39,6 +39,10 @@ var userSchema = new Schema(
       required: true,
       default: "customer",
     },
+    user_point: {
+      type: Number,
+      default: 0,
+    },
   },
   {
     timestamps: true,

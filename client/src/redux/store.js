@@ -6,7 +6,7 @@ import notificationReducer from "./notificationSlice";
 import appointmentReducer from "./appointmentSlice";
 import sliderReducer from "./sliderSlice";
 import serviceReducer from "./serviceSlice";
-
+import giftReducer from "./giftSlice";
 import inventoryReducer from "./inventorySlice";
 import invoiceReducer from "./invoiceSlice";
 import reviewReducer from "./reviewSlice";
@@ -42,6 +42,7 @@ const rootReducer = combineReducers({
   invoice: invoiceReducer,
   review: reviewReducer,
   statistic: statisticReducer,
+  gift: giftReducer,
 });
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

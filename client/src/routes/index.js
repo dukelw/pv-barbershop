@@ -15,6 +15,7 @@ import Empty from "../layouts/Empty";
 import Account from "../pages/Account";
 import Password from "../pages/Password";
 import About from "../pages/About";
+import Gift from "../pages/Gift";
 const publicRoutes = [
   { path: config.routes.signin, component: Signin, layout: null },
   { path: config.routes.signup, component: Signup, layout: null },
@@ -23,8 +24,17 @@ const publicRoutes = [
   { path: config.routes.notFound, component: NotFound, layout: null },
   { path: config.routes.about, component: About, layout: MainLayout },
   { path: config.routes.logout, component: Logout, layout: null },
-  { path: config.routes.account, component: Account, layout: MainLayout},
-  { path: config.routes.changePassword, component: Password, layout: MainLayout},
+  { path: config.routes.account, component: Account, layout: MainLayout },
+  {
+    path: config.routes.gift,
+    component: Gift,
+    layout: MainLayout,
+  },
+  {
+    path: config.routes.changePassword,
+    component: Password,
+    layout: MainLayout,
+  },
 ];
 
 const privateRoutes = [
@@ -49,7 +59,6 @@ const privateRoutes = [
     path: config.routes.workbench,
     component: Workbench,
   },
-  
 ];
 
 export { publicRoutes, privateRoutes };

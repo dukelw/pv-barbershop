@@ -185,6 +185,23 @@ import {
   getSystemIncomeStart,
   getSystemIncomeSuccess,
 } from "./statisticSlice";
+import {
+  createGiftFailure,
+  createGiftStart,
+  createGiftSuccess,
+  getAllGiftsFailure,
+  getAllGiftsStart,
+  getAllGiftsSuccess,
+  getRedemptionsFailure,
+  getRedemptionsStart,
+  getRedemptionsSuccess,
+  redeemGiftFailure,
+  redeemGiftStart,
+  redeemGiftSuccess,
+  updateGiftFailure,
+  updateGiftStart,
+  updateGiftSuccess,
+} from "./giftSlice";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -214,8 +231,7 @@ export const signin = async (user, dispatch, navigate) => {
       navigate("/");
     } else if (role === "staff") {
       window.location.href = `${process.env.REACT_APP_DASHBOARD_URL}baber-dashboard`;
-    } 
-    else {
+    } else {
       window.location.href = `${process.env.REACT_APP_DASHBOARD_URL}`;
     }
   } catch (error) {
@@ -339,6 +355,34 @@ export const changePassword = async (
     return res.data;
   } catch (error) {
     dispatch(changePasswordFailure());
+  }
+};
+
+export const updateAccumulatePoint = async (
+  accessToken,
+  userID,
+  point,
+  dispatch
+) => {
+  dispatch(updateUserStart());
+  try {
+    const res = await axios.put(
+      `${REACT_APP_BASE_URL}user/point`,
+      {
+        userID,
+        point,
+      },
+      {
+        headers: {
+          authorization: accessToken,
+          user: userID,
+        },
+      }
+    );
+    dispatch(updateUserSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    dispatch(updateUserFailure());
   }
 };
 
@@ -1131,7 +1175,6 @@ export const getInventory = async (ID, dispatch) => {
     dispatch(getInventorySuccess(res.data));
     return res.data;
   } catch (error) {
-
     console.error("Error fetching inventory:", error);
     dispatch(getInventoryFailure());
   }
@@ -1142,7 +1185,6 @@ export const getAllInventories = async (dispatch) => {
   try {
     const res = await axios.get(`${REACT_APP_BASE_URL}inventory/all`, {
       headers: {
-
         "Content-Type": "application/json",
       },
     });
@@ -1153,7 +1195,6 @@ export const getAllInventories = async (dispatch) => {
     dispatch(getAllInventorysFailure());
   }
 };
-
 
 export const createInventory = async (
   accessToken,
@@ -1225,7 +1266,6 @@ export const deleteInventory = async (accessToken, ID, dispatch, axiosJWT) => {
     return false;
   }
 };
-
 
 // End inventory
 
@@ -1344,11 +1384,14 @@ export const getAllReviews = async (dispatch) => {
 export const getAllReviewsOfBarber = async (barberID, dispatch) => {
   dispatch(getAllReviewsStart());
   try {
-    const res = await axios.get(`${REACT_APP_BASE_URL}review/barber/${barberID}`, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    const res = await axios.get(
+      `${REACT_APP_BASE_URL}review/barber/${barberID}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     dispatch(getAllReviewsSuccess(res.data));
     console.log(res);
     return res.data.metadata;
@@ -1536,3 +1579,95 @@ export const getRatingsOfBarber = async (dispatch) => {
 };
 
 // End statistic
+
+// Start gift
+export const getAllGifts = async (dispatch) => {
+  dispatch(getAllGiftsStart());
+  try {
+    const res = await axios.get(`${REACT_APP_BASE_URL}gift/list`);
+    dispatch(getAllGiftsSuccess(res.data.metadata));
+    return res.data.metadata;
+  } catch (error) {
+    dispatch(getAllGiftsFailure());
+    console.error("Failed to get gifts:", error);
+  }
+};
+
+// Create a new gift
+export const createGift = async (accessToken, giftData, dispatch) => {
+  dispatch(createGiftStart());
+  try {
+    const res = await axios.post(`${REACT_APP_BASE_URL}gift/create`, giftData, {
+      headers: {
+        "Content-Type": "application/json",
+        authorization: accessToken,
+      },
+    });
+    dispatch(createGiftSuccess(res.data.metadata));
+    return res.data.metadata;
+  } catch (error) {
+    dispatch(createGiftFailure());
+    console.error("Failed to create gift:", error);
+  }
+};
+
+// Update a gift
+export const updateGift = async (accessToken, id, giftData, dispatch) => {
+  dispatch(updateGiftStart());
+  try {
+    const res = await axios.put(
+      `${REACT_APP_BASE_URL}gift/${id}/update`,
+      giftData,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: accessToken,
+        },
+      }
+    );
+    dispatch(updateGiftSuccess(res.data.metadata));
+    return res.data.metadata;
+  } catch (error) {
+    dispatch(updateGiftFailure());
+    console.error("Failed to update gift:", error);
+  }
+};
+
+// Redeem a gift
+export const redeemGift = async (accessToken, redeemData, dispatch) => {
+  dispatch(redeemGiftStart());
+  try {
+    const res = await axios.post(
+      `${REACT_APP_BASE_URL}gift/redeem`,
+      redeemData,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: accessToken,
+        },
+      }
+    );
+    dispatch(redeemGiftSuccess(res.data.metadata));
+    return res.data.metadata;
+  } catch (error) {
+    dispatch(redeemGiftFailure());
+    console.error("Failed to redeem gift:", error);
+  }
+};
+
+// Get user redemption history
+export const getRedemptions = async (userID, dispatch) => {
+  dispatch(getRedemptionsStart());
+  try {
+    const res = await axios.get(
+      `${REACT_APP_BASE_URL}gift/redemptions?userID=${userID}`
+    );
+    dispatch(getRedemptionsSuccess(res.data.metadata));
+    return res.data.metadata;
+  } catch (error) {
+    dispatch(getRedemptionsFailure());
+    console.error("Failed to fetch redemption history:", error);
+  }
+};
+
+// End gift
