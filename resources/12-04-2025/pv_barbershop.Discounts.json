@@ -1,0 +1,214 @@
+[{
+  "_id": {
+    "$oid": "67f9b58266ed9e969cc7f3b4"
+  },
+  "code": "THEVITHEDISCOUNT",
+  "description": "Discount for belove customer.",
+  "percentage": 10,
+  "is_active": true,
+  "start_date": {
+    "$date": "2025-01-01T00:00:00.000Z"
+  },
+  "end_date": {
+    "$date": "2025-09-01T00:00:00.000Z"
+  },
+  "usage_limit": 10,
+  "used_count": 0,
+  "assigned_user": null,
+  "createdAt": {
+    "$date": "2025-04-12T00:36:18.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-12T00:39:39.876Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f9b76a66ed9e969cc7f3bc"
+  },
+  "code": "FORUSERTHEDISCOUNT",
+  "description": "Discount for belove customer.",
+  "amount": 100000,
+  "is_active": true,
+  "start_date": {
+    "$date": "2025-01-01T00:00:00.000Z"
+  },
+  "end_date": {
+    "$date": "2025-09-01T00:00:00.000Z"
+  },
+  "usage_limit": 1,
+  "used_count": 1,
+  "assigned_user": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "createdAt": {
+    "$date": "2025-04-12T00:44:26.074Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-12T00:49:33.410Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fa557f67ff6f8b532f7049"
+  },
+  "code": "EMVIDISCOUNT",
+  "description": "Discount for em Vi.",
+  "percentage": 10,
+  "amount": 0,
+  "is_active": true,
+  "start_date": {
+    "$date": "2025-04-11T04:57:00.000Z"
+  },
+  "end_date": {
+    "$date": "2025-08-30T18:58:00.000Z"
+  },
+  "usage_limit": 10,
+  "used_count": 0,
+  "assigned_user": {
+    "$oid": "67f29b55d7a5ece461881119"
+  },
+  "createdAt": {
+    "$date": "2025-04-12T11:58:55.839Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-12T11:58:55.839Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fa5bf867ff6f8b532f7095"
+  },
+  "code": "ETHE",
+  "description": "No",
+  "percentage": 0,
+  "amount": 10000,
+  "is_active": true,
+  "start_date": {
+    "$date": "2025-04-12T12:25:50.451Z"
+  },
+  "end_date": {
+    "$date": "2025-09-07T05:30:00.000Z"
+  },
+  "usage_limit": 100,
+  "used_count": 1,
+  "assigned_user": null,
+  "createdAt": {
+    "$date": "2025-04-12T12:26:32.614Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-12T14:45:41.140Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fa5dee67ff6f8b532f709e"
+  },
+  "code": "THEVI",
+  "description": "No",
+  "percentage": 10,
+  "amount": 1000,
+  "is_active": true,
+  "start_date": {
+    "$date": "2025-04-05T05:34:00.000Z"
+  },
+  "end_date": {
+    "$date": "2025-06-07T05:34:00.000Z"
+  },
+  "usage_limit": 10,
+  "used_count": 0,
+  "assigned_user": null,
+  "createdAt": {
+    "$date": "2025-04-12T12:34:54.913Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-12T12:58:09.045Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fa617a67ff6f8b532f70e0"
+  },
+  "code": "YO",
+  "description": "Hello",
+  "percentage": 10,
+  "amount": 0,
+  "is_active": true,
+  "start_date": {
+    "$date": "2025-04-12T12:49:39.871Z"
+  },
+  "end_date": {
+    "$date": "2025-05-10T05:49:00.000Z"
+  },
+  "usage_limit": 1,
+  "used_count": 1,
+  "assigned_user": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "createdAt": {
+    "$date": "2025-04-12T12:50:02.679Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-12T14:09:23.109Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fa63b48844bc171e7768af"
+  },
+  "code": "FINALTEST",
+  "description": "Jack the Bool'and",
+  "percentage": 10,
+  "amount": 0,
+  "is_active": true,
+  "start_date": {
+    "$date": "2025-04-12T12:58:17.222Z"
+  },
+  "end_date": {
+    "$date": "2025-09-27T10:02:00.000Z"
+  },
+  "usage_limit": 10,
+  "used_count": 0,
+  "assigned_user": {
+    "$oid": "67caf2b0231e1de6abb78f84"
+  },
+  "createdAt": {
+    "$date": "2025-04-12T12:59:32.116Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-12T12:59:58.099Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fa66288844bc171e77695b"
+  },
+  "code": "GENERAL",
+  "description": "Boo",
+  "percentage": 10,
+  "amount": 1000000,
+  "is_active": true,
+  "start_date": {
+    "$date": "2025-04-12T13:08:46.679Z"
+  },
+  "end_date": {
+    "$date": "2025-05-11T06:08:00.000Z"
+  },
+  "usage_limit": 2,
+  "used_count": 0,
+  "assigned_user": null,
+  "createdAt": {
+    "$date": "2025-04-12T13:10:00.529Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-12T13:10:00.529Z"
+  },
+  "__v": 0
+}]
