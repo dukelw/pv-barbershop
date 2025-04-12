@@ -27,9 +27,11 @@ class InvoiceService {
 
   async getAllInvoices(populate) {
     if (populate) {
-      return await InvoiceModel.find().populate("appointment");
+      return await InvoiceModel.find()
+        .sort({ createdAt: -1 })
+        .populate("appointment");
     }
-    return await InvoiceModel.find();
+    return await InvoiceModel.find().sort({ createdAt: -1 });
   }
 
   async updateInvoiceStatus(invoiceID, status) {

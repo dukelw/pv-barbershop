@@ -10,6 +10,7 @@ const paymentRouter = require("./payment");
 const sliderRouter = require("./slider");
 const statisticRouter = require("./statistic");
 const giftRouter = require("./gift");
+const discountRouter = require("./discount");
 
 function route(app) {
   app.use("/api/v1/user/", userRouter);
@@ -23,6 +24,7 @@ function route(app) {
   app.use("/api/v1/slider/", sliderRouter);
   app.use("/api/v1/statistic/", statisticRouter);
   app.use("/api/v1/gift/", giftRouter);
+  app.use("/api/v1/discount/", discountRouter);
   app.use("/", siteRouter);
 }
 

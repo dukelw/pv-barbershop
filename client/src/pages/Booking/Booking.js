@@ -156,6 +156,10 @@ function Booking() {
       <Divider
         sx={{ my: 2, bgcolor: "black", height: 2, width: "800px", mt: 0 }}
       />
+      <Typography color="primary" fontWeight="bold">
+        Lưu ý: Hãy đăng ký tài khoản trước khi đặt lịch để hưởng các ưu đãi về
+        tích điểm đổi thưởng cũng như giảm giá!
+      </Typography>
       <form onSubmit={handleSubmit} className={cx("form")}>
         <Box mb={2} className={cx("box")}>
           <label className={cx("label")}>Số Điện Thoại *</label>
