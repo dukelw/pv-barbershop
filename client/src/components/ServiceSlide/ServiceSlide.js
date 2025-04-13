@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Card,
   CardContent,
@@ -6,169 +6,194 @@ import {
   Button,
   Grid,
   IconButton,
+  Box,
 } from "@mui/material";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 import styles from "./ServiceSlide.module.scss";
 import classNames from "classnames/bind";
+import { getAllServices } from "../../redux/apiRequest";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
-const services = [
-  {
-    img: "https://khunganh.net/wp-content/uploads/2018/08/khung-anh-vuong1.jpg",
-    name: "Cắt tóc",
-    description: "Tạo kiểu chuyên nghiệp với Pomade.",
-  },
-  {
-    img: "https://khunganh.net/wp-content/uploads/2018/08/khung-anh-vuong1.jpg",
-    name: "Gội đầu",
-    description: "Thư giãn với dầu gội cao cấp.",
-  },
-  {
-    img: "https://khunganh.net/wp-content/uploads/2018/08/khung-anh-vuong1.jpg",
-    name: "Uốn tóc",
-    description: "Tạo sóng tự nhiên, phong cách hiện đại.",
-  },
-  {
-    img: "https://khunganh.net/wp-content/uploads/2018/08/khung-anh-vuong1.jpg",
-    name: "Nhuộm tóc",
-    description: "Màu sắc đa dạng, hợp xu hướng.",
-  },
-  {
-    img: "https://khunganh.net/wp-content/uploads/2018/08/khung-anh-vuong1.jpg",
-    name: "Dưỡng tóc",
-    description: "Phục hồi tóc hư tổn, chắc khỏe.",
-  },
-  {
-    img: "https://khunganh.net/wp-content/uploads/2018/08/khung-anh-vuong1.jpg",
-    name: "Tẩy tóc",
-    description: "Làm sáng nền tóc trước khi nhuộm.",
-  },
-];
-
 export default function ServiceSlide() {
-  const [index, setIndex] = useState(0);
+  const dispatch = useDispatch();
+  const [services, setServices] = useState([]);
+  const [startIndex, setStartIndex] = useState(0);
   const itemsPerPage = 5;
 
+  const handleGetService = async () => {
+    const res = await getAllServices(dispatch);
+    if (res?.metadata) {
+      const activeServices = res.metadata.filter((s) => s.isActive);
+      const formatted = activeServices.map((item) => ({
+        img: item.service_image,
+        name: item.service_name,
+        description: item.service_description,
+      }));
+      setServices(formatted);
+    }
+  };
+
   const handleNext = () => {
-    setIndex((prev) => (prev + 1) % services.length);
+    setStartIndex((prev) => (prev + itemsPerPage) % services.length);
   };
 
   const handlePrev = () => {
-    setIndex((prev) => (prev - 1 + services.length) % services.length);
+    setStartIndex((prev) =>
+      (prev - itemsPerPage + services.length) % services.length
+    );
   };
+
+  useEffect(() => {
+    handleGetService();
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
-    }, 2000);
+    }, 4000); // Mỗi 4 giây chuyển trang
     return () => clearInterval(interval);
-  }, []);
+  }, [services]);
+
+  // Hiển thị 5 phần tử liên tục (vòng lặp circular)
+  const visibleServices = [];
+  for (let i = 0; i < itemsPerPage; i++) {
+    const index = (startIndex + i) % services.length;
+    visibleServices.push(services[index]);
+  }
 
   return (
-    <>
-      <h4 className={cx("subtitle")}>About Our</h4>
-      <h1 className={cx("title")}>Service</h1>
-      <Grid container justifyContent="center" alignItems="center" spacing={2}>
-        <Grid item xs={12} sm={12} md={12}>
-          <Grid container spacing={2}>
-            {Array.from({ length: itemsPerPage }).map((_, i) => {
-              const currentIndex = (index + i) % services.length;
-              const service = services[currentIndex];
-              return (
-                <Grid item xs={12} sm={4} md={2.4} key={currentIndex}>
-                  <Card
+    <Box className={cx("wrapper")} sx={{ padding: "40px 0" }}>
+      <Typography variant="h5" align="center" className={cx("subtitle")}>
+        About Our
+      </Typography>
+      <Typography variant="h3" align="center" className={cx("title")}>
+        Service
+      </Typography>
+
+      <Grid
+        container
+        justifyContent="center"
+        alignItems="stretch"
+        spacing={2}
+        mt={2}
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          transition: "transform 1s ease-in-out", // Thêm hiệu ứng chuyển động
+        }}
+      >
+        {visibleServices.map((service, idx) => (
+          <Grid item xs={12} sm={4} md={2.4} key={idx}>
+            <Card
+              sx={{
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                transition: "transform 0.5s ease", // Giữ hiệu ứng khi hover
+                "&:hover": {
+                  transform: "scale(1.05)",
+                },
+              }}
+            >
+              <Box
+                sx={{
+                  height: 150,
+                  backgroundImage: `url(${service?.img})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              />
+              <CardContent
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  flexGrow: 1,
+                }}
+              >
+                <Box sx={{ flexGrow: 1 }}>
+                  <Typography
+                    variant="h6"
+                    fontWeight="bold"
                     sx={{
-                      height: "350px",
-                      display: "flex",
-                      flexDirection: "column",
-                      transition: "transform 0.5s ease",
-                      "&:hover": {
-                        transform: "scale(1.05)",
-                      },
+                      display: "-webkit-box",
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                      minHeight: "50px",
                     }}
                   >
-                    <div
-                      style={{
-                        backgroundImage: `url(${service.img})`,
-                        height: "150px",
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        transition: "background-image 0.5s ease",
-                      }}
-                    ></div>
-                    <CardContent
-                      sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        flexGrow: 1,
-                        boxShadow: "0 1px 16px rgba(0, 0, 0, 0.15)",
-                      }}
-                    >
-                      <div className={cx("card__content-top")}>
-                        <Typography variant="h6" fontWeight="bold">
-                          {service.name}
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          color="text.secondary"
-                          mt={1}
-                        >
-                          {service.description}
-                        </Typography>
-                      </div>
-                      <Button
-                        className={cx("card__content-bottom")}
-                        variant="contained"
-                        fullWidth
-                        sx={{
-                          mt: 2,
-                          backgroundColor: "var(--dark)",
-                          color: "var(--white)",
-                        }}
-                      >
-                        Xem thêm
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </Grid>
-              );
-            })}
+                    {service?.name}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{
+                      mt: 1,
+                      display: "-webkit-box",
+                      WebkitLineClamp: 3,
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                      minHeight: "60px",
+                    }}
+                  >
+                    {service?.description}
+                  </Typography>
+                </Box>
+                <Button
+                  variant="contained"
+                  fullWidth
+                  sx={{
+                    mt: 2,
+                    backgroundColor: "var(--dark)",
+                    color: "var(--white)",
+                  }}
+                >
+                  <Link
+                    to="/services"  // Đặt đường dẫn tới trang services
+                    style={{
+                      textDecoration: 'none',  // Loại bỏ gạch chân mặc định của Link
+                      color: 'inherit',        // Đảm bảo màu sắc được giữ nguyên như khi không dùng Link
+                    }}
+                  >
+                    Xem thêm
+                  </Link>
+                </Button>
+
+              </CardContent>
+            </Card>
           </Grid>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          style={{
-            textAlign: "center",
-            marginTop: "20px",
-            paddingBottom: "40px",
+        ))}
+      </Grid>
+
+      <Box textAlign="center" mt={4}>
+        <IconButton
+          onClick={handlePrev}
+          sx={{
+            mx: 1,
+            color: "var(--white)",
+            backgroundColor: "var(--dark)",
           }}
         >
-          <IconButton
-            onClick={handlePrev}
-            size="small"
-            sx={{
-              margin: "0 10px",
-              color: "var(--white)",
-              backgroundColor: "var(--dark)",
-            }}
-          >
-            <ArrowBack fontSize="small" />
-          </IconButton>
-          <IconButton
-            onClick={handleNext}
-            size="small"
-            sx={{
-              margin: "0 10px",
-              color: "var(--white)",
-              backgroundColor: "var(--dark)",
-            }}
-          >
-            <ArrowForward fontSize="small" />
-          </IconButton>
-        </Grid>
-      </Grid>
-    </>
+          <ArrowBack fontSize="small" />
+        </IconButton>
+        <IconButton
+          onClick={handleNext}
+          sx={{
+            mx: 1,
+            color: "var(--white)",
+            backgroundColor: "var(--dark)",
+          }}
+        >
+          <ArrowForward fontSize="small" />
+        </IconButton>
+      </Box>
+    </Box>
   );
 }

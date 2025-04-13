@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames/bind";
 import styles from "./About.module.scss";
 import { Link } from "react-router-dom";
+import ServiceSlide from "../../components/ServiceSlide";
 
 const cx = classNames.bind(styles);
 
@@ -120,16 +121,16 @@ function About() {
               </div>
             </div>
             
-            <Link to="/about-detail" className={cx("btn", "btn-outline")}>
+            {/* <Link to="/about-detail" className={cx("btn", "btn-outline")}>
               TÌM HIỂU THÊM
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
 
       {/* Why Choose Us Section */}
       <div className={cx("features-section")}>
-        <h2 className={cx("section-title")}>TẠI SAO CHỌN CHÚNG TÔI</h2>
+        <h2 className={cx("title-service")}>TẠI SAO CHỌN CHÚNG TÔI</h2>
         <div className={cx("divider")}></div>
         <p className={cx("section-desc")}>Những lý do làm nên sự khác biệt của MAN HAIRCUTS</p>
         
@@ -148,49 +149,33 @@ function About() {
 
       {/* Services Overview */}
       <div className={cx("services-section")}>
-        <h2 className={cx("section-title")}>DỊCH VỤ CỦA CHÚNG TÔI</h2>
+        <h2 className={cx("title-service")}>DỊCH VỤ CỦA CHÚNG TÔI</h2>
         <div className={cx("divider")}></div>
         <p className={cx("section-desc")}>Chúng tôi cung cấp đa dạng các dịch vụ chăm sóc tóc chất lượng cao</p>
         
-        <div className={cx("services-grid")}>
-          {shopInfo.services.map((service, index) => (
-            <div key={index} className={cx("service-card")}>
-              <div className={cx("service-image")}>
-                <img src={service.image} alt={service.name} />
-              </div>
-              <div className={cx("service-details")}>
-                <h3>{service.name}</h3>
-                <p>{service.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <section className={cx("service-container")}>
+                <section className={cx("service")}>
+                  <ServiceSlide />
+                </section>
+              </section>
         
-        <div className={cx("text-center")}>
+        {/* <div className={cx("text-center")}>
           <Link to="/services" className={cx("btn", "btn-primary")}>
             XEM TẤT CẢ DỊCH VỤ
           </Link>
-        </div>
+        </div> */}
       </div>
 
       {/* Stylist Team */}
       <div className={cx("team-section")}>
-        <h2 className={cx("section-title")}>ĐỘI NGŨ STYLIST</h2>
+        <h2 className={cx("title-service")}>ĐỘI NGŨ STYLIST</h2>
         <div className={cx("divider")}></div>
         <p className={cx("section-desc")}>Gặp gỡ những chuyên gia tạo mẫu tóc tài năng của chúng tôi</p>
         
-        <div className={cx("team-grid")}>
-          {shopInfo.stylists.map((stylist, index) => (
-            <div key={index} className={cx("team-card")}>
-              <div className={cx("team-image")}>
-                <img src={stylist.image} alt={stylist.name} />
-              </div>
-              <div className={cx("team-info")}>
-                <h3>{stylist.name}</h3>
-                <p>{stylist.position}</p>
-              </div>
-            </div>
-          ))}
+        <div className={cx("btn-container")}>
+          <Link to="/barbers" className={cx("btn", "btn-light")}>
+            DANH SÁCH CÁC BARBER
+          </Link>
         </div>
       </div>
 

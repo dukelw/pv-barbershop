@@ -38,7 +38,7 @@ function MainHeader() {
             <Link to={"/booking"}>Đặt lịch</Link>
           </li>
           <li>
-            <Link to={"/service"}>Dịch vụ</Link>
+            <Link to={"/services"}>Dịch vụ</Link>
           </li>
           {!currentUser ? (
             <li style={{ visibility: "hidden" }}>
@@ -58,7 +58,7 @@ function MainHeader() {
         </div>
         <div className={cx("right-nav")}>
           <li>
-            <Link to={"/barber"}>Nhân sự</Link>
+            <Link to={"/barbers"}>Nhân sự</Link>
           </li>
           {currentUser ? (
             <div>

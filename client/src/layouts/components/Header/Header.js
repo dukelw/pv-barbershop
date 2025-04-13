@@ -37,7 +37,7 @@ function Header() {
           <Link to={"/booking"}>Đặt lịch</Link>
         </li>
         <li>
-          <Link to={"/service"}>Dịch vụ</Link>
+          <Link to={"/services"}>Dịch vụ</Link>
         </li>
         <li>
           <Link to={"/about"}>Câu chuyện</Link>
@@ -60,7 +60,7 @@ function Header() {
           <></>
         )}
         <li>
-          <Link to={"/barber"}>Nhân sự</Link>
+          <Link to={"/barbers"}>Nhân sự</Link>
         </li>
         {currentUser ? (
           <div>

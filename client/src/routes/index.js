@@ -15,6 +15,9 @@ import Empty from "../layouts/Empty";
 import Account from "../pages/Account";
 import Password from "../pages/Password";
 import About from "../pages/About";
+import Barber from "../pages/Barber";
+import Service from "../pages/ServiceList";
+
 import Gift from "../pages/Gift";
 const publicRoutes = [
   { path: config.routes.signin, component: Signin, layout: null },
@@ -25,6 +28,8 @@ const publicRoutes = [
   { path: config.routes.about, component: About, layout: MainLayout },
   { path: config.routes.logout, component: Logout, layout: null },
   { path: config.routes.account, component: Account, layout: MainLayout },
+  { path: config.routes.barber, component: Barber, layout: MainLayout },
+  { path: config.routes.service, component: Service, layout: MainLayout },
   {
     path: config.routes.gift,
     component: Gift,
