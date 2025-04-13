@@ -13,6 +13,7 @@ This project uses **ReactJS** for the frontend, **NodeJS** for the backend, and 
 - [Usage](#usage)
 - [Contributing](#contributing)
 
+
 ## Technologies Used
 - **Frontend**: ReactJS
 - **Backend**: NodeJS
