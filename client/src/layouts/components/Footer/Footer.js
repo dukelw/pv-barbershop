@@ -104,13 +104,19 @@ const Footer = () => {
               justifyContent="center"
               gap={1}
               flexWrap="wrap"
-              sx={{marginTop: "12px"}}
+              sx={{ marginTop: "12px" }}
             >
-              {[1, 2, 3, 4, 5].map((_, index) => (
+              {[
+                "https://res.cloudinary.com/vinhisreal/image/upload/v1744528950/pvbarbershop/1744528879546-hua-quang-han-tham-du-giai-thuong-dien-anh-baeksang-lan-59-voi-tu-cach-nguoi-trao-gia-2.jpg.jpg",
+                "https://res.cloudinary.com/vinhisreal/image/upload/v1744529239/pvbarbershop/1744529165582-480587644_1224137549712776_6826957666366957282_n.jpg.jpg",
+                "https://res.cloudinary.com/vinhisreal/image/upload/v1744529769/pvbarbershop/1744529694331-363793504_1908215872893548_2929361378794883358_n.jpg.jpg",
+                "https://res.cloudinary.com/vinhisreal/image/upload/v1744530956/pvbarbershop/1744530886121-5.jpg.jpg",
+                "https://res.cloudinary.com/vinhisreal/image/upload/v1744530552/pvbarbershop/1744530482045-459311904_1545239976097211_843266163592352690_n.jpg.jpg"
+              ].map((src, index) => (
                 <Box
                   key={index}
                   component="img"
-                  src={`https://khunganh.net/wp-content/uploads/2018/08/khung-anh-vuong1.jpg`}
+                  src={src}
                   sx={{ width: 60, height: 60, borderRadius: 1 }}
                 />
               ))}

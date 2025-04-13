@@ -9,6 +9,9 @@ const routes = {
   changePassword: "/change-password/:userID",
   about: "/about",
   gift: "/gifts",
+  barber: "/barbers",
+  service: "/services",
+
   home: "/",
   notFound: "*",
 };

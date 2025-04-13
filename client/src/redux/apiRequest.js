@@ -1209,7 +1209,6 @@ export const getAllInventories = async (dispatch) => {
       },
     });
     dispatch(getAllInventorysSuccess(res.data));
-    console.log(res);
     return res.data.metadata;
   } catch (error) {
     dispatch(getAllInventorysFailure());

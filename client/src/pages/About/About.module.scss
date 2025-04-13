@@ -28,7 +28,6 @@ $dark-color: #222222;
   justify-content: center;
   color: $light-color;
   text-align: center;
-  margin-bottom: 80px;
   
   &-content {
     max-width: 800px;
@@ -56,7 +55,7 @@ $dark-color: #222222;
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 15px;
-  color: var(--white);
+  color: var(--dark);
 }
 
 .section-desc {
@@ -193,57 +192,17 @@ $dark-color: #222222;
 // Services Section
 .services-section {
   padding: 80px 0;
-  background-color: $light-color;
+  background-color: var(--dark);
 }
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-bottom: 40px;
+.service {
+  margin: 0px 12px 0px 12px;
 }
-
-.service-card {
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  background-color: $light-color;
-  
-  &:hover {
-    transform: translateY(-10px);
-  }
-}
-
-.service-image {
-  height: 250px;
-  overflow: hidden;
-  
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  
-  &:hover img {
-    transform: scale(1.1);
-  }
-}
-
-.service-details {
-  padding: 20px;
-  
-  h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: $secondary-color;
-  }
-  
-  p {
-    color: #666;
-    line-height: 1.6;
-  }
+.title-service {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--white);
 }
 
 // Team Section
@@ -298,6 +257,11 @@ $dark-color: #222222;
     font-weight: 600;
   }
 }
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Optional: Add space above the button */
+}
 
 // Call to Action
 .cta-section {
@@ -307,7 +271,7 @@ $dark-color: #222222;
   background-position: center;
   color: $light-color;
   text-align: center;
-  margin-top: 80px;
+  // margin-top: 80px;
 }
 
 .cta-content {

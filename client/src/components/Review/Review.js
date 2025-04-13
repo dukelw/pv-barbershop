@@ -17,7 +17,6 @@ const Review = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getAllReviews(dispatch);
-      console.log("data", data);
       setReviews(data || []);
     };
     fetchData();
