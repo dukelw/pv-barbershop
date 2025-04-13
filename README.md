@@ -14,7 +14,6 @@ This project uses **ReactJS** for the frontend, **NodeJS** for the backend, and 
 - [Contributing](#contributing)
 
 ## Technologies Used
-
 - **Frontend**: ReactJS
 - **Backend**: NodeJS
 - **Database**: MongoDB
