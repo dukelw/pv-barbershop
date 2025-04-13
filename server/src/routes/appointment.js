@@ -9,7 +9,7 @@ router.get("/:id", asyncHandler(appointmentController.get));
 router.put("/:id/status", asyncHandler(appointmentController.updateStatus));
 router.put("/:id/proof", asyncHandler(appointmentController.updateProof));
 
-router.get("/user/:userPhone", asyncHandler(appointmentController.getByUser));
+router.get("/user/:userID", asyncHandler(appointmentController.getByUser));
 router.get(
   "/barber/:barberId",
   asyncHandler(appointmentController.getByBarber)

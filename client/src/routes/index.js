@@ -19,6 +19,7 @@ import Barber from "../pages/Barber";
 import Service from "../pages/ServiceList";
 
 import Gift from "../pages/Gift";
+import History from "../pages/History";
 const publicRoutes = [
   { path: config.routes.signin, component: Signin, layout: null },
   { path: config.routes.signup, component: Signup, layout: null },
@@ -30,6 +31,7 @@ const publicRoutes = [
   { path: config.routes.account, component: Account, layout: MainLayout },
   { path: config.routes.barber, component: Barber, layout: MainLayout },
   { path: config.routes.service, component: Service, layout: MainLayout },
+  {path: config.routes.history, component: History,layout: MainLayout},
   {
     path: config.routes.gift,
     component: Gift,
@@ -64,6 +66,7 @@ const privateRoutes = [
     path: config.routes.workbench,
     component: Workbench,
   },
+  
 ];
 
 export { publicRoutes, privateRoutes };

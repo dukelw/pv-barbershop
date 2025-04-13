@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 .container {
+  font-family: 'Roboto', sans-serif; // Dòng này để áp dụng Roboto toàn bộ bên trong
   padding: 32px;
   width: 100%;
   min-height: 100vh;
@@ -118,7 +121,6 @@
     font-weight: 500;
     color: #333;
     transition: background-color 0.2s ease;
-    text-transform: uppercase; /* Uppercase nút phân trang */
 
     &:hover {
       background-color: #d5d5d5;
@@ -131,7 +133,7 @@
   }
 
   .active {
-    background-color: var(--yellow);
+    background-color:var(--yellow);
     color: var(--dark);
   }
 }

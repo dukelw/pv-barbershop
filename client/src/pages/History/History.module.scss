@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-.container {
-  font-family: 'Roboto', sans-serif; // Dòng này để áp dụng Roboto toàn bộ bên trong
+.history-container {
   padding: 32px;
   width: 100%;
   min-height: 100vh;
@@ -10,8 +8,8 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
-
 
 .title {
   text-align: center;
@@ -20,89 +18,62 @@
   font-weight: bold;
   color: #333;
   width: 100%;
+  font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
-
 }
 
-.barber-card {
+.no-appointments {
+  font-size: 18px;
+  color: #777;
+  margin-top: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.appointment-list {
   width: 100%;
   max-width: 1000px;
   display: flex;
-  align-items: flex-start;
-  padding: 20px;
+  flex-direction: column;
+  gap: 24px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.appointment-card {
+  width: 100%;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 12px;
-  margin-bottom: 24px;
-  background-color: #fff;
+  padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease;
+  font-family: 'Roboto', sans-serif;
 
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
   }
-}
 
-.avatar {
-  width: 120px;
-  height: 120px;
-  margin-right: 20px;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-  }
-}
-
-.info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-
-  h2 {
-    margin: 0 0 10px;
-    font-size: 22px;
-    color: #222;
-  }
-
-  p {
-    margin: 4px 0;
+  div {
     font-size: 16px;
-    color: #555;
-  }
+    color: #444;
+    margin-bottom: 8px;
+    font-family: 'Roboto', sans-serif;
 
-  .stars {
-    font-size: 18px;
-    color: #fbc02d;
-    margin-left: 8px;
-  }
-
-  .reviews {
-    margin-top: 10px;
-    background: #f9f9f9;
-    padding: 10px;
-    border-radius: 5px;
-
-    h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
-      color: #333;
+    strong {
+      color: #222;
+      font-family: 'Roboto', sans-serif;
     }
+  }
 
-    .review-item {
-      margin-bottom: 10px;
+  ul {
+    padding-left: 20px;
+    font-family: 'Roboto', sans-serif;
 
-      p {
-        font-size: 14px;
-        color: #444;
-      }
-
-      .stars {
-        font-size: 16px;
-        margin-top: 5px;
-      }
+    li {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 4px;
+      font-family: 'Roboto', sans-serif;
     }
   }
 }

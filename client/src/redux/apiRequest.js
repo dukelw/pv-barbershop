@@ -1055,11 +1055,11 @@ export const getAllAppointmentsOfBarber = async (barberID, dispatch) => {
   }
 };
 
-export const getAllAppointmentsOfUser = async (userPhone, dispatch) => {
+export const getAllAppointmentsOfUser = async (userID, dispatch) => {
   dispatch(findAllAppointmentsStart());
   try {
     const res = await axios.get(
-      `${REACT_APP_BASE_URL}appointment/user/${userPhone}`,
+      `${REACT_APP_BASE_URL}appointment/user/${userID}`,
       {
         headers: {
           "Content-Type": "application/json",
@@ -1072,6 +1072,8 @@ export const getAllAppointmentsOfUser = async (userPhone, dispatch) => {
     dispatch(findAllAppointmentsFailure());
   }
 };
+
+
 
 export const createAppointment = async (appointment, dispatch) => {
   dispatch(createAppointmentStart());

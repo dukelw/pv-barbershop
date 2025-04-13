@@ -97,6 +97,14 @@ function Header() {
               </MenuItem>
               <MenuItem onClick={handleClose}>
                 <Link
+                  to={`/history/${userID}`}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  Lịch sử đặt lịch
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={handleClose}>
+                <Link
                   to={`/change-password/${userID}`}
                   style={{ textDecoration: "none", color: "inherit" }}
                 >

@@ -11,6 +11,7 @@ const routes = {
   gift: "/gifts",
   barber: "/barbers",
   service: "/services",
+  history: "/history/:userID",
 
   home: "/",
   notFound: "*",
