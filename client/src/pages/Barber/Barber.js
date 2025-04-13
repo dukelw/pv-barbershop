@@ -15,6 +15,7 @@ function Barber() {
 
   const handleGetBarber = async () => {
     const res = await findAllBarber(dispatch);
+    console.log(res)
     if (res?.metadata) {
       // Gọi review của từng barber và tính rating trung bình
       const updatedBarbers = await Promise.all(
@@ -76,8 +77,8 @@ function Barber() {
         <div className={cx("info")}>
           <h2>{barber.user_name}</h2>
           <p>Email: {barber.user_email}</p>
-          <p>Giới tính: {barber.user_gender}</p>
-          <p>Điểm: {barber.user_point}</p>
+          <p>Giới tính: {barber.user_gender === "male" ? "Nam" : barber.user_gender === "female" ? "Nữ" : "Khác"}</p>
+          <p>Số điện thoại: {barber.user_phone}</p>
           <p>
             Đánh giá: {barber.avgRating} / 5{" "}
             <span className={cx("stars")}>{renderStars(barber.avgRating)}</span>

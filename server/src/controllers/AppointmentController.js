@@ -29,7 +29,7 @@ class AppointmentController {
     new SuccessResponse({
       message: "User's appointments",
       metadata: await appointmentService.getAppointmentsByUser(
-        req.params.userPhone
+        req.params.userID
       ),
     }).send(res);
   }
