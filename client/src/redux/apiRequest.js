@@ -26,6 +26,9 @@ import {
   findAllUsersStart,
   findAllUsersSuccess,
   findAllUsersFailure,
+  findAllReceptionistStart,
+  findAllReceptionistSuccess,
+  findAllReceptionistFailure,
 } from "./userSlice";
 import {
   uploadAudioFailure,
@@ -465,6 +468,17 @@ export const findAllBarber = async (dispatch) => {
   }
 };
 
+export const findReceptionists = async (dispatch) => {
+  dispatch(findAllReceptionistStart());
+  try {
+    const res = await axios.get(`${REACT_APP_BASE_URL}user/find-receptionist`);
+    dispatch(findAllReceptionistSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    dispatch(findAllReceptionistFailure());
+  }
+};
+
 export const banUser = async (
   accessToken,
   userID,
@@ -619,14 +633,17 @@ export const deleteComment = async (
 
 // Start notification
 
-export const getNotifications = async (ID, dispatch) => {
+export const getNotifications = async (userID, dispatch) => {
   dispatch(getAllNotificationsStart());
   try {
-    const res = await axios.get(`${REACT_APP_BASE_URL}notification/${ID}`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await axios.get(
+      `${REACT_APP_BASE_URL}notification/list/${userID}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     dispatch(getAllNotificationsSuccess(res.data));
     return res.data;
   } catch (error) {
@@ -638,13 +655,12 @@ export const getNotifications = async (ID, dispatch) => {
 export const createNotification = async (
   accessToken,
   notification,
-  dispatch,
-  axiosJWT
+  dispatch
 ) => {
   dispatch(createNotificationStart());
   try {
-    const res = await axiosJWT.post(
-      `${REACT_APP_BASE_URL}notification`,
+    const res = await axios.post(
+      `${REACT_APP_BASE_URL}notification/create`,
       notification,
       {
         headers: {
@@ -654,22 +670,18 @@ export const createNotification = async (
       }
     );
     dispatch(createNotificationSuccess(res.data));
+    return res.data;
   } catch (error) {
     dispatch(createNotificationFailure());
   }
 };
 
-export const markRead = async (
-  accessToken,
-  notification,
-  dispatch,
-  axiosJWT
-) => {
+export const markRead = async (accessToken, notificationID, dispatch) => {
   dispatch(updateNotificationStart());
   try {
-    const res = await axiosJWT.post(
-      `${REACT_APP_BASE_URL}notification/mark-read`,
-      notification,
+    const res = await axios.put(
+      `${REACT_APP_BASE_URL}notification/${notificationID}/mark-read`,
+      {},
       {
         headers: {
           "Content-Type": "application/json",
@@ -678,10 +690,33 @@ export const markRead = async (
       }
     );
     dispatch(updateNotificationSuccess(res.data));
+    return res.data;
   } catch (error) {
     dispatch(updateNotificationFailure());
   }
 };
+
+// export const deleteNotification = async (accessToken, notificationID, dispatch) => {
+//   dispatch(deleteNoti());
+//   try {
+//     await axiosJWT.delete(
+//       `${REACT_APP_BASE_URL}slider/notification/${notificationID}`,
+//       {},
+//       {
+//         headers: {
+//           "Content-Type": "application/json",
+//           authorization: `${accessToken}`,
+//         },
+//       }
+//     );
+//     dispatch(deleteSliderSuccess());
+//   } catch (error) {
+//     dispatch(deleteSliderFailure());
+//     return false;
+//   }
+// };
+
+// End notification
 
 // Start slider
 
@@ -1072,8 +1107,6 @@ export const getAllAppointmentsOfUser = async (userID, dispatch) => {
     dispatch(findAllAppointmentsFailure());
   }
 };
-
-
 
 export const createAppointment = async (appointment, dispatch) => {
   dispatch(createAppointmentStart());

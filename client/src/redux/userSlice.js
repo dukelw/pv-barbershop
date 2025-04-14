@@ -27,6 +27,11 @@ const userSlide = createSlice({
       isFetching: false,
       error: false,
     },
+    findAllReceptionist: {
+      foundReceptionists: null,
+      isFetching: false,
+      error: false,
+    },
     update: {
       isFetching: false,
       error: false,
@@ -103,6 +108,18 @@ const userSlide = createSlice({
       state.findAll.isFetching = false;
       state.findAll.error = true;
     },
+    findAllReceptionistStart: (state) => {
+      state.findAllReceptionist.isFetching = true;
+    },
+    findAllReceptionistSuccess: (state, action) => {
+      state.findAllReceptionist.isFetching = false;
+      state.findAllReceptionist.foundReceptionists = action.payload;
+      state.findAllReceptionist.error = false;
+    },
+    findAllReceptionistFailure: (state) => {
+      state.findAllReceptionist.isFetching = false;
+      state.findAllReceptionist.error = true;
+    },
     updateUserStart: (state) => {
       state.update.isFetching = true;
     },
@@ -156,6 +173,9 @@ export const {
   findAllUsersStart,
   findAllUsersSuccess,
   findAllUsersFailure,
+  findAllReceptionistStart,
+  findAllReceptionistSuccess,
+  findAllReceptionistFailure,
   updateUserStart,
   updateUserSuccess,
   updateUserFailure,

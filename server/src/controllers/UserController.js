@@ -74,6 +74,13 @@ class UserController {
     }).send(res);
   }
 
+  async findReceptionist(req, res, next) {
+    new SuccessResponse({
+      message: "Find receptionist successfully",
+      metadata: await userService.findReceptionist(),
+    }).send(res);
+  }
+
   async findAll(req, res, next) {
     new SuccessResponse({
       message: "Find all barber successfully",
