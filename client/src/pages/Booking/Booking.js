@@ -88,6 +88,25 @@ function Booking() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const fullDateTime = `${formData.date} ${formData.time}`;
+    const selectedTime = moment(fullDateTime, "YYYY-MM-DD HH:mm");
+    const now = moment();
+
+    if (selectedTime.isBefore(now)) {
+      toast.error("Không thể đặt lịch ở thời gian đã qua!");
+      return;
+    }
+
+    const hour = selectedTime.hour();
+    if (hour >= 22) {
+      toast.error("Không thể đặt lịch sau 22 giờ!");
+      return;
+    }
+
+    const endMoment = moment(endTime, "YYYY-MM-DD HH:mm");
+    if (endMoment.hour() >= 22) {
+      toast.error("Không thể đặt lịch nếu thời gian kết thúc sau 22 giờ!");
+      return;
+    }
 
     const appointment = {
       customer: currentUser ? userID : null,
@@ -228,11 +247,23 @@ function Booking() {
             required
           >
             <option value="">Chọn giờ</option>
-            {availableTimes.map((time, index) => (
-              <option key={index} value={time}>
-                {time}
-              </option>
-            ))}
+            {availableTimes
+              .filter((time) => {
+                const selectedDate = formData.date;
+                if (!selectedDate) return true;
+
+                const fullDateTime = `${selectedDate} ${time}`;
+                const momentTime = moment(fullDateTime, "YYYY-MM-DD HH:mm");
+
+                const now = moment();
+
+                return momentTime.isSameOrAfter(now) && momentTime.hour() < 22;
+              })
+              .map((time, index) => (
+                <option key={index} value={time}>
+                  {time}
+                </option>
+              ))}
           </select>
         </Box>
         <Box mb={2} className={cx("box")}>
