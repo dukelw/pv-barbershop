@@ -11,6 +11,7 @@ router.post("/signup", asyncHandler(userController.signup));
 router.post("/create-account", asyncHandler(userController.createAccount));
 router.get("/find/:id", asyncHandler(userController.find));
 router.get("/find-barber", asyncHandler(userController.findAllFreeBarber));
+router.get("/find-receptionist", asyncHandler(userController.findReceptionist));
 router.get("/barber", asyncHandler(userController.findAllBarber));
 router.get("/", asyncHandler(userController.findAll));
 router.delete("/:id/:userID", asyncHandler(userController.delete));

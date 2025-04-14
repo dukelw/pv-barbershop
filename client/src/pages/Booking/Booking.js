@@ -12,7 +12,9 @@ import classNames from "classnames/bind";
 import styles from "./Booking.module.scss";
 import {
   createAppointment,
+  createNotification,
   findAllFreeBarber,
+  findReceptionists,
   getAllServices,
 } from "../../redux/apiRequest";
 import { useDispatch, useSelector } from "react-redux";
@@ -31,6 +33,7 @@ function Booking() {
   const [allServices, setServices] = useState([]);
   const [endTime, setEndTime] = useState("");
   const [barbers, setBarbers] = useState([]);
+  const [receptionists, setReceptionists] = useState([]);
   const [formData, setFormData] = useState({
     phone: "",
     name: "",
@@ -85,11 +88,6 @@ function Booking() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const fullDateTime = `${formData.date} ${formData.time}`;
-    console.log("Form Data Submitted: ", {
-      ...formData,
-      fullDateTime,
-      endTime,
-    });
 
     const appointment = {
       customer: currentUser ? userID : null,
@@ -102,7 +100,26 @@ function Booking() {
       end: endTime,
     };
     const data = await createAppointment(appointment, dispatch);
+
     if (data) {
+      for (const r of receptionists) {
+        await createNotification(
+          accessToken,
+          {
+            user: r._id,
+            title: "New Appointment",
+            message: `Customer ${
+              formData.name
+            } has booked an appointment at ${moment(fullDateTime).format(
+              "HH:mm DD/MM/YYYY"
+            )}`,
+            data: data.metadata,
+            is_read: false,
+          },
+          dispatch
+        );
+      }
+
       toast.success("Đặt lịch thành công! Vào Lịch sử đặt lịch để kiểm tra.");
 
       setFormData({
@@ -126,7 +143,7 @@ function Booking() {
   };
 
   const handleGetBarber = async () => {
-    if (formData.date && formData.time && formData.services.length != 0) {
+    if (formData.date && formData.time && formData.services.length !== 0) {
       const fullDateTime = `${formData.date} ${formData.time}`;
       const startMoment = moment(fullDateTime, "YYYY-MM-DD HH:mm");
       const data = await findAllFreeBarber("", startMoment, endTime, dispatch);
@@ -137,9 +154,16 @@ function Booking() {
     }
   };
 
+  const handleGetReceptionist = async () => {
+    const data = await findReceptionists(dispatch);
+    console.log("Receptionist", data);
+    setReceptionists(data.metadata);
+  };
+
   useEffect(() => {
     handleGetService();
     handleGetBarber();
+    handleGetReceptionist();
   }, []);
 
   useEffect(() => {

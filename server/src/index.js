@@ -1,32 +1,52 @@
 require("dotenv").config();
 const cors = require("cors");
 const express = require("express");
+const http = require("http");
+const { Server } = require("socket.io");
 const route = require("./routes");
+
 const app = express();
 const PORT = process.env.PORT || 4000;
+// Create HTTP server
+const server = http.createServer(app);
+
+// Init Socket.IO
+const io = new Server(server, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"],
+  },
+});
+
+app.set("io", io);
+
+io.on("connection", (socket) => {
+  console.log("🔌 A user connected:", socket.id);
+
+  socket.on("join_room", (userId) => {
+    socket.join(userId);
+    console.log(`✅ User ${userId} joined room ${userId}`);
+  });
+
+  socket.on("disconnect", () => {
+    console.log("❌ A user disconnected:", socket.id);
+  });
+});
 
 app.use(cors());
-
-// Init middlewares
 app.use(express.json());
-app.use(
-  express.urlencoded({
-    extended: true,
-  })
-);
+app.use(express.urlencoded({ extended: true }));
 
-// Init db
 require("./databases/connect-mongodb");
 
-// Use routes
 route(app);
 
-const runningServer = app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+const runningServer = server.listen(PORT, () => {
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
 
 process.on("SIGINT", () => {
-  runningServer.close(() => console.log("Exit server express"));
+  runningServer.close(() => console.log("🛑 Exit server express"));
 });
 
-module.exports = app;
+module.exports = { app, io };

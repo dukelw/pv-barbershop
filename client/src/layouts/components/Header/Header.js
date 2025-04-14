@@ -3,9 +3,30 @@ import classNames from "classnames/bind";
 import styles from "./Header.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { createAxios } from "../../../createAxios";
-import { useState } from "react";
-import { Avatar, Menu, MenuItem, IconButton } from "@mui/material";
-import { logout } from "../../../redux/apiRequest";
+import { useEffect, useState } from "react";
+import {
+  Avatar,
+  Menu,
+  MenuItem,
+  IconButton,
+  Tooltip,
+  Badge,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemSecondaryAction,
+  Button,
+  Typography,
+  Popover,
+} from "@mui/material";
+import { Notifications, Delete } from "@mui/icons-material";
+import {
+  getNotifications,
+  logout,
+  markRead,
+  // deleteNotification,
+} from "../../../redux/apiRequest";
+import socket from "../../../hooks/useSocket";
 
 const cx = classNames.bind(styles);
 function Header() {
@@ -16,20 +37,56 @@ function Header() {
   const navigate = useNavigate();
   const axiosJWT = createAxios(currentUser);
 
+  const [unreadCount, setUnreadCount] = useState(0);
+  const [notifications, setNotifications] = useState([]);
+  const [anchorNotif, setAnchorNotif] = useState(null);
+
   const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
+  const openMenu = Boolean(anchorEl);
+  const openNotif = Boolean(anchorNotif);
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+  const handleNotifClick = (event) => setAnchorNotif(event.currentTarget);
+  const handleNotifClose = () => setAnchorNotif(null);
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  const handleAvatarClick = (event) => setAnchorEl(event.currentTarget);
+  const handleAvatarClose = () => setAnchorEl(null);
 
   const handleLogout = async () => {
     await logout(accessToken, userID, dispatch, navigate, axiosJWT);
   };
+
+  const loadNotifications = async () => {
+    const res = await getNotifications(userID, dispatch);
+    if (res?.data) {
+      setNotifications(res.data);
+      setUnreadCount(res.data.filter((n) => !n.isRead).length);
+    }
+  };
+
+  const handleMarkRead = async (id) => {
+    await markRead(id, dispatch);
+    loadNotifications();
+  };
+
+  const handleDelete = async (id) => {
+    // await deleteNotification(id, dispatch);
+    alert("Delete", id);
+    loadNotifications();
+  };
+
+  useEffect(() => {
+    if (!userID) return;
+
+    socket.emit("join_room", userID);
+    loadNotifications();
+
+    socket.on("new_notification", () => {
+      loadNotifications();
+    });
+
+    return () => socket.off("new_notification");
+  }, [userID]);
+
   return (
     <header className={cx("container")}>
       <div className={cx("left-nav")}>
@@ -43,6 +100,7 @@ function Header() {
           <Link to={"/about"}>Câu chuyện</Link>
         </li>
       </div>
+
       <div className={cx("logo")}>
         <Link to={"/"}>
           <img
@@ -51,77 +109,148 @@ function Header() {
           />
         </Link>
       </div>
+
       <div className={cx("right-nav")}>
-        {currentUser ? (
+        {currentUser && (
           <li style={{ visibility: "hidden" }}>
             <Link to={"/"}>Khoảng trắng cân</Link>
           </li>
-        ) : (
-          <></>
         )}
         <li>
           <Link to={"/barbers"}>Nhân sự</Link>
         </li>
-        {currentUser ? (
-          <div>
-            <IconButton onClick={handleClick}>
+
+        {currentUser && (
+          <>
+            <li>
+              <Tooltip title="Thông báo">
+                <IconButton onClick={handleNotifClick}>
+                  <Badge badgeContent={unreadCount} color="error">
+                    <Notifications sx={{ color: "var(--white)" }} />
+                  </Badge>
+                </IconButton>
+              </Tooltip>
+            </li>
+
+            <Popover
+              open={openNotif}
+              anchorEl={anchorNotif}
+              onClose={handleNotifClose}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "center",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "center",
+              }}
+            >
+              <List sx={{ width: 350, maxHeight: 400, overflowY: "auto" }}>
+                {notifications.length === 0 ? (
+                  <ListItem>
+                    <ListItemText
+                      style={{ color: "var(--black)" }}
+                      primary="Không có thông báo"
+                    />
+                  </ListItem>
+                ) : (
+                  notifications.map((noti) => (
+                    <ListItem
+                      key={noti._id}
+                      sx={{
+                        backgroundColor: noti.isRead ? "#f5f5f5" : "#e3f2fd",
+                      }}
+                    >
+                      <ListItemText
+                        primary={noti.title}
+                        secondary={noti.message}
+                      />
+                      <ListItemSecondaryAction>
+                        {!noti.isRead && (
+                          <Button
+                            size="small"
+                            onClick={() => handleMarkRead(noti._id)}
+                          >
+                            Read
+                          </Button>
+                        )}
+                        <IconButton
+                          edge="end"
+                          onClick={() => handleDelete(noti._id)}
+                        >
+                          <Delete />
+                        </IconButton>
+                      </ListItemSecondaryAction>
+                    </ListItem>
+                  ))
+                )}
+              </List>
+            </Popover>
+
+            <IconButton onClick={handleAvatarClick}>
               <Avatar
                 src={currentUser?.metadata.user.user_avatar}
                 alt="User Avatar"
               />
             </IconButton>
-            <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-              <MenuItem onClick={handleClose}>
+            <Menu
+              anchorEl={anchorEl}
+              open={openMenu}
+              onClose={handleAvatarClose}
+            >
+              <MenuItem onClick={handleAvatarClose}>
                 <Link
-                  to="/my-bookings"
                   style={{ textDecoration: "none", color: "inherit" }}
+                  to="/my-bookings"
                 >
                   Xem lịch cắt tóc
                 </Link>
               </MenuItem>
-              <MenuItem onClick={handleClose}>
+              <MenuItem onClick={handleAvatarClose}>
                 <Link
-                  to="/gifts"
                   style={{ textDecoration: "none", color: "inherit" }}
+                  to="/gifts"
                 >
                   Đổi thưởng
                 </Link>
               </MenuItem>
-              <MenuItem onClick={handleClose}>
+              <MenuItem onClick={handleAvatarClose}>
                 <Link
-                  to={`/account/${userID}`}
                   style={{ textDecoration: "none", color: "inherit" }}
+                  to={`/account/${userID}`}
                 >
                   Thông tin tài khoản
                 </Link>
               </MenuItem>
-              <MenuItem onClick={handleClose}>
+              <MenuItem onClick={handleAvatarClose}>
                 <Link
-                  to={`/history/${userID}`}
                   style={{ textDecoration: "none", color: "inherit" }}
+                  to={`/history/${userID}`}
                 >
                   Lịch sử đặt lịch
                 </Link>
               </MenuItem>
-              <MenuItem onClick={handleClose}>
+              <MenuItem onClick={handleAvatarClose}>
                 <Link
-                  to={`/change-password/${userID}`}
                   style={{ textDecoration: "none", color: "inherit" }}
+                  to={`/change-password/${userID}`}
                 >
                   Đổi mật khẩu
                 </Link>
               </MenuItem>
               <MenuItem
                 onClick={() => {
-                  handleClose();
+                  handleAvatarClose();
                   handleLogout();
                 }}
               >
                 Đăng xuất
               </MenuItem>
             </Menu>
-          </div>
-        ) : (
+          </>
+        )}
+
+        {!currentUser && (
           <>
             <li>
               <Link to={"/signin"}>Đăng nhập</Link>

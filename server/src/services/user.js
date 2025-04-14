@@ -209,6 +209,14 @@ class UserService {
     return foundUsers;
   };
 
+  findReceptionist = async () => {
+    let foundUsers;
+    const query = { user_role: "receptionist" };
+
+    foundUsers = await UserModel.find(query);
+    return foundUsers;
+  };
+
   findAllFreeBarber = async (keySearch, timeStart, timeEnd) => {
     let foundUsers;
     const query = { user_role: "staff" };
