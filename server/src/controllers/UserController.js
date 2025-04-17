@@ -123,6 +123,13 @@ class UserController {
     }).send(res);
   }
 
+  async restorePassword(req, res, next) {
+    new SuccessResponse({
+      message: "Change password successfully",
+      metadata: await userService.restorePassword(req.body),
+    }).send(res);
+  }
+
   async createAccount(req, res, next) {
     new SuccessResponse({
       message: "Change password successfully",

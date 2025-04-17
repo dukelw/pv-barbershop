@@ -329,6 +329,23 @@ class UserService {
     return updatedUser.modifiedCount;
   };
 
+  restorePassword = async ({ email, new_password }) => {
+    // 1. Check email
+    const foundUser = await UserModel.findOne({ user_email: email });
+    if (!foundUser) throw new BadRequestError("User has not registered");
+
+    // 2. Hash password
+    const hashedPassword = await bcrypt.hash(new_password, 10);
+
+    // 3. Change password
+    const updatedUser = await UserModel.findOneAndUpdate(
+      { user_email: email },
+      { user_password: hashedPassword }
+    );
+
+    return updatedUser.modifiedCount;
+  };
+
   delete = async ({ deleteID, userID }) => {
     const foundUser = await UserModel.findById(userID);
     if (
