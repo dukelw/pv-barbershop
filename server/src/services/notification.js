@@ -28,6 +28,10 @@ class NotificationService {
   async deleteNotification(id) {
     return await NotificationModel.deleteOne({ _id: id });
   }
+
+  async deleteAllNotification(id) {
+    return await NotificationModel.deleteMany({ user: id });
+  }
 }
 
 module.exports = new NotificationService();
