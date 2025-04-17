@@ -17,9 +17,33 @@ import {
 } from "@mui/icons-material";
 import styles from "./Footer.module.scss";
 import classNames from "classnames/bind";
+import { useState } from "react";
+import { toast } from "react-toastify";
+import axios from "axios";
+import { contactViaEmail } from "../../../redux/apiRequest";
 const cx = classNames.bind(styles);
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSendContact = async () => {
+    if (!email || !message) {
+      toast.error("Vui lòng nhập đầy đủ email và nội dung");
+      return;
+    }
+
+    try {
+      await contactViaEmail({ email, message });
+      toast.success("Đã gửi thành công!");
+      setEmail("");
+      setMessage("");
+    } catch (err) {
+      console.error(err);
+      toast.error("Gửi thất bại, vui lòng thử lại sau!");
+    }
+  };
+
   return (
     <Box
       sx={{
@@ -66,12 +90,25 @@ const Footer = () => {
               label="Email của bạn"
               variant="filled"
               sx={{ backgroundColor: "white", borderRadius: 1, mt: 2 }}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <TextField
+              fullWidth
+              label="Nội dung"
+              multiline
+              minRows={4}
+              variant="filled"
+              sx={{ backgroundColor: "white", borderRadius: 1, mt: 2 }}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             />
             <Button
               fullWidth
               variant="contained"
               sx={{ mt: 2 }}
               style={{ backgroundColor: "var(--white)", color: "var(--dark)" }}
+              onClick={handleSendContact}
             >
               Gửi
             </Button>
@@ -111,7 +148,7 @@ const Footer = () => {
                 "https://res.cloudinary.com/vinhisreal/image/upload/v1744529239/pvbarbershop/1744529165582-480587644_1224137549712776_6826957666366957282_n.jpg.jpg",
                 "https://res.cloudinary.com/vinhisreal/image/upload/v1744529769/pvbarbershop/1744529694331-363793504_1908215872893548_2929361378794883358_n.jpg.jpg",
                 "https://res.cloudinary.com/vinhisreal/image/upload/v1744530956/pvbarbershop/1744530886121-5.jpg.jpg",
-                "https://res.cloudinary.com/vinhisreal/image/upload/v1744530552/pvbarbershop/1744530482045-459311904_1545239976097211_843266163592352690_n.jpg.jpg"
+                "https://res.cloudinary.com/vinhisreal/image/upload/v1744530552/pvbarbershop/1744530482045-459311904_1545239976097211_843266163592352690_n.jpg.jpg",
               ].map((src, index) => (
                 <Box
                   key={index}

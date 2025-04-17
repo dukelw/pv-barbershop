@@ -43,6 +43,9 @@ var userSchema = new Schema(
       type: Number,
       default: 0,
     },
+    deletedBy: {
+      type: String,
+    },
   },
   {
     timestamps: true,

@@ -232,14 +232,6 @@ function MainHeader() {
               <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
                 <MenuItem onClick={handleClose}>
                   <Link
-                    to="/my-bookings"
-                    style={{ textDecoration: "none", color: "inherit" }}
-                  >
-                    Xem lịch cắt tóc
-                  </Link>
-                </MenuItem>
-                <MenuItem onClick={handleClose}>
-                  <Link
                     to="/gifts"
                     style={{ textDecoration: "none", color: "inherit" }}
                   >

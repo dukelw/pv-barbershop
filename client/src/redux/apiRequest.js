@@ -1846,3 +1846,19 @@ export const deleteDiscount = async (accessToken, ID, dispatch) => {
 };
 
 // End discount
+
+// Start contact
+
+export const contactViaEmail = async (data) => {
+  try {
+    await axios.post(`${REACT_APP_BASE_URL}contact`, data, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  } catch (error) {
+    console.error("Failed to send contact email:", error);
+  }
+};
+
+// End contact

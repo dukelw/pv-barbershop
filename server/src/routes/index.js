@@ -12,6 +12,7 @@ const statisticRouter = require("./statistic");
 const giftRouter = require("./gift");
 const discountRouter = require("./discount");
 const notificationRouter = require("./notification");
+const contactRouter = require("./contact");
 
 function route(app) {
   app.use("/api/v1/user/", userRouter);
@@ -27,6 +28,7 @@ function route(app) {
   app.use("/api/v1/gift/", giftRouter);
   app.use("/api/v1/notification/", notificationRouter);
   app.use("/api/v1/discount/", discountRouter);
+  app.use("/api/v1/contact/", contactRouter);
   app.use("/", siteRouter);
 }
 
