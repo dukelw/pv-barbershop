@@ -74,12 +74,6 @@ function Header() {
     loadNotifications();
   };
 
-  const handleDelete = async (id) => {
-    // await deleteNotification(id, dispatch);
-    alert("Delete", id);
-    loadNotifications();
-  };
-
   useEffect(() => {
     if (!userID) return;
 
@@ -233,14 +227,6 @@ function Header() {
               open={openMenu}
               onClose={handleAvatarClose}
             >
-              <MenuItem onClick={handleAvatarClose}>
-                <Link
-                  style={{ textDecoration: "none", color: "inherit" }}
-                  to="/my-bookings"
-                >
-                  Xem lịch cắt tóc
-                </Link>
-              </MenuItem>
               <MenuItem onClick={handleAvatarClose}>
                 <Link
                   style={{ textDecoration: "none", color: "inherit" }}
