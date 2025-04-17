@@ -31,7 +31,7 @@ const publicRoutes = [
   { path: config.routes.account, component: Account, layout: MainLayout },
   { path: config.routes.barber, component: Barber, layout: MainLayout },
   { path: config.routes.service, component: Service, layout: MainLayout },
-  {path: config.routes.history, component: History,layout: MainLayout},
+  { path: config.routes.history, component: History,layout: MainLayout },
   {
     path: config.routes.gift,
     component: Gift,
