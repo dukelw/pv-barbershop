@@ -1,0 +1,424 @@
+[{
+  "_id": {
+    "$oid": "67f77c79db52268f0e5cc992"
+  },
+  "customer": "Duke",
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "6615a75c83e90df1bcb91234"
+    },
+    {
+      "$oid": "6615a76d83e90df1bcb95678"
+    }
+  ],
+  "rating": 5,
+  "comment": "Barber cắt rất đẹp và vui tính!",
+  "createdAt": {
+    "$date": "2025-04-10T08:08:25.859Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-10T08:08:25.859Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f77e065b47ca7bf241eead"
+  },
+  "customer": "Lewis",
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    },
+    {
+      "$oid": "67f0024636accc91b1163380"
+    }
+  ],
+  "rating": 5,
+  "comment": "Barber cắt rất đẹp và vui tính!",
+  "createdAt": {
+    "$date": "2025-04-10T08:15:02.879Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-10T08:15:02.879Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f7866522bbd17e2382a962"
+  },
+  "customer": "The Vi",
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    }
+  ],
+  "rating": 2,
+  "comment": "Barber rất vui tính!",
+  "createdAt": {
+    "$date": "2025-04-10T08:50:45.226Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-10T08:50:45.226Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f79b3d365b5de45c239244"
+  },
+  "customer": "Duke Lewis",
+  "barber": {
+    "$oid": "67f3e700c64356388d2db947"
+  },
+  "service": [
+    {
+      "$oid": "67f0051136accc91b1163397"
+    }
+  ],
+  "rating": 4,
+  "comment": "She likes Haibara Ai.",
+  "createdAt": {
+    "$date": "2025-04-10T10:19:41.470Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-10T10:19:41.470Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f8df915725d0394afbd176"
+  },
+  "customer": "Nguyen Bao Dang",
+  "barber": {
+    "$oid": "67f585c104e16a605f7b0013"
+  },
+  "service": [
+    {
+      "$oid": "67f0024636accc91b1163380"
+    }
+  ],
+  "rating": 4,
+  "comment": "Good barber!",
+  "createdAt": {
+    "$date": "2025-04-11T09:23:29.392Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-11T09:23:29.392Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f8e0525725d0394afbd1a3"
+  },
+  "customer": "Nguyen Long",
+  "barber": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "service": [
+    {
+      "$oid": "67f003c736accc91b116338f"
+    }
+  ],
+  "rating": 4,
+  "comment": "",
+  "createdAt": {
+    "$date": "2025-04-11T09:26:42.926Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-11T09:26:42.926Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f8e11a5725d0394afbd1e3"
+  },
+  "customer": "Le Phan The Vi",
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f004e236accc91b1163395"
+    }
+  ],
+  "rating": 4,
+  "comment": "Good barber",
+  "createdAt": {
+    "$date": "2025-04-11T09:30:02.156Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-11T09:30:02.156Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f8e2165725d0394afbd220"
+  },
+  "customer": "Em Vi",
+  "barber": {
+    "$oid": "67f3e541c64356388d2db8e3"
+  },
+  "service": [
+    {
+      "$oid": "67f0036336accc91b116338d"
+    },
+    {
+      "$oid": "67f003c736accc91b116338f"
+    },
+    {
+      "$oid": "67f0040136accc91b1163391"
+    },
+    {
+      "$oid": "67f004a936accc91b1163393"
+    },
+    {
+      "$oid": "67f004e236accc91b1163395"
+    },
+    {
+      "$oid": "67f0051136accc91b1163397"
+    }
+  ],
+  "rating": 4,
+  "comment": "",
+  "createdAt": {
+    "$date": "2025-04-11T09:34:14.381Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-11T09:34:14.381Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fa7145a6565bf048a7f357"
+  },
+  "customer": "User",
+  "barber": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "service": [
+    {
+      "$oid": "67f0040136accc91b1163391"
+    },
+    {
+      "$oid": "67f004a936accc91b1163393"
+    }
+  ],
+  "rating": 4,
+  "comment": "Thank you, rất đẹp",
+  "createdAt": {
+    "$date": "2025-04-12T13:57:25.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-12T13:57:25.648Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fa71a5a6565bf048a7f39b"
+  },
+  "customer": "Lewis",
+  "barber": {
+    "$oid": "67f3e541c64356388d2db8e3"
+  },
+  "service": [
+    {
+      "$oid": "67f0033236accc91b116338b"
+    },
+    {
+      "$oid": "67f0036336accc91b116338d"
+    }
+  ],
+  "rating": 5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2025-04-12T13:59:01.925Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-12T13:59:01.925Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fa7d2b52e4283ecee13f48"
+  },
+  "customer": "Lewis",
+  "barber": {
+    "$oid": "67f3e700c64356388d2db947"
+  },
+  "service": [
+    {
+      "$oid": "67f0051136accc91b1163397"
+    }
+  ],
+  "rating": 5,
+  "comment": "Good barber man. Thank you.",
+  "createdAt": {
+    "$date": "2025-04-12T14:48:11.115Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-12T14:48:11.115Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd2f76abece3ea3a15d09f"
+  },
+  "customer": "Lewis",
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f0026236accc91b1163382"
+    }
+  ],
+  "rating": 5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2025-04-14T15:53:26.026Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T15:53:26.026Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd3323abece3ea3a15d166"
+  },
+  "customer": "Lewis",
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    }
+  ],
+  "rating": 5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2025-04-14T16:09:07.015Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T16:09:07.015Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd363c2f4aca11149f2ba8"
+  },
+  "customer": "The Vi",
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f0033236accc91b116338b"
+    }
+  ],
+  "rating": 5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2025-04-14T16:22:20.783Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T16:22:20.783Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fe43db3b9420a5326d25f9"
+  },
+  "customer": "Lewis",
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f0026236accc91b1163382"
+    },
+    {
+      "$oid": "67f0033236accc91b116338b"
+    }
+  ],
+  "rating": 5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2025-04-15T11:32:43.709Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-15T11:32:43.709Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6800b61460da3abc4f79d9e3"
+  },
+  "customer": "The Vi",
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f0036336accc91b116338d"
+    }
+  ],
+  "rating": 5,
+  "comment": "Tho cat oke",
+  "createdAt": {
+    "$date": "2025-04-17T08:04:36.125Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-17T08:04:36.125Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6800bcb9fa4a59e426c29e70"
+  },
+  "customer": "Em Vĩ",
+  "barber": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "service": [
+    {
+      "$oid": "67f0051136accc91b1163397"
+    },
+    {
+      "$oid": "67f004e236accc91b1163395"
+    }
+  ],
+  "rating": 5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2025-04-17T08:32:57.764Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-17T08:32:57.764Z"
+  },
+  "__v": 0
+}]
