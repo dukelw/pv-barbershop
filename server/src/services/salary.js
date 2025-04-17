@@ -31,6 +31,7 @@ class SalaryService {
             user_name,
             role: user_role,
             salary: 40000000,
+            user_avatar: user_avatar,
           });
         } else {
           // Lấy các appointment đã hoàn thành trong tháng
