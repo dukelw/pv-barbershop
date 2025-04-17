@@ -29,7 +29,10 @@ class InvoiceService {
     if (populate) {
       return await InvoiceModel.find()
         .sort({ createdAt: -1 })
-        .populate("appointment");
+        .populate({
+          path: "appointment",
+          populate: [{ path: "customer" }, { path: "service" }],
+        });
     }
     return await InvoiceModel.find().sort({ createdAt: -1 });
   }

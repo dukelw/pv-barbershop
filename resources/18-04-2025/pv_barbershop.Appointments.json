@@ -1,0 +1,1864 @@
+[{
+  "_id": {
+    "$oid": "67f21f4652d86b9aae93dd52"
+  },
+  "customer": null,
+  "customer_name": "Duke",
+  "phone_number": 345444190,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    },
+    {
+      "$oid": "67f0024636accc91b1163380"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-04T03:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-04T04:05:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "No mention.",
+  "createdAt": {
+    "$date": "2025-04-06T06:29:26.963Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T07:01:51.707Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2220933e982184b3c6196"
+  },
+  "customer": {
+    "$oid": "67ee5299beb270d6ab2def8b"
+  },
+  "customer_name": "King Crimson",
+  "phone_number": 345444190,
+  "barber": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    },
+    {
+      "$oid": "67f0024636accc91b1163380"
+    },
+    {
+      "$oid": "67f0026236accc91b1163382"
+    },
+    {
+      "$oid": "67f0033236accc91b116338b"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-04T01:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-04T03:55:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "Hello",
+  "createdAt": {
+    "$date": "2025-04-06T06:41:13.556Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T08:16:06.026Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2345594b4c17c63072e55"
+  },
+  "customer": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "customer_name": "Lewis",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    },
+    {
+      "$oid": "67f0024636accc91b1163380"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-09T01:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-09T02:05:00.000Z"
+  },
+  "status": "completed",
+  "notes": "Note",
+  "createdAt": {
+    "$date": "2025-04-06T07:59:17.847Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-08T08:22:49.409Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744019287/schedules/1744019284440-image_processing20230602-7-ruxxod.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "67f3a3ddd15f8b5e2cdcfaf6"
+  },
+  "customer": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "customer_name": "The Vi",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    },
+    {
+      "$oid": "67f0024636accc91b1163380"
+    },
+    {
+      "$oid": "67f0026236accc91b1163382"
+    },
+    {
+      "$oid": "67f0033236accc91b116338b"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-12T05:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-12T07:55:00.000Z"
+  },
+  "status": "completed",
+  "notes": "Cắt cho cẩn thận nhé.",
+  "createdAt": {
+    "$date": "2025-04-07T10:07:25.264Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-08T08:14:51.007Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744021030/schedules/1744021027295-91835b04-dd48-4ef2-84fb-af91fc337b23.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "67f3a7a504d84fec73b698c4"
+  },
+  "customer": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "customer_name": "Dang Khoa",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f0026236accc91b1163382"
+    },
+    {
+      "$oid": "67f004a936accc91b1163393"
+    },
+    {
+      "$oid": "67f004e236accc91b1163395"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-22T05:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-22T06:45:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "Vinh làm mới chịu",
+  "createdAt": {
+    "$date": "2025-04-07T10:23:33.524Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-07T10:24:07.055Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f3de4dc64356388d2db854"
+  },
+  "customer": {
+    "$oid": "67ee5299beb270d6ab2def8b"
+  },
+  "customer_name": "Lê Phan Thảo Anh",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    },
+    {
+      "$oid": "67f0024636accc91b1163380"
+    },
+    {
+      "$oid": "67f0026236accc91b1163382"
+    },
+    {
+      "$oid": "67f0033236accc91b116338b"
+    },
+    {
+      "$oid": "67f0036336accc91b116338d"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-09T01:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-09T05:10:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-07T14:16:45.170Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-08T20:14:38.908Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f3e380c64356388d2db8c1"
+  },
+  "customer": {
+    "$oid": "67ee5299beb270d6ab2def8b"
+  },
+  "customer_name": "Lê Phan Thế Vĩ",
+  "phone_number": 345444190,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    },
+    {
+      "$oid": "67f0024636accc91b1163380"
+    },
+    {
+      "$oid": "67f004e236accc91b1163395"
+    },
+    {
+      "$oid": "67f0051136accc91b1163397"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-09T05:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-09T07:20:00.000Z"
+  },
+  "status": "pending",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-07T14:38:56.408Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-07T14:38:56.408Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f3e5a7c64356388d2db8fa"
+  },
+  "customer": null,
+  "customer_name": "Nguyen Dang Khoa",
+  "phone_number": 708283732,
+  "barber": {
+    "$oid": "67f3e541c64356388d2db8e3"
+  },
+  "service": [
+    {
+      "$oid": "67f0024636accc91b1163380"
+    },
+    {
+      "$oid": "67f0026236accc91b1163382"
+    },
+    {
+      "$oid": "67f0036336accc91b116338d"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-09T07:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-09T09:20:00.000Z"
+  },
+  "status": "pending",
+  "notes": "Thợ này có con tên Sol à?",
+  "createdAt": {
+    "$date": "2025-04-07T14:48:07.385Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-07T14:48:07.385Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f3e61ec64356388d2db915"
+  },
+  "customer": {
+    "$oid": "67ee5299beb270d6ab2def8b"
+  },
+  "customer_name": "Đỗ Quyên",
+  "phone_number": 345444190,
+  "barber": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "service": [
+    {
+      "$oid": "67f0024636accc91b1163380"
+    },
+    {
+      "$oid": "67f0026236accc91b1163382"
+    },
+    {
+      "$oid": "67f003c736accc91b116338f"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-09T07:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-09T09:05:00.000Z"
+  },
+  "status": "pending",
+  "notes": "Cắt tóc cho chồng",
+  "createdAt": {
+    "$date": "2025-04-07T14:50:06.043Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-07T14:50:06.043Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f3e68dc64356388d2db926"
+  },
+  "customer": {
+    "$oid": "67ee5299beb270d6ab2def8b"
+  },
+  "customer_name": "Đỗ Đạt",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67f3e541c64356388d2db8e3"
+  },
+  "service": [
+    {
+      "$oid": "67f0024636accc91b1163380"
+    },
+    {
+      "$oid": "67f0026236accc91b1163382"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-09T01:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-09T02:05:00.000Z"
+  },
+  "status": "completed",
+  "notes": "Anh này có vợ tên Thiên An à.",
+  "createdAt": {
+    "$date": "2025-04-07T14:51:57.538Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-08T20:24:09.706Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744039853/schedules/1744039848934-image_processing20230602-7-ruxxod.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "67f3e6e5c64356388d2db941"
+  },
+  "customer": {
+    "$oid": "67ee5299beb270d6ab2def8b"
+  },
+  "customer_name": "Tủ lạnh Samsung",
+  "phone_number": 456152783,
+  "barber": {
+    "$oid": "67f3e700c64356388d2db947"
+  },
+  "service": [
+    {
+      "$oid": "67f0033236accc91b116338b"
+    },
+    {
+      "$oid": "67f0036336accc91b116338d"
+    },
+    {
+      "$oid": "67f0051136accc91b1163397"
+    },
+    {
+      "$oid": "67f004e236accc91b1163395"
+    },
+    {
+      "$oid": "67f004a936accc91b1163393"
+    },
+    {
+      "$oid": "67f0040136accc91b1163391"
+    },
+    {
+      "$oid": "67f003c736accc91b116338f"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-09T07:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-09T13:05:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "Hớt tóc cạnh tranh thằng Panasonic",
+  "createdAt": {
+    "$date": "2025-04-07T14:53:25.827Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-07T14:55:38.598Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f5868504e16a605f7b0050"
+  },
+  "customer": {
+    "$oid": "67ee5299beb270d6ab2def8b"
+  },
+  "customer_name": "Duke Lewis",
+  "phone_number": 123456788,
+  "barber": {
+    "$oid": "67f585c104e16a605f7b0013"
+  },
+  "service": [
+    {
+      "$oid": "67f004a936accc91b1163393"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-09T03:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-09T03:30:00.000Z"
+  },
+  "status": "completed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-08T20:26:45.609Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-08T20:28:38.678Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744144114/schedules/1744144110857-image_processing20230602-7-ruxxod.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "67f5877904e16a605f7b00ae"
+  },
+  "customer": {
+    "$oid": "67ee5299beb270d6ab2def8b"
+  },
+  "customer_name": "Thế Vĩ",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67f3e541c64356388d2db8e3"
+  },
+  "service": [
+    {
+      "$oid": "67f004e236accc91b1163395"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-09T11:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-09T11:30:00.000Z"
+  },
+  "status": "completed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-08T20:30:49.321Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-09T15:05:06.235Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744211101/schedules/1744211099065-Screenshot%202025-04-09%20114755.png.png"
+},
+{
+  "_id": {
+    "$oid": "67f58c6004e16a605f7b01c3"
+  },
+  "customer": {
+    "$oid": "67ee5299beb270d6ab2def8b"
+  },
+  "customer_name": "Thế Vĩ",
+  "phone_number": 345444190,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-17T03:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-17T03:45:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-08T20:51:44.242Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T08:10:24.623Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f58c9f04e16a605f7b01dc"
+  },
+  "customer": {
+    "$oid": "67ee5299beb270d6ab2def8b"
+  },
+  "customer_name": "Thế Vĩ",
+  "phone_number": 345444190,
+  "barber": null,
+  "service": [
+    {
+      "$oid": "67f0051136accc91b1163397"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-09T11:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-09T11:45:00.000Z"
+  },
+  "status": "pending",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-08T20:52:47.789Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-08T20:52:47.789Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f79b0b365b5de45c239220"
+  },
+  "customer": {
+    "$oid": "67ee5299beb270d6ab2def8b"
+  },
+  "customer_name": "Duke Lewis",
+  "phone_number": 345444190,
+  "barber": {
+    "$oid": "67f3e700c64356388d2db947"
+  },
+  "service": [
+    {
+      "$oid": "67f0051136accc91b1163397"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-12T03:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-12T03:45:00.000Z"
+  },
+  "status": "completed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-10T10:18:51.988Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-10T10:19:22.442Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744280357/schedules/1744280353430-image_processing20230602-7-ruxxod.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "67f8df2a5725d0394afbd14d"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "Nguyen Bao Dang",
+  "phone_number": 345444190,
+  "barber": {
+    "$oid": "67f585c104e16a605f7b0013"
+  },
+  "service": [
+    {
+      "$oid": "67f0024636accc91b1163380"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-11T11:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-11T11:20:00.000Z"
+  },
+  "status": "completed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-11T09:21:46.219Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-11T09:22:19.225Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744363337/schedules/1744363333081-image_processing20230602-7-ruxxod.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "67f8e0095725d0394afbd184"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "Nguyen Long",
+  "phone_number": 345444190,
+  "barber": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "service": [
+    {
+      "$oid": "67f003c736accc91b116338f"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-11T11:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-11T12:00:00.000Z"
+  },
+  "status": "completed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-11T09:25:29.134Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-11T09:26:02.987Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744363561/schedules/1744363555496-91835b04-dd48-4ef2-84fb-af91fc337b23.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "67f8e0d45725d0394afbd1c3"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "Le Phan The Vi",
+  "phone_number": 345444190,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f004e236accc91b1163395"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-11T11:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-11T11:30:00.000Z"
+  },
+  "status": "completed",
+  "notes": "Cat toc cho dep nhe",
+  "createdAt": {
+    "$date": "2025-04-11T09:28:52.678Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-11T09:29:25.508Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744363761/schedules/1744363756683-image_processing20230602-7-ruxxod.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "67f8e1de5725d0394afbd1fb"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "Em Vi",
+  "phone_number": 342864056,
+  "barber": {
+    "$oid": "67f3e541c64356388d2db8e3"
+  },
+  "service": [
+    {
+      "$oid": "67f0036336accc91b116338d"
+    },
+    {
+      "$oid": "67f003c736accc91b116338f"
+    },
+    {
+      "$oid": "67f0040136accc91b1163391"
+    },
+    {
+      "$oid": "67f004a936accc91b1163393"
+    },
+    {
+      "$oid": "67f004e236accc91b1163395"
+    },
+    {
+      "$oid": "67f0051136accc91b1163397"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-11T13:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-11T18:00:00.000Z"
+  },
+  "status": "completed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-11T09:33:18.509Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-11T09:33:44.503Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744364022/schedules/1744364017902-image_processing20230602-7-ruxxod.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "67fa6cd0edba0ce5dc3e173e"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "User",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "service": [
+    {
+      "$oid": "67f0040136accc91b1163391"
+    },
+    {
+      "$oid": "67f004a936accc91b1163393"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-12T03:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-12T04:30:00.000Z"
+  },
+  "status": "completed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-12T13:38:24.368Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-12T13:39:54.059Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744465191/schedules/1744465184328-image_processing20230602-7-ruxxod.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "67fa6ce5edba0ce5dc3e1746"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "Lewis",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67f3e700c64356388d2db947"
+  },
+  "service": [
+    {
+      "$oid": "67f004e236accc91b1163395"
+    },
+    {
+      "$oid": "67f0051136accc91b1163397"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-05-10T13:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-05-10T14:15:00.000Z"
+  },
+  "status": "pending",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-12T13:38:45.387Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-12T13:38:45.387Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fa6d0bedba0ce5dc3e175d"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "Lewis",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67f3e541c64356388d2db8e3"
+  },
+  "service": [
+    {
+      "$oid": "67f0033236accc91b116338b"
+    },
+    {
+      "$oid": "67f0036336accc91b116338d"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-12T11:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-12T13:20:00.000Z"
+  },
+  "status": "completed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-12T13:39:23.517Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-12T13:58:24.635Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744466300/schedules/1744466291125-91835b04-dd48-4ef2-84fb-af91fc337b23.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "67fa7248a6565bf048a7f3ba"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "The Vi",
+  "phone_number": 813663682,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f004e236accc91b1163395"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-12T11:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-12T11:30:00.000Z"
+  },
+  "status": "completed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-12T14:01:44.220Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-12T14:02:20.386Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744466535/schedules/1744466529600-image_processing20230602-7-ruxxod.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "67fa74b3a6565bf048a7f444"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "Lewis",
+  "phone_number": 367828282,
+  "barber": {
+    "$oid": "67f3e700c64356388d2db947"
+  },
+  "service": [
+    {
+      "$oid": "67f0051136accc91b1163397"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-12T11:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-12T11:45:00.000Z"
+  },
+  "status": "completed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-12T14:12:03.824Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-12T14:45:32.961Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744469130/schedules/1744469120567-91835b04-dd48-4ef2-84fb-af91fc337b23.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "67fa7825a6565bf048a7f455"
+  },
+  "customer": null,
+  "customer_name": "Em Vĩ",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67f3e700c64356388d2db947"
+  },
+  "service": [
+    {
+      "$oid": "67f0026236accc91b1163382"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-12T13:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-12T13:45:00.000Z"
+  },
+  "status": "completed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-12T14:26:45.857Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-12T14:40:56.809Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744468407/schedules/1744468400379-image_processing20230602-7-ruxxod.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "67fcb09549c6cb8b835ff1d2"
+  },
+  "customer": null,
+  "customer_name": "Le Phan The Vi",
+  "phone_number": 345444190,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    },
+    {
+      "$oid": "67f0024636accc91b1163380"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-14T01:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-14T02:05:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T06:52:05.870Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T08:01:33.761Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcb0ea49c6cb8b835ff1fb"
+  },
+  "customer": null,
+  "customer_name": "Le Phan The Vi",
+  "phone_number": 342864056,
+  "barber": {
+    "$oid": "67f3e541c64356388d2db8e3"
+  },
+  "service": [
+    {
+      "$oid": "67f0026236accc91b1163382"
+    },
+    {
+      "$oid": "67f0024636accc91b1163380"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-24T01:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-24T02:05:00.000Z"
+  },
+  "status": "pending",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T06:53:30.484Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T06:53:30.484Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcb18f558d66a7467a0d18"
+  },
+  "customer": null,
+  "customer_name": "Le Phan The Vi",
+  "phone_number": 345444190,
+  "barber": null,
+  "service": [
+    {
+      "$oid": "67f003c736accc91b116338f"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-05-01T01:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-05-01T02:00:00.000Z"
+  },
+  "status": "pending",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T06:56:15.315Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T06:56:15.315Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcb2ab558d66a7467a0d23"
+  },
+  "customer": null,
+  "customer_name": "Le Phan The Vi",
+  "phone_number": 345444190,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f0033236accc91b116338b"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-17T01:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-17T02:05:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T07:00:59.377Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T08:04:06.789Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcb5803ecf28c258240531"
+  },
+  "customer": null,
+  "customer_name": "Le Phan The Vi",
+  "phone_number": 345444190,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f0026236accc91b1163382"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-16T01:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-16T01:45:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T07:13:04.931Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T08:03:08.274Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcb58f3ecf28c25824053d"
+  },
+  "customer": null,
+  "customer_name": "52200038",
+  "phone_number": 342864056,
+  "barber": {
+    "$oid": "67f585c104e16a605f7b0013"
+  },
+  "service": [
+    {
+      "$oid": "67f0036336accc91b116338d"
+    },
+    {
+      "$oid": "67f003c736accc91b116338f"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-16T03:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-16T05:15:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T07:13:19.689Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T15:21:03.398Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcbb1b3ecf28c258240577"
+  },
+  "customer": null,
+  "customer_name": "Le Phan The Vi",
+  "phone_number": 345444190,
+  "barber": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "service": [
+    {
+      "$oid": "67f003c736accc91b116338f"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-16T03:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-16T04:00:00.000Z"
+  },
+  "status": "pending",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T07:36:59.827Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T07:36:59.827Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcbd4d82d41330d937292f"
+  },
+  "customer": null,
+  "customer_name": "Nguyen Bao Dang",
+  "phone_number": 342864056,
+  "barber": null,
+  "service": [
+    {
+      "$oid": "67f0026236accc91b1163382"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-16T03:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-16T03:45:00.000Z"
+  },
+  "status": "pending",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T07:46:21.981Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T07:46:21.981Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcc23282d41330d93729f4"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "The Vi",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f0024636accc91b1163380"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-15T01:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-15T01:20:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T08:07:14.341Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T08:08:16.561Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcc2d482d41330d9372a22"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "Em Vĩ",
+  "phone_number": 123456789,
+  "barber": null,
+  "service": [
+    {
+      "$oid": "67f0024636accc91b1163380"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-17T03:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-17T03:20:00.000Z"
+  },
+  "status": "pending",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T08:09:56.148Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T08:09:56.148Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcc32882d41330d9372a3a"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "User",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f0033236accc91b116338b"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-18T11:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-18T12:05:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T08:11:20.699Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T08:12:00.809Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcc37d82d41330d9372a57"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "The Vi",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-15T03:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-15T03:45:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T08:12:45.222Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T08:13:25.571Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcc43882d41330d9372a79"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "Lewis",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f0036336accc91b116338d"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-17T05:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-17T06:15:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T08:15:52.940Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T08:16:39.053Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcc5c882d41330d9372ae6"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "The Vi",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f0026236accc91b1163382"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-16T03:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-16T03:45:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T08:22:32.394Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T08:23:04.085Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcc77982d41330d9372b3d"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "The Vi",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-17T11:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-17T11:45:00.000Z"
+  },
+  "status": "canceled",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T08:29:45.271Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-17T07:56:02.182Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd298fabece3ea3a15cea5"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "The Vi",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f003c736accc91b116338f"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-16T11:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-16T12:00:00.000Z"
+  },
+  "status": "confirmed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T15:28:15.266Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T15:28:57.258Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd2e10abece3ea3a15d014"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "Lewis",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f0026236accc91b1163382"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-14T09:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-14T09:45:00.000Z"
+  },
+  "status": "completed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T15:47:28.397Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T15:53:07.395Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744645723/schedules/1744645721379-459301824_934755612018631_6981237156955920413_n.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "67fd32c2abece3ea3a15d11d"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "Lewis",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-14T13:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-14T13:45:00.000Z"
+  },
+  "status": "completed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T16:07:30.596Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T16:08:49.245Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744646914/schedules/1744646911462-459301824_934755612018631_6981237156955920413_n.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "67fd34f62f4aca11149f2ac2"
+  },
+  "customer": null,
+  "customer_name": "Javascript New",
+  "phone_number": 345444190,
+  "barber": null,
+  "service": [
+    {
+      "$oid": "67f0024636accc91b1163380"
+    },
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    },
+    {
+      "$oid": "67f0026236accc91b1163382"
+    },
+    {
+      "$oid": "67f0040136accc91b1163391"
+    },
+    {
+      "$oid": "67f003c736accc91b116338f"
+    },
+    {
+      "$oid": "67f0036336accc91b116338d"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-15T13:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-15T18:05:00.000Z"
+  },
+  "status": "pending",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T16:16:54.302Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T16:16:54.302Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd35452f4aca11149f2ae2"
+  },
+  "customer": null,
+  "customer_name": "Duke Lewis",
+  "phone_number": 123456789,
+  "barber": null,
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    },
+    {
+      "$oid": "67f0024636accc91b1163380"
+    },
+    {
+      "$oid": "67f004e236accc91b1163395"
+    },
+    {
+      "$oid": "67f0051136accc91b1163397"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-15T03:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-15T05:20:00.000Z"
+  },
+  "status": "pending",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T16:18:13.189Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T16:18:13.189Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd35602f4aca11149f2af6"
+  },
+  "customer": null,
+  "customer_name": "Javascript New",
+  "phone_number": 345444190,
+  "barber": null,
+  "service": [
+    {
+      "$oid": "67f0033236accc91b116338b"
+    },
+    {
+      "$oid": "67f0026236accc91b1163382"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-15T13:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-15T14:50:00.000Z"
+  },
+  "status": "pending",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T16:18:40.579Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T16:18:40.579Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd35da2f4aca11149f2b51"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "The Vi",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f0033236accc91b116338b"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-30T13:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-30T14:05:00.000Z"
+  },
+  "status": "completed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-14T16:20:42.230Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T16:21:59.804Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744647698/schedules/1744647696337-459301824_934755612018631_6981237156955920413_n.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "67fe42aa3b9420a5326d259b"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "The Vi",
+  "phone_number": 123456789,
+  "barber": null,
+  "service": [
+    {
+      "$oid": "67f001ff36accc91b116337e"
+    },
+    {
+      "$oid": "67f0024636accc91b1163380"
+    },
+    {
+      "$oid": "67f0026236accc91b1163382"
+    },
+    {
+      "$oid": "67f004e236accc91b1163395"
+    },
+    {
+      "$oid": "67f004a936accc91b1163393"
+    },
+    {
+      "$oid": "67f0040136accc91b1163391"
+    },
+    {
+      "$oid": "67f003c736accc91b116338f"
+    },
+    {
+      "$oid": "67f0036336accc91b116338d"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-15T13:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-15T19:05:00.000Z"
+  },
+  "status": "pending",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-15T11:27:38.442Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-15T11:27:38.442Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fe43143b9420a5326d25b2"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "Lewis",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f0026236accc91b1163382"
+    },
+    {
+      "$oid": "67f0033236accc91b116338b"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-23T09:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-23T10:50:00.000Z"
+  },
+  "status": "completed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-15T11:29:24.888Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-15T11:32:12.088Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744716716/schedules/1744716712177-459301824_934755612018631_6981237156955920413_n.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "6800b57560da3abc4f79d998"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "The Vi",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67eeaa265782c6cb88812688"
+  },
+  "service": [
+    {
+      "$oid": "67f0036336accc91b116338d"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-17T13:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-17T14:15:00.000Z"
+  },
+  "status": "completed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-17T08:01:57.358Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-17T08:02:42.647Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744876955/schedules/1744876952776-459301824_934755612018631_6981237156955920413_n.jpg.jpg"
+},
+{
+  "_id": {
+    "$oid": "6800bc4cfa4a59e426c29e18"
+  },
+  "customer": {
+    "$oid": "67f8defb5725d0394afbd13f"
+  },
+  "customer_name": "Em Vĩ",
+  "phone_number": 123456789,
+  "barber": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "service": [
+    {
+      "$oid": "67f0051136accc91b1163397"
+    },
+    {
+      "$oid": "67f004e236accc91b1163395"
+    }
+  ],
+  "appointment_start": {
+    "$date": "2025-04-17T13:00:00.000Z"
+  },
+  "appointment_end": {
+    "$date": "2025-04-17T14:15:00.000Z"
+  },
+  "status": "completed",
+  "notes": "",
+  "createdAt": {
+    "$date": "2025-04-17T08:31:08.317Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-17T08:32:40.215Z"
+  },
+  "__v": 0,
+  "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744878750/schedules/1744878747160-459301824_934755612018631_6981237156955920413_n.jpg.jpg"
+}]

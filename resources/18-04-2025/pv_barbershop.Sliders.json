@@ -1,0 +1,85 @@
+[{
+  "_id": {
+    "$oid": "67ea6ab994cb972c6cd27077"
+  },
+  "slider_collection": "W1M42025",
+  "slider_content": "This is the first slide",
+  "slider_image": "https://preview.redd.it/official-shorekeeper-wallpapers-v0-gglcv8kuaosd1.jpg?width=1080&crop=smart&auto=webp&s=cdb330ca50e5065abbe24feecb771335fc3a3209",
+  "slider_link": "\"\"",
+  "isActive": true,
+  "createdAt": {
+    "$date": "2025-03-31T10:13:13.384Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-31T10:18:23.127Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ea6af394cb972c6cd2707a"
+  },
+  "slider_collection": "W1M42025",
+  "slider_content": "This is the second slide",
+  "slider_image": "https://pbs.twimg.com/media/GcUH43FbwAAY-Gr.jpg:large",
+  "slider_link": "\"\"",
+  "isActive": true,
+  "createdAt": {
+    "$date": "2025-03-31T10:14:11.403Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-31T10:18:23.127Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ea6b2194cb972c6cd2707d"
+  },
+  "slider_collection": "W1M42025",
+  "slider_content": "This is the third slide",
+  "slider_image": "https://i.ytimg.com/vi/AGPKSbH2S-Q/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB3gfx1F1DFt4-GwR0vC9WEHHCSKw",
+  "slider_link": "\"\"",
+  "isActive": true,
+  "createdAt": {
+    "$date": "2025-03-31T10:14:57.263Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-31T10:18:23.127Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ea6b4f94cb972c6cd27080"
+  },
+  "slider_collection": "W1M42025",
+  "slider_content": "This is the fourth slide",
+  "slider_image": "https://c4.wallpaperflare.com/wallpaper/53/849/233/wuthering-waves-changli-wuthering-waves-hd-wallpaper-preview.jpg",
+  "slider_link": "\"\"",
+  "isActive": true,
+  "createdAt": {
+    "$date": "2025-03-31T10:15:43.649Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-31T10:18:23.127Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ea6b7394cb972c6cd27083"
+  },
+  "slider_collection": "W2M42025",
+  "slider_content": "This is the fifth slide",
+  "slider_image": "https://preview.redd.it/it-would-be-super-awesome-if-wuwa-will-have-art-for-loading-v0-25t2gu916acd1.jpg?width=7680&format=pjpg&auto=webp&s=f484b90e822aabf94370f2669be821dee9fef183",
+  "slider_link": "\"\"",
+  "isActive": false,
+  "createdAt": {
+    "$date": "2025-03-31T10:16:19.742Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-31T10:18:23.044Z"
+  },
+  "__v": 0
+}]

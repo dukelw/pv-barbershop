@@ -1,0 +1,1513 @@
+[{
+  "_id": {
+    "$oid": "67fcb09549c6cb8b835ff1d6"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer Le Phan The Vi has booked an appointment at 08:00 14/04/2025",
+  "data": {
+    "customer": null,
+    "customer_name": "Le Phan The Vi",
+    "phone_number": 345444190,
+    "barber": "67eeaa265782c6cb88812688",
+    "service": [
+      "67f001ff36accc91b116337e",
+      "67f0024636accc91b1163380"
+    ],
+    "appointment_start": "2025-04-14T01:00:00.000Z",
+    "appointment_end": "2025-04-14T02:05:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fcb09549c6cb8b835ff1d2",
+    "createdAt": "2025-04-14T06:52:05.870Z",
+    "updatedAt": "2025-04-14T06:52:05.870Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T06:52:05.970Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T06:52:05.970Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcb0ea49c6cb8b835ff1ff"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer Le Phan The Vi has booked an appointment at 08:00 24/04/2025",
+  "data": {
+    "customer": null,
+    "customer_name": "Le Phan The Vi",
+    "phone_number": 342864056,
+    "barber": "67f3e541c64356388d2db8e3",
+    "service": [
+      "67f0026236accc91b1163382",
+      "67f0024636accc91b1163380"
+    ],
+    "appointment_start": "2025-04-24T01:00:00.000Z",
+    "appointment_end": "2025-04-24T02:05:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fcb0ea49c6cb8b835ff1fb",
+    "createdAt": "2025-04-14T06:53:30.484Z",
+    "updatedAt": "2025-04-14T06:53:30.484Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T06:53:30.566Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T06:53:30.566Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcb18f558d66a7467a0d1c"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer Le Phan The Vi has booked an appointment at 08:00 01/05/2025",
+  "data": {
+    "customer": null,
+    "customer_name": "Le Phan The Vi",
+    "phone_number": 345444190,
+    "barber": null,
+    "service": [
+      "67f003c736accc91b116338f"
+    ],
+    "appointment_start": "2025-05-01T01:00:00.000Z",
+    "appointment_end": "2025-05-01T02:00:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fcb18f558d66a7467a0d18",
+    "createdAt": "2025-04-14T06:56:15.315Z",
+    "updatedAt": "2025-04-14T06:56:15.315Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T06:56:15.371Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T06:56:15.371Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcb2ab558d66a7467a0d27"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer Le Phan The Vi has booked an appointment at 08:00 17/04/2025",
+  "data": {
+    "customer": null,
+    "customer_name": "Le Phan The Vi",
+    "phone_number": 345444190,
+    "barber": null,
+    "service": [
+      "67f0033236accc91b116338b"
+    ],
+    "appointment_start": "2025-04-17T01:00:00.000Z",
+    "appointment_end": "2025-04-17T02:05:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fcb2ab558d66a7467a0d23",
+    "createdAt": "2025-04-14T07:00:59.377Z",
+    "updatedAt": "2025-04-14T07:00:59.377Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T07:00:59.453Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T07:00:59.453Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcb5813ecf28c258240535"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer Le Phan The Vi has booked an appointment at 08:00 16/04/2025",
+  "data": {
+    "customer": null,
+    "customer_name": "Le Phan The Vi",
+    "phone_number": 345444190,
+    "barber": null,
+    "service": [
+      "67f0026236accc91b1163382"
+    ],
+    "appointment_start": "2025-04-16T01:00:00.000Z",
+    "appointment_end": "2025-04-16T01:45:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fcb5803ecf28c258240531",
+    "createdAt": "2025-04-14T07:13:04.931Z",
+    "updatedAt": "2025-04-14T07:13:04.931Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T07:13:05.026Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T07:13:05.026Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcb58f3ecf28c258240541"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer 52200038 has booked an appointment at 10:00 16/04/2025",
+  "data": {
+    "customer": null,
+    "customer_name": "52200038",
+    "phone_number": 342864056,
+    "barber": null,
+    "service": [
+      "67f0036336accc91b116338d",
+      "67f003c736accc91b116338f"
+    ],
+    "appointment_start": "2025-04-16T03:00:00.000Z",
+    "appointment_end": "2025-04-16T05:15:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fcb58f3ecf28c25824053d",
+    "createdAt": "2025-04-14T07:13:19.689Z",
+    "updatedAt": "2025-04-14T07:13:19.689Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T07:13:19.742Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T07:13:19.742Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcbb1b3ecf28c25824057b"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer Le Phan The Vi has booked an appointment at 10:00 16/04/2025",
+  "data": {
+    "customer": null,
+    "customer_name": "Le Phan The Vi",
+    "phone_number": 345444190,
+    "barber": "67f173408cfcb5e3ea4eaca6",
+    "service": [
+      "67f003c736accc91b116338f"
+    ],
+    "appointment_start": "2025-04-16T03:00:00.000Z",
+    "appointment_end": "2025-04-16T04:00:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fcbb1b3ecf28c258240577",
+    "createdAt": "2025-04-14T07:36:59.827Z",
+    "updatedAt": "2025-04-14T07:36:59.827Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T07:36:59.886Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T07:36:59.886Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcbd4e82d41330d9372933"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer Nguyen Bao Dang has booked an appointment at 10:00 16/04/2025",
+  "data": {
+    "customer": null,
+    "customer_name": "Nguyen Bao Dang",
+    "phone_number": 342864056,
+    "barber": null,
+    "service": [
+      "67f0026236accc91b1163382"
+    ],
+    "appointment_start": "2025-04-16T03:00:00.000Z",
+    "appointment_end": "2025-04-16T03:45:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fcbd4d82d41330d937292f",
+    "createdAt": "2025-04-14T07:46:21.981Z",
+    "updatedAt": "2025-04-14T07:46:21.981Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T07:46:22.066Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T07:46:22.066Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcc23282d41330d93729f8"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer The Vi has booked an appointment at 08:00 15/04/2025",
+  "data": {
+    "customer": "67f8defb5725d0394afbd13f",
+    "customer_name": "The Vi",
+    "phone_number": 123456789,
+    "barber": "67eeaa265782c6cb88812688",
+    "service": [
+      "67f0024636accc91b1163380"
+    ],
+    "appointment_start": "2025-04-15T01:00:00.000Z",
+    "appointment_end": "2025-04-15T01:20:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fcc23282d41330d93729f4",
+    "createdAt": "2025-04-14T08:07:14.341Z",
+    "updatedAt": "2025-04-14T08:07:14.341Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T08:07:14.493Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T08:07:14.493Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcc2d482d41330d9372a26"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer Em Vĩ has booked an appointment at 10:00 17/04/2025",
+  "data": {
+    "customer": "67f8defb5725d0394afbd13f",
+    "customer_name": "Em Vĩ",
+    "phone_number": 123456789,
+    "barber": null,
+    "service": [
+      "67f0024636accc91b1163380"
+    ],
+    "appointment_start": "2025-04-17T03:00:00.000Z",
+    "appointment_end": "2025-04-17T03:20:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fcc2d482d41330d9372a22",
+    "createdAt": "2025-04-14T08:09:56.148Z",
+    "updatedAt": "2025-04-14T08:09:56.148Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T08:09:56.234Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T08:09:56.234Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcc32882d41330d9372a3e"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer User has booked an appointment at 18:00 18/04/2025",
+  "data": {
+    "customer": "67f8defb5725d0394afbd13f",
+    "customer_name": "User",
+    "phone_number": 123456789,
+    "barber": "67eeaa265782c6cb88812688",
+    "service": [
+      "67f0033236accc91b116338b"
+    ],
+    "appointment_start": "2025-04-18T11:00:00.000Z",
+    "appointment_end": "2025-04-18T12:05:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fcc32882d41330d9372a3a",
+    "createdAt": "2025-04-14T08:11:20.699Z",
+    "updatedAt": "2025-04-14T08:11:20.699Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T08:11:20.788Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T08:11:20.788Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcc37d82d41330d9372a5b"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer The Vi has booked an appointment at 10:00 15/04/2025",
+  "data": {
+    "customer": "67f8defb5725d0394afbd13f",
+    "customer_name": "The Vi",
+    "phone_number": 123456789,
+    "barber": "67eeaa265782c6cb88812688",
+    "service": [
+      "67f001ff36accc91b116337e"
+    ],
+    "appointment_start": "2025-04-15T03:00:00.000Z",
+    "appointment_end": "2025-04-15T03:45:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fcc37d82d41330d9372a57",
+    "createdAt": "2025-04-14T08:12:45.222Z",
+    "updatedAt": "2025-04-14T08:12:45.222Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T08:12:45.256Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T08:12:45.256Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcc43982d41330d9372a7d"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer Lewis has booked an appointment at 12:00 17/04/2025",
+  "data": {
+    "customer": "67f8defb5725d0394afbd13f",
+    "customer_name": "Lewis",
+    "phone_number": 123456789,
+    "barber": "67eeaa265782c6cb88812688",
+    "service": [
+      "67f0036336accc91b116338d"
+    ],
+    "appointment_start": "2025-04-17T05:00:00.000Z",
+    "appointment_end": "2025-04-17T06:15:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fcc43882d41330d9372a79",
+    "createdAt": "2025-04-14T08:15:52.940Z",
+    "updatedAt": "2025-04-14T08:15:52.940Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T08:15:53.116Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T08:15:53.116Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcc5c882d41330d9372aea"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer The Vi has booked an appointment at 10:00 16/04/2025",
+  "data": {
+    "customer": "67f8defb5725d0394afbd13f",
+    "customer_name": "The Vi",
+    "phone_number": 123456789,
+    "barber": "67eeaa265782c6cb88812688",
+    "service": [
+      "67f0026236accc91b1163382"
+    ],
+    "appointment_start": "2025-04-16T03:00:00.000Z",
+    "appointment_end": "2025-04-16T03:45:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fcc5c882d41330d9372ae6",
+    "createdAt": "2025-04-14T08:22:32.394Z",
+    "updatedAt": "2025-04-14T08:22:32.394Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T08:22:32.482Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T08:22:32.482Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcc77982d41330d9372b41"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer The Vi has booked an appointment at 18:00 17/04/2025",
+  "data": {
+    "customer": "67f8defb5725d0394afbd13f",
+    "customer_name": "The Vi",
+    "phone_number": 123456789,
+    "barber": "67eeaa265782c6cb88812688",
+    "service": [
+      "67f001ff36accc91b116337e"
+    ],
+    "appointment_start": "2025-04-17T11:00:00.000Z",
+    "appointment_end": "2025-04-17T11:45:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fcc77982d41330d9372b3d",
+    "createdAt": "2025-04-14T08:29:45.271Z",
+    "updatedAt": "2025-04-14T08:29:45.271Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T08:29:45.344Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T08:29:45.344Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd27dfabece3ea3a15ce12"
+  },
+  "user": {
+    "$oid": "67f585c104e16a605f7b0013"
+  },
+  "title": "New Schedule",
+  "message": "Customer undefined has booked an appointment from 22:21 14/04/2025 to 22:21 14/04/2025",
+  "data": {
+    "appointmentToUpdate": "67fcb58f3ecf28c25824053d",
+    "barber": {
+      "user_point": 0,
+      "_id": "67f585c104e16a605f7b0013",
+      "user_name": "Đăng Khoa",
+      "user_email": "khoa@gmail.com",
+      "user_avatar": "https://res.cloudinary.com/lewisshop/image/upload/v1744143809/users/1744143805379-image_processing20230602-7-ruxxod.jpg.jpg",
+      "user_password": "$2b$10$8AFtq7d0zzz2zsrFwJi9p.yUB8MlzREgFCGC1BvtBxaAat5QVT8q6",
+      "user_gender": "male",
+      "user_phone": "",
+      "user_role": "staff",
+      "createdAt": "2025-04-08T20:23:29.108Z",
+      "updatedAt": "2025-04-08T20:23:29.108Z",
+      "__v": 0
+    }
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T15:21:03.423Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T15:21:03.423Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd298fabece3ea3a15cea9"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer The Vi has booked an appointment at 18:00 16/04/2025",
+  "data": {
+    "customer": "67f8defb5725d0394afbd13f",
+    "customer_name": "The Vi",
+    "phone_number": 123456789,
+    "barber": "67eeaa265782c6cb88812688",
+    "service": [
+      "67f003c736accc91b116338f"
+    ],
+    "appointment_start": "2025-04-16T11:00:00.000Z",
+    "appointment_end": "2025-04-16T12:00:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fd298fabece3ea3a15cea5",
+    "createdAt": "2025-04-14T15:28:15.266Z",
+    "updatedAt": "2025-04-14T15:28:15.266Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T15:28:15.307Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T15:28:15.307Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd2e10abece3ea3a15d018"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer Lewis has booked an appointment at 16:00 14/04/2025",
+  "data": {
+    "customer": "67f8defb5725d0394afbd13f",
+    "customer_name": "Lewis",
+    "phone_number": 123456789,
+    "barber": "67eeaa265782c6cb88812688",
+    "service": [
+      "67f0026236accc91b1163382"
+    ],
+    "appointment_start": "2025-04-14T09:00:00.000Z",
+    "appointment_end": "2025-04-14T09:45:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fd2e10abece3ea3a15d014",
+    "createdAt": "2025-04-14T15:47:28.397Z",
+    "updatedAt": "2025-04-14T15:47:28.397Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T15:47:28.438Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T15:47:28.438Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd2e5cabece3ea3a15d03b"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "Haircut Complete",
+  "message": "Barber Quang Vinh has completed haircut appointment from 16:00 14/04/2025 to 16:45 14/04/2025",
+  "data": {
+    "message": "Appointment proof updated",
+    "statusCode": 200,
+    "metadata": {
+      "_id": "67fd2e10abece3ea3a15d014",
+      "customer": "67f8defb5725d0394afbd13f",
+      "customer_name": "Lewis",
+      "phone_number": 123456789,
+      "barber": "67eeaa265782c6cb88812688",
+      "service": [
+        "67f0026236accc91b1163382"
+      ],
+      "appointment_start": "2025-04-14T09:00:00.000Z",
+      "appointment_end": "2025-04-14T09:45:00.000Z",
+      "status": "confirmed",
+      "notes": "",
+      "createdAt": "2025-04-14T15:47:28.397Z",
+      "updatedAt": "2025-04-14T15:48:44.279Z",
+      "__v": 0,
+      "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744645723/schedules/1744645721379-459301824_934755612018631_6981237156955920413_n.jpg.jpg"
+    }
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T15:48:44.307Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T15:48:44.307Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd32c2abece3ea3a15d121"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer Lewis has booked an appointment at 20:00 14/04/2025",
+  "data": {
+    "customer": "67f8defb5725d0394afbd13f",
+    "customer_name": "Lewis",
+    "phone_number": 123456789,
+    "barber": "67eeaa265782c6cb88812688",
+    "service": [
+      "67f001ff36accc91b116337e"
+    ],
+    "appointment_start": "2025-04-14T13:00:00.000Z",
+    "appointment_end": "2025-04-14T13:45:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fd32c2abece3ea3a15d11d",
+    "createdAt": "2025-04-14T16:07:30.596Z",
+    "updatedAt": "2025-04-14T16:07:30.596Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T16:07:30.646Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T16:07:30.646Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd3302abece3ea3a15d143"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "Haircut Complete",
+  "message": "Barber Quang Vinh has completed haircut appointment from 20:00 14/04/2025 to 20:45 14/04/2025",
+  "data": {
+    "message": "Appointment proof updated",
+    "statusCode": 200,
+    "metadata": {
+      "_id": "67fd32c2abece3ea3a15d11d",
+      "customer": "67f8defb5725d0394afbd13f",
+      "customer_name": "Lewis",
+      "phone_number": 123456789,
+      "barber": "67eeaa265782c6cb88812688",
+      "service": [
+        "67f001ff36accc91b116337e"
+      ],
+      "appointment_start": "2025-04-14T13:00:00.000Z",
+      "appointment_end": "2025-04-14T13:45:00.000Z",
+      "status": "confirmed",
+      "notes": "",
+      "createdAt": "2025-04-14T16:07:30.596Z",
+      "updatedAt": "2025-04-14T16:08:34.624Z",
+      "__v": 0,
+      "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744646914/schedules/1744646911462-459301824_934755612018631_6981237156955920413_n.jpg.jpg"
+    }
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T16:08:34.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T16:08:34.647Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd34f62f4aca11149f2ac6"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer Javascript New has booked an appointment at 20:00 15/04/2025",
+  "data": {
+    "customer": null,
+    "customer_name": "Javascript New",
+    "phone_number": 345444190,
+    "barber": null,
+    "service": [
+      "67f0024636accc91b1163380",
+      "67f001ff36accc91b116337e",
+      "67f0026236accc91b1163382",
+      "67f0040136accc91b1163391",
+      "67f003c736accc91b116338f",
+      "67f0036336accc91b116338d"
+    ],
+    "appointment_start": "2025-04-15T13:00:00.000Z",
+    "appointment_end": "2025-04-15T18:05:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fd34f62f4aca11149f2ac2",
+    "createdAt": "2025-04-14T16:16:54.302Z",
+    "updatedAt": "2025-04-14T16:16:54.302Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T16:16:54.360Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T16:16:54.360Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd35452f4aca11149f2ae6"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer Duke Lewis has booked an appointment at 10:00 15/04/2025",
+  "data": {
+    "customer": null,
+    "customer_name": "Duke Lewis",
+    "phone_number": 123456789,
+    "barber": null,
+    "service": [
+      "67f001ff36accc91b116337e",
+      "67f0024636accc91b1163380",
+      "67f004e236accc91b1163395",
+      "67f0051136accc91b1163397"
+    ],
+    "appointment_start": "2025-04-15T03:00:00.000Z",
+    "appointment_end": "2025-04-15T05:20:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fd35452f4aca11149f2ae2",
+    "createdAt": "2025-04-14T16:18:13.189Z",
+    "updatedAt": "2025-04-14T16:18:13.189Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T16:18:13.218Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T16:18:13.218Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd35602f4aca11149f2afa"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer Javascript New has booked an appointment at 20:00 15/04/2025",
+  "data": {
+    "customer": null,
+    "customer_name": "Javascript New",
+    "phone_number": 345444190,
+    "barber": null,
+    "service": [
+      "67f0033236accc91b116338b",
+      "67f0026236accc91b1163382"
+    ],
+    "appointment_start": "2025-04-15T13:00:00.000Z",
+    "appointment_end": "2025-04-15T14:50:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fd35602f4aca11149f2af6",
+    "createdAt": "2025-04-14T16:18:40.579Z",
+    "updatedAt": "2025-04-14T16:18:40.579Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T16:18:40.613Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T16:18:40.613Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd35da2f4aca11149f2b55"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer The Vi has booked an appointment at 20:00 30/04/2025",
+  "data": {
+    "customer": "67f8defb5725d0394afbd13f",
+    "customer_name": "The Vi",
+    "phone_number": 123456789,
+    "barber": null,
+    "service": [
+      "67f0033236accc91b116338b"
+    ],
+    "appointment_start": "2025-04-30T13:00:00.000Z",
+    "appointment_end": "2025-04-30T14:05:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fd35da2f4aca11149f2b51",
+    "createdAt": "2025-04-14T16:20:42.230Z",
+    "updatedAt": "2025-04-14T16:20:42.230Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T16:20:42.255Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T16:20:42.255Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd36132f4aca11149f2b7d"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "Haircut Complete",
+  "message": "Barber Quang Vinh has completed haircut appointment from 20:00 30/04/2025 to 21:05 30/04/2025",
+  "data": {
+    "message": "Appointment proof updated",
+    "statusCode": 200,
+    "metadata": {
+      "_id": "67fd35da2f4aca11149f2b51",
+      "customer": "67f8defb5725d0394afbd13f",
+      "customer_name": "The Vi",
+      "phone_number": 123456789,
+      "barber": "67eeaa265782c6cb88812688",
+      "service": [
+        "67f0033236accc91b116338b"
+      ],
+      "appointment_start": "2025-04-30T13:00:00.000Z",
+      "appointment_end": "2025-04-30T14:05:00.000Z",
+      "status": "confirmed",
+      "notes": "",
+      "createdAt": "2025-04-14T16:20:42.230Z",
+      "updatedAt": "2025-04-14T16:21:39.269Z",
+      "__v": 0,
+      "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744647698/schedules/1744647696337-459301824_934755612018631_6981237156955920413_n.jpg.jpg"
+    }
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-14T16:21:39.308Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-14T16:21:39.308Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fe42aa3b9420a5326d259f"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer The Vi has booked an appointment at 20:00 15/04/2025",
+  "data": {
+    "customer": "67f8defb5725d0394afbd13f",
+    "customer_name": "The Vi",
+    "phone_number": 123456789,
+    "barber": null,
+    "service": [
+      "67f001ff36accc91b116337e",
+      "67f0024636accc91b1163380",
+      "67f0026236accc91b1163382",
+      "67f004e236accc91b1163395",
+      "67f004a936accc91b1163393",
+      "67f0040136accc91b1163391",
+      "67f003c736accc91b116338f",
+      "67f0036336accc91b116338d"
+    ],
+    "appointment_start": "2025-04-15T13:00:00.000Z",
+    "appointment_end": "2025-04-15T19:05:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fe42aa3b9420a5326d259b",
+    "createdAt": "2025-04-15T11:27:38.442Z",
+    "updatedAt": "2025-04-15T11:27:38.442Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-15T11:27:38.551Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-15T11:27:38.551Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fe43143b9420a5326d25b6"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer Lewis has booked an appointment at 16:00 23/04/2025",
+  "data": {
+    "customer": "67f8defb5725d0394afbd13f",
+    "customer_name": "Lewis",
+    "phone_number": 123456789,
+    "barber": "67eeaa265782c6cb88812688",
+    "service": [
+      "67f0026236accc91b1163382",
+      "67f0033236accc91b116338b"
+    ],
+    "appointment_start": "2025-04-23T09:00:00.000Z",
+    "appointment_end": "2025-04-23T10:50:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "67fe43143b9420a5326d25b2",
+    "createdAt": "2025-04-15T11:29:24.888Z",
+    "updatedAt": "2025-04-15T11:29:24.888Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-15T11:29:24.999Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-15T11:29:24.999Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fe43ac3b9420a5326d25d9"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "Haircut Complete",
+  "message": "Barber Quang Vinh has completed haircut appointment from 16:00 23/04/2025 to 17:50 23/04/2025",
+  "data": {
+    "message": "Appointment proof updated",
+    "statusCode": 200,
+    "metadata": {
+      "_id": "67fe43143b9420a5326d25b2",
+      "customer": "67f8defb5725d0394afbd13f",
+      "customer_name": "Lewis",
+      "phone_number": 123456789,
+      "barber": "67eeaa265782c6cb88812688",
+      "service": [
+        "67f0026236accc91b1163382",
+        "67f0033236accc91b116338b"
+      ],
+      "appointment_start": "2025-04-23T09:00:00.000Z",
+      "appointment_end": "2025-04-23T10:50:00.000Z",
+      "status": "confirmed",
+      "notes": "",
+      "createdAt": "2025-04-15T11:29:24.888Z",
+      "updatedAt": "2025-04-15T11:31:56.138Z",
+      "__v": 0,
+      "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744716716/schedules/1744716712177-459301824_934755612018631_6981237156955920413_n.jpg.jpg"
+    }
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-15T11:31:56.209Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-15T11:31:56.209Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6800b41260da3abc4f79d955"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "Haircut Canceled!",
+  "message": "Barber Quang Vinh has canceled haircut appointment from 18:00 17/04/2025 to 18:45 17/04/2025 with customer The Vi, please contact with them!",
+  "data": {
+    "_id": "67fcc77982d41330d9372b3d",
+    "customer": {
+      "_id": "67f8defb5725d0394afbd13f",
+      "user_name": "User",
+      "user_email": "user@gmail.com",
+      "user_avatar": "",
+      "user_password": "$2b$10$w3tvO8TaZZekRPXsM4VbO.j1QiKRXJfqbpIciE4C/P/1oR7Zj4fGu",
+      "user_gender": "unknown",
+      "user_phone": "",
+      "user_role": "customer",
+      "user_point": 35027,
+      "createdAt": "2025-04-11T09:20:59.548Z",
+      "updatedAt": "2025-04-15T11:32:34.022Z",
+      "__v": 0
+    },
+    "customer_name": "The Vi",
+    "phone_number": 123456789,
+    "barber": "67eeaa265782c6cb88812688",
+    "service": [
+      {
+        "_id": "67f001ff36accc91b116337e",
+        "service_name": "Cắt gội Combo 1",
+        "service_price": 120000,
+        "service_duration": 45,
+        "service_description": "Combo Cắt kỹ và Combo Gội Massage",
+        "service_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743782400/services/1743782397564-cat-goi-combo-1-1.jpg.jpg",
+        "isActive": true,
+        "createdAt": "2025-04-04T15:59:59.563Z",
+        "updatedAt": "2025-04-04T15:59:59.563Z",
+        "__v": 0
+      }
+    ],
+    "appointment_start": "2025-04-17T11:00:00.000Z",
+    "appointment_end": "2025-04-17T11:45:00.000Z",
+    "status": "confirmed",
+    "notes": "",
+    "createdAt": "2025-04-14T08:29:45.271Z",
+    "updatedAt": "2025-04-14T08:30:31.932Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-17T07:56:02.379Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-17T07:56:02.379Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6800b57560da3abc4f79d99c"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer The Vi has booked an appointment at 20:00 17/04/2025",
+  "data": {
+    "customer": "67f8defb5725d0394afbd13f",
+    "customer_name": "The Vi",
+    "phone_number": 123456789,
+    "barber": null,
+    "service": [
+      "67f0036336accc91b116338d"
+    ],
+    "appointment_start": "2025-04-17T13:00:00.000Z",
+    "appointment_end": "2025-04-17T14:15:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "6800b57560da3abc4f79d998",
+    "createdAt": "2025-04-17T08:01:57.358Z",
+    "updatedAt": "2025-04-17T08:01:57.358Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-17T08:01:57.463Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-17T08:01:57.463Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6800b59c60da3abc4f79d9bf"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "Haircut Complete",
+  "message": "Barber Quang Vinh has completed haircut appointment from 20:00 17/04/2025 to 21:15 17/04/2025",
+  "data": {
+    "message": "Appointment proof updated",
+    "statusCode": 200,
+    "metadata": {
+      "_id": "6800b57560da3abc4f79d998",
+      "customer": "67f8defb5725d0394afbd13f",
+      "customer_name": "The Vi",
+      "phone_number": 123456789,
+      "barber": "67eeaa265782c6cb88812688",
+      "service": [
+        "67f0036336accc91b116338d"
+      ],
+      "appointment_start": "2025-04-17T13:00:00.000Z",
+      "appointment_end": "2025-04-17T14:15:00.000Z",
+      "status": "confirmed",
+      "notes": "",
+      "createdAt": "2025-04-17T08:01:57.358Z",
+      "updatedAt": "2025-04-17T08:02:36.129Z",
+      "__v": 0,
+      "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744876955/schedules/1744876952776-459301824_934755612018631_6981237156955920413_n.jpg.jpg"
+    }
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-17T08:02:36.177Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-17T08:02:36.177Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6800bc4cfa4a59e426c29e1a"
+  },
+  "user": {
+    "$oid": "67ee5299beb270d6ab2def8b"
+  },
+  "title": "New Appointment",
+  "message": "Customer Em Vĩ has booked an appointment at 20:00 17/04/2025",
+  "data": {
+    "customer": "67f8defb5725d0394afbd13f",
+    "customer_name": "Em Vĩ",
+    "phone_number": 123456789,
+    "barber": "67f173408cfcb5e3ea4eaca6",
+    "service": [
+      "67f0051136accc91b1163397",
+      "67f004e236accc91b1163395"
+    ],
+    "appointment_start": "2025-04-17T13:00:00.000Z",
+    "appointment_end": "2025-04-17T14:15:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "6800bc4cfa4a59e426c29e18",
+    "createdAt": "2025-04-17T08:31:08.317Z",
+    "updatedAt": "2025-04-17T08:31:08.317Z",
+    "__v": 0
+  },
+  "is_read": true,
+  "createdAt": {
+    "$date": "2025-04-17T08:31:08.372Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-17T08:31:18.975Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6800bc4cfa4a59e426c29e1c"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "New Appointment",
+  "message": "Customer Em Vĩ has booked an appointment at 20:00 17/04/2025",
+  "data": {
+    "customer": "67f8defb5725d0394afbd13f",
+    "customer_name": "Em Vĩ",
+    "phone_number": 123456789,
+    "barber": "67f173408cfcb5e3ea4eaca6",
+    "service": [
+      "67f0051136accc91b1163397",
+      "67f004e236accc91b1163395"
+    ],
+    "appointment_start": "2025-04-17T13:00:00.000Z",
+    "appointment_end": "2025-04-17T14:15:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "_id": "6800bc4cfa4a59e426c29e18",
+    "createdAt": "2025-04-17T08:31:08.317Z",
+    "updatedAt": "2025-04-17T08:31:08.317Z",
+    "__v": 0
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-17T08:31:08.428Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-17T08:31:08.428Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6800bc60fa4a59e426c29e27"
+  },
+  "user": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "title": "New Schedule",
+  "message": "You will have an appointment with customer Em Vĩ from 20:00 17/04/2025 to 21:15 17/04/2025",
+  "data": {
+    "_id": "6800bc4cfa4a59e426c29e18",
+    "customer": {
+      "_id": "67f8defb5725d0394afbd13f",
+      "user_name": "User",
+      "user_email": "user@gmail.com",
+      "user_avatar": "",
+      "user_password": "$2b$10$w3tvO8TaZZekRPXsM4VbO.j1QiKRXJfqbpIciE4C/P/1oR7Zj4fGu",
+      "user_gender": "unknown",
+      "user_phone": "",
+      "user_role": "customer",
+      "user_point": 35350,
+      "createdAt": "2025-04-11T09:20:59.548Z",
+      "updatedAt": "2025-04-17T08:04:25.317Z",
+      "__v": 0
+    },
+    "customer_name": "Em Vĩ",
+    "phone_number": 123456789,
+    "barber": {
+      "user_gender": "unknown",
+      "user_phone": "",
+      "user_point": 0,
+      "_id": "67f173408cfcb5e3ea4eaca6",
+      "user_name": "Tuấn Phương",
+      "user_email": "phuong@gmail.com",
+      "user_avatar": "https://pbs.twimg.com/profile_images/1856286778124111872/aqqCRaRE_400x400.jpg",
+      "user_password": "$2b$10$aMOdPOM95tmLD9Cq.fxpFe/9XGOWBMNsrnv6AhV/jzq3OT03YIzQm",
+      "user_role": "staff",
+      "createdAt": "2025-04-05T18:15:28.347Z",
+      "updatedAt": "2025-04-05T18:15:28.347Z",
+      "__v": 0
+    },
+    "service": [
+      {
+        "_id": "67f0051136accc91b1163397",
+        "service_name": "Chăm sóc da cấp thiết UltraWhite",
+        "service_price": 55000,
+        "service_duration": 45,
+        "service_description": "Tẩy da chết trắng mịn - Đắp mặt nạ lạnh",
+        "service_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743783186/services/1743783183072-chamsoc.jpg.jpg",
+        "isActive": true,
+        "createdAt": "2025-04-04T16:13:05.632Z",
+        "updatedAt": "2025-04-04T16:13:05.632Z",
+        "__v": 0
+      },
+      {
+        "_id": "67f004e236accc91b1163395",
+        "service_name": "Tẩy da chết sủi bọt Hàn Quốc",
+        "service_price": 35000,
+        "service_duration": 30,
+        "service_description": "Tẩy da chết nhẹ nhàng bằng gel sủi bọt giúp da căng mịn, tươi mới",
+        "service_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743783139/services/1743783135104-tayda.jpg.jpg",
+        "isActive": true,
+        "createdAt": "2025-04-04T16:12:18.997Z",
+        "updatedAt": "2025-04-04T16:12:18.997Z",
+        "__v": 0
+      }
+    ],
+    "appointment_start": "2025-04-17T13:00:00.000Z",
+    "appointment_end": "2025-04-17T14:15:00.000Z",
+    "status": "pending",
+    "notes": "",
+    "createdAt": "2025-04-17T08:31:08.317Z",
+    "updatedAt": "2025-04-17T08:31:08.317Z",
+    "__v": 0
+  },
+  "is_read": true,
+  "createdAt": {
+    "$date": "2025-04-17T08:31:28.920Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-17T08:32:08.524Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6800bc9efa4a59e426c29e47"
+  },
+  "user": {
+    "$oid": "67ee5299beb270d6ab2def8b"
+  },
+  "title": "Haircut Complete",
+  "message": "Barber Tuấn Phương has completed haircut appointment from 20:00 17/04/2025 to 21:15 17/04/2025",
+  "data": {
+    "message": "Appointment proof updated",
+    "statusCode": 200,
+    "metadata": {
+      "_id": "6800bc4cfa4a59e426c29e18",
+      "customer": "67f8defb5725d0394afbd13f",
+      "customer_name": "Em Vĩ",
+      "phone_number": 123456789,
+      "barber": "67f173408cfcb5e3ea4eaca6",
+      "service": [
+        "67f0051136accc91b1163397",
+        "67f004e236accc91b1163395"
+      ],
+      "appointment_start": "2025-04-17T13:00:00.000Z",
+      "appointment_end": "2025-04-17T14:15:00.000Z",
+      "status": "confirmed",
+      "notes": "",
+      "createdAt": "2025-04-17T08:31:08.317Z",
+      "updatedAt": "2025-04-17T08:32:30.814Z",
+      "__v": 0,
+      "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744878750/schedules/1744878747160-459301824_934755612018631_6981237156955920413_n.jpg.jpg"
+    }
+  },
+  "is_read": true,
+  "createdAt": {
+    "$date": "2025-04-17T08:32:30.835Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-17T08:32:37.333Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6800bc9efa4a59e426c29e49"
+  },
+  "user": {
+    "$oid": "67f55bcb2505a4dd8d46f6dd"
+  },
+  "title": "Haircut Complete",
+  "message": "Barber Tuấn Phương has completed haircut appointment from 20:00 17/04/2025 to 21:15 17/04/2025",
+  "data": {
+    "message": "Appointment proof updated",
+    "statusCode": 200,
+    "metadata": {
+      "_id": "6800bc4cfa4a59e426c29e18",
+      "customer": "67f8defb5725d0394afbd13f",
+      "customer_name": "Em Vĩ",
+      "phone_number": 123456789,
+      "barber": "67f173408cfcb5e3ea4eaca6",
+      "service": [
+        "67f0051136accc91b1163397",
+        "67f004e236accc91b1163395"
+      ],
+      "appointment_start": "2025-04-17T13:00:00.000Z",
+      "appointment_end": "2025-04-17T14:15:00.000Z",
+      "status": "confirmed",
+      "notes": "",
+      "createdAt": "2025-04-17T08:31:08.317Z",
+      "updatedAt": "2025-04-17T08:32:30.814Z",
+      "__v": 0,
+      "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744878750/schedules/1744878747160-459301824_934755612018631_6981237156955920413_n.jpg.jpg"
+    }
+  },
+  "is_read": false,
+  "createdAt": {
+    "$date": "2025-04-17T08:32:30.868Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-17T08:32:30.868Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6800bca8fa4a59e426c29e56"
+  },
+  "user": {
+    "$oid": "67f173408cfcb5e3ea4eaca6"
+  },
+  "title": "Appointment Confirmed as Completed",
+  "message": "Receptionist Le Phan The Vi has confirmed that you have completed the haircut appointment from 20:00 17/04/2025 to 21:15 17/04/2025.",
+  "data": {
+    "_id": "6800bc4cfa4a59e426c29e18",
+    "customer": {
+      "_id": "67f8defb5725d0394afbd13f",
+      "user_name": "User",
+      "user_email": "user@gmail.com",
+      "user_avatar": "",
+      "user_password": "$2b$10$w3tvO8TaZZekRPXsM4VbO.j1QiKRXJfqbpIciE4C/P/1oR7Zj4fGu",
+      "user_gender": "unknown",
+      "user_phone": "",
+      "user_role": "customer",
+      "user_point": 35350,
+      "createdAt": "2025-04-11T09:20:59.548Z",
+      "updatedAt": "2025-04-17T08:04:25.317Z",
+      "__v": 0
+    },
+    "customer_name": "Em Vĩ",
+    "phone_number": 123456789,
+    "barber": {
+      "user_gender": "unknown",
+      "user_phone": "",
+      "user_point": 0,
+      "_id": "67f173408cfcb5e3ea4eaca6",
+      "user_name": "Tuấn Phương",
+      "user_email": "phuong@gmail.com",
+      "user_avatar": "https://pbs.twimg.com/profile_images/1856286778124111872/aqqCRaRE_400x400.jpg",
+      "user_password": "$2b$10$aMOdPOM95tmLD9Cq.fxpFe/9XGOWBMNsrnv6AhV/jzq3OT03YIzQm",
+      "user_role": "staff",
+      "createdAt": "2025-04-05T18:15:28.347Z",
+      "updatedAt": "2025-04-05T18:15:28.347Z",
+      "__v": 0
+    },
+    "service": [
+      {
+        "_id": "67f0051136accc91b1163397",
+        "service_name": "Chăm sóc da cấp thiết UltraWhite",
+        "service_price": 55000,
+        "service_duration": 45,
+        "service_description": "Tẩy da chết trắng mịn - Đắp mặt nạ lạnh",
+        "service_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743783186/services/1743783183072-chamsoc.jpg.jpg",
+        "isActive": true,
+        "createdAt": "2025-04-04T16:13:05.632Z",
+        "updatedAt": "2025-04-04T16:13:05.632Z",
+        "__v": 0
+      },
+      {
+        "_id": "67f004e236accc91b1163395",
+        "service_name": "Tẩy da chết sủi bọt Hàn Quốc",
+        "service_price": 35000,
+        "service_duration": 30,
+        "service_description": "Tẩy da chết nhẹ nhàng bằng gel sủi bọt giúp da căng mịn, tươi mới",
+        "service_image": "https://res.cloudinary.com/puahuhu/image/upload/v1743783139/services/1743783135104-tayda.jpg.jpg",
+        "isActive": true,
+        "createdAt": "2025-04-04T16:12:18.997Z",
+        "updatedAt": "2025-04-04T16:12:18.997Z",
+        "__v": 0
+      }
+    ],
+    "appointment_start": "2025-04-17T13:00:00.000Z",
+    "appointment_end": "2025-04-17T14:15:00.000Z",
+    "status": "confirmed",
+    "notes": "",
+    "createdAt": "2025-04-17T08:31:08.317Z",
+    "updatedAt": "2025-04-17T08:32:30.814Z",
+    "__v": 0,
+    "complete_picture": "https://res.cloudinary.com/lewisshop/image/upload/v1744878750/schedules/1744878747160-459301824_934755612018631_6981237156955920413_n.jpg.jpg"
+  },
+  "is_read": true,
+  "createdAt": {
+    "$date": "2025-04-17T08:32:40.243Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-17T08:32:47.346Z"
+  },
+  "__v": 0
+}]
