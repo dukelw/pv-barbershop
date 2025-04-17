@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { createAxios } from "../../createAxios";
 import { useEffect } from "react";
 import { logout } from "../../redux/apiRequest";
+import { CircularProgress, Typography, Box } from "@mui/material";
 
 function Logout() {
   const currentUser = useSelector((state) => state.user.signin.currentUser);
@@ -14,8 +15,25 @@ function Logout() {
 
   useEffect(() => {
     logout(accessToken, userID, dispatch, navigate, axiosJWT);
-  });
-  return <h1>Logging out...</h1>;
+  }, []);
+
+  return (
+    <Box
+      sx={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        bgcolor: "background.default",
+      }}
+    >
+      <CircularProgress color="primary" />
+      <Typography variant="body2" color="textSecondary" sx={{ mt: 2 }}>
+        Đang đăng xuất...
+      </Typography>
+    </Box>
+  );
 }
 
 export default Logout;
