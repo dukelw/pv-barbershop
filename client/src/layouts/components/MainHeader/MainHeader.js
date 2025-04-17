@@ -18,9 +18,15 @@ import {
   ListItemSecondaryAction,
   Button,
   Typography,
+  Box,
 } from "@mui/material";
 import { Notifications, Delete, Check } from "@mui/icons-material";
-import { logout, getNotifications, markRead } from "../../../redux/apiRequest";
+import {
+  logout,
+  getNotifications,
+  markRead,
+  deleteAllNotification,
+} from "../../../redux/apiRequest";
 import socket from "../../../hooks/useSocket";
 
 const cx = classNames.bind(styles);
@@ -38,6 +44,11 @@ function MainHeader() {
   const [unreadCount, setUnreadCount] = useState(0);
   const open = Boolean(anchorEl);
   const openNotif = Boolean(anchorNotif);
+
+  const handleDeleteAll = async () => {
+    await deleteAllNotification(accessToken, userID, dispatch);
+    loadNotifications();
+  };
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -139,6 +150,27 @@ function MainHeader() {
                 }}
               >
                 <List sx={{ width: 350, maxHeight: 400, overflowY: "auto" }}>
+                  {notifications.length !== 0 && (
+                    <Box
+                      display="flex"
+                      justifyContent="space-between"
+                      alignItems="center"
+                      px={2}
+                      py={1}
+                    >
+                      <Typography variant="h6" fontWeight="bold">
+                        Thông báo
+                      </Typography>
+                      <Button
+                        color="error"
+                        size="small"
+                        onClick={handleDeleteAll}
+                        sx={{ textTransform: "none" }}
+                      >
+                        Xoá tất cả
+                      </Button>
+                    </Box>
+                  )}
                   {notifications.length === 0 ? (
                     <ListItem>
                       <ListItemText
@@ -198,14 +230,6 @@ function MainHeader() {
                 />
               </IconButton>
               <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-                <MenuItem onClick={handleClose}>
-                  <Link
-                    to="/my-bookings"
-                    style={{ textDecoration: "none", color: "inherit" }}
-                  >
-                    Xem lịch cắt tóc
-                  </Link>
-                </MenuItem>
                 <MenuItem onClick={handleClose}>
                   <Link
                     to="/gifts"

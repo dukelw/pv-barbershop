@@ -9,6 +9,10 @@ router.get(
   asyncHandler(notificationController.getNotificationsByUser)
 );
 router.put("/:id/mark-read", asyncHandler(notificationController.markAsRead));
+router.delete(
+  "/delete-all/:userID",
+  asyncHandler(notificationController.deleteAllNotificationOfUser)
+);
 router.delete("/:id", asyncHandler(notificationController.deleteNotification));
 
 module.exports = router;

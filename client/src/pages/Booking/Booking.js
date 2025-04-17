@@ -103,7 +103,10 @@ function Booking() {
     }
 
     const endMoment = moment(endTime, "YYYY-MM-DD HH:mm");
-    if (endMoment.hour() >= 22) {
+
+    const maxEndTime = moment(`${formData.date} 22:00`, "YYYY-MM-DD HH:mm");
+
+    if (endMoment.isAfter(maxEndTime)) {
       toast.error("Không thể đặt lịch nếu thời gian kết thúc sau 22 giờ!");
       return;
     }

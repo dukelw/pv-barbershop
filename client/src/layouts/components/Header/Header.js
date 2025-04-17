@@ -18,13 +18,14 @@ import {
   Button,
   Typography,
   Popover,
+  Box,
 } from "@mui/material";
-import { Notifications, Delete } from "@mui/icons-material";
+import { Notifications, Delete, Check } from "@mui/icons-material";
 import {
+  deleteAllNotification,
   getNotifications,
   logout,
   markRead,
-  // deleteNotification,
 } from "../../../redux/apiRequest";
 import socket from "../../../hooks/useSocket";
 
@@ -51,6 +52,11 @@ function Header() {
   const handleAvatarClick = (event) => setAnchorEl(event.currentTarget);
   const handleAvatarClose = () => setAnchorEl(null);
 
+  const handleDeleteAll = async () => {
+    await deleteAllNotification(accessToken, userID, dispatch);
+    loadNotifications();
+  };
+
   const handleLogout = async () => {
     await logout(accessToken, userID, dispatch, navigate, axiosJWT);
   };
@@ -65,12 +71,6 @@ function Header() {
 
   const handleMarkRead = async (id) => {
     await markRead(id, dispatch);
-    loadNotifications();
-  };
-
-  const handleDelete = async (id) => {
-    // await deleteNotification(id, dispatch);
-    alert("Delete", id);
     loadNotifications();
   };
 
@@ -146,6 +146,27 @@ function Header() {
               }}
             >
               <List sx={{ width: 350, maxHeight: 400, overflowY: "auto" }}>
+                {notifications.length !== 0 && (
+                  <Box
+                    display="flex"
+                    justifyContent="space-between"
+                    alignItems="center"
+                    px={2}
+                    py={1}
+                  >
+                    <Typography variant="h6" fontWeight="bold">
+                      Thông báo
+                    </Typography>
+                    <Button
+                      color="error"
+                      size="small"
+                      onClick={handleDeleteAll}
+                      sx={{ textTransform: "none" }}
+                    >
+                      Xoá tất cả
+                    </Button>
+                  </Box>
+                )}
                 {notifications.length === 0 ? (
                   <ListItem>
                     <ListItemText
@@ -158,28 +179,36 @@ function Header() {
                     <ListItem
                       key={noti._id}
                       sx={{
-                        backgroundColor: noti.isRead ? "#f5f5f5" : "#e3f2fd",
+                        backgroundColor: noti.is_read ? "#f5f5f5" : "#e3f2fd",
                       }}
                     >
                       <ListItemText
-                        primary={noti.title}
-                        secondary={noti.message}
+                        primary={
+                          <Typography
+                            variant="subtitle1"
+                            fontWeight="bold"
+                            sx={{ color: "var(--black)" }}
+                          >
+                            {noti.title}
+                          </Typography>
+                        }
+                        secondary={
+                          <p
+                            style={{
+                              textDecoration: "none",
+                              textTransform: "none",
+                            }}
+                          >
+                            {noti.message}
+                          </p>
+                        }
                       />
                       <ListItemSecondaryAction>
-                        {!noti.isRead && (
-                          <Button
-                            size="small"
-                            onClick={() => handleMarkRead(noti._id)}
-                          >
-                            Read
-                          </Button>
+                        {!noti.is_read && (
+                          <IconButton onClick={() => handleMarkRead(noti._id)}>
+                            <Check />
+                          </IconButton>
                         )}
-                        <IconButton
-                          edge="end"
-                          onClick={() => handleDelete(noti._id)}
-                        >
-                          <Delete />
-                        </IconButton>
                       </ListItemSecondaryAction>
                     </ListItem>
                   ))
@@ -198,14 +227,6 @@ function Header() {
               open={openMenu}
               onClose={handleAvatarClose}
             >
-              <MenuItem onClick={handleAvatarClose}>
-                <Link
-                  style={{ textDecoration: "none", color: "inherit" }}
-                  to="/my-bookings"
-                >
-                  Xem lịch cắt tóc
-                </Link>
-              </MenuItem>
               <MenuItem onClick={handleAvatarClose}>
                 <Link
                   style={{ textDecoration: "none", color: "inherit" }}

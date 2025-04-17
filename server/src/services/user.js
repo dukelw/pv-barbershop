@@ -79,6 +79,10 @@ class UserService {
     const foundUser = await findByEmail({ email });
     if (!foundUser) throw new BadRequestError("User has not registered");
 
+    if (foundUser.deletedBy != null) {
+      throw new BadRequestError("User has been deleted");
+    }
+
     // 2. Match password
     const isMatch = await bcrypt.compare(password, foundUser.user_password);
     if (!isMatch) throw new AuthFailureError("Authentication failed");
@@ -188,38 +192,45 @@ class UserService {
   };
 
   findAll = async (keySearch) => {
-    let foundUsers;
+    let query = {
+      deletedBy: { $exists: false },
+    };
 
     if (keySearch) {
-      foundUsers = await UserModel.find({
-        user_name: { $regex: keySearch, $options: "i" },
-      });
-    } else {
-      foundUsers = await UserModel.find();
+      query.user_name = { $regex: keySearch, $options: "i" };
     }
+
+    const foundUsers = await UserModel.find(query);
     console.log(foundUsers);
     return foundUsers;
   };
 
   findAllBarber = async () => {
-    let foundUsers;
-    const query = { user_role: "staff" };
+    const query = {
+      user_role: "staff",
+      deletedBy: { $exists: false },
+    };
 
-    foundUsers = await UserModel.find(query);
+    const foundUsers = await UserModel.find(query);
     return foundUsers;
   };
 
   findReceptionist = async () => {
-    let foundUsers;
-    const query = { user_role: "receptionist" };
+    const query = {
+      user_role: "receptionist",
+      deletedBy: { $exists: false },
+    };
 
-    foundUsers = await UserModel.find(query);
+    const foundUsers = await UserModel.find(query);
     return foundUsers;
   };
 
   findAllFreeBarber = async (keySearch, timeStart, timeEnd) => {
     let foundUsers;
-    const query = { user_role: "staff" };
+    const query = {
+      user_role: "staff",
+      deletedBy: { $exists: false },
+    };
 
     if (keySearch) {
       query.user_name = { $regex: keySearch, $options: "i" };
@@ -227,7 +238,6 @@ class UserService {
 
     foundUsers = await UserModel.find(query);
 
-    console.log("starttime", timeStart, "endtime", timeEnd);
     if (timeStart && timeEnd) {
       const busyAppointments = await AppointmentModel.find({
         appointment_start: { $lt: new Date(timeEnd) },
@@ -330,7 +340,11 @@ class UserService {
     const deleteUser = await UserModel.findById(deleteID);
     if (!foundUser) throw new NotFoundError("User not found");
 
-    const result = await UserModel.deleteOne({ _id: deleteUser._id });
+    const result = await UserModel.findOneAndUpdate(
+      { _id: deleteUser._id },
+      { deletedBy: userID },
+      { new: true }
+    );
     return result;
   };
 
