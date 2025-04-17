@@ -6,12 +6,11 @@ import { useDispatch } from "react-redux";
 import classNames from "classnames/bind";
 import Cookies from "js-cookie";
 import styles from "./Signup.module.scss";
-import { signup } from "../../redux/apiRequest";
-import { Checkbox, FormControlLabel } from "@mui/material";
+import { sendOtp, signup, verifyOtp } from "../../redux/apiRequest";
+import { Checkbox, FormControlLabel, Modal, TextField } from "@mui/material";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import MuiAlert from "@mui/material/Alert"; // 
+
 const cx = classNames.bind(styles);
 
 function Signup() {
@@ -20,6 +19,8 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
+  const [otp, setOtp] = useState("");
+  const [openOtpModal, setOpenOtpModal] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -31,18 +32,41 @@ function Signup() {
       return;
     }
 
-    if (rememberMe) {
-      Cookies.set("email", email, { expires: 7 });
-      Cookies.set("password", password, { expires: 7 });
+    try {
+      await sendOtp(email);
+      toast.info("Đã gửi mã OTP đến email của bạn.");
+      setOpenOtpModal(true);
+    } catch (error) {
+      toast.error("Gửi OTP thất bại.");
     }
+  };
 
-    const user = { name, email, password };
-    const result = await signup(user, dispatch, navigate);
+  const handleVerifyOtp = async () => {
+    try {
+      const res = await verifyOtp(email, otp);
+      console.log("data", res);
 
-    if (result === false) {
-      toast.error("Đăng ký thất bại. Vui lòng thử lại.");
-    } else {
-      toast.success("Đăng ký thành công!");
+      if (res.metadata.verified) {
+        if (rememberMe) {
+          Cookies.set("email", email, { expires: 7 });
+          Cookies.set("password", password, { expires: 7 });
+        }
+
+        const user = { name, email, password };
+        const result = await signup(user, dispatch, navigate);
+
+        if (result === false) {
+          toast.error("Đăng ký thất bại. Vui lòng thử lại.");
+        } else {
+          toast.success("Đăng ký thành công!");
+        }
+
+        setOpenOtpModal(false);
+      } else {
+        toast.error("Mã OTP không đúng.");
+      }
+    } catch (error) {
+      toast.error("Xác minh OTP thất bại.");
     }
   };
 
@@ -61,7 +85,6 @@ function Signup() {
         <div className={cx("right-part")}>
           <h1 className={cx("title")}>Đăng ký</h1>
           <form onSubmit={handleSubmit} className={cx("form")}>
-            {/* Tên */}
             <Box mb={1}>
               <label style={{ color: "white" }}>Tên đăng ký</label>
               <input
@@ -72,7 +95,6 @@ function Signup() {
               />
             </Box>
 
-            {/* Email */}
             <Box mb={1}>
               <label style={{ color: "white" }}>Email</label>
               <input
@@ -83,7 +105,6 @@ function Signup() {
               />
             </Box>
 
-            {/* Mật khẩu */}
             <Box mb={1}>
               <label style={{ color: "white" }}>Mật khẩu</label>
               <div className={cx("input-wrapper")}>
@@ -102,7 +123,6 @@ function Signup() {
               </div>
             </Box>
 
-            {/* Ghi nhớ */}
             <Box>
               <FormControlLabel
                 control={
@@ -123,7 +143,6 @@ function Signup() {
               />
             </Box>
 
-            {/* Nút đăng ký */}
             <Box sx={{ textAlign: "center" }} mb={2}>
               <Button
                 sx={{
@@ -143,7 +162,6 @@ function Signup() {
               </Button>
             </Box>
 
-            {/* Link đăng nhập */}
             <Box mb={2}>
               Đã có tài khoản?
               <Link
@@ -160,6 +178,53 @@ function Signup() {
           </form>
         </div>
       </div>
+
+      {/* Modal nhập OTP */}
+      <Modal
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        open={openOtpModal}
+        onClose={() => setOpenOtpModal(false)}
+      >
+        <Box
+          sx={{
+            backgroundColor: "var(--white)",
+            width: "800px",
+            padding: "40px",
+            height: "200px",
+            outline: "unset",
+          }}
+          className={cx("otp-modal")}
+        >
+          <h2>Xác thực OTP</h2>
+          <TextField
+            fullWidth
+            label="Nhập mã OTP"
+            value={otp}
+            onChange={(e) => setOtp(e.target.value)}
+          />
+          <Button
+            onClick={handleVerifyOtp}
+            variant="contained"
+            fullWidth
+            sx={{
+              marginTop: 2,
+              backgroundColor: "var(--yellow)",
+              color: "var(--dark)",
+              fontWeight: "bold",
+              "&:hover": {
+                backgroundColor: "var(--white)",
+                color: "var(--black)",
+              },
+            }}
+          >
+            Xác nhận OTP
+          </Button>
+        </Box>
+      </Modal>
     </div>
   );
 }

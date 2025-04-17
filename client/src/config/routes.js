@@ -12,7 +12,7 @@ const routes = {
   barber: "/barbers",
   service: "/services",
   history: "/history/:userID",
-
+  restore: "restore-password",
   home: "/",
   notFound: "*",
 };

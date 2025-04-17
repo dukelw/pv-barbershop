@@ -16,6 +16,7 @@ router.get("/barber", asyncHandler(userController.findAllBarber));
 router.get("/", asyncHandler(userController.findAll));
 router.delete("/:id/:userID", asyncHandler(userController.delete));
 router.put("/point", asyncHandler(userController.updatePoint));
+router.post("/restore-password", asyncHandler(userController.restorePassword));
 
 router.use(authentication);
 router.post("/logout", asyncHandler(userController.logout));

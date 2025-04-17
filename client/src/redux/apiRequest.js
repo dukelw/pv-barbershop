@@ -381,6 +381,26 @@ export const changePassword = async (
   }
 };
 
+export const restorePassword = async (accessToken, userID, data, dispatch) => {
+  dispatch(changePasswordStart());
+  try {
+    const res = await axios.post(
+      `${REACT_APP_BASE_URL}user/restore-password`,
+      data,
+      {
+        headers: {
+          authorization: accessToken,
+          user: userID,
+        },
+      }
+    );
+    dispatch(changePasswordSuccess(res.data));
+    return res.data;
+  } catch (error) {
+    dispatch(changePasswordFailure());
+  }
+};
+
 export const updateAccumulatePoint = async (
   accessToken,
   userID,
@@ -1862,3 +1882,42 @@ export const contactViaEmail = async (data) => {
 };
 
 // End contact
+
+// Start OTP
+export const sendOtp = async (email) => {
+  try {
+    const response = await axios.post(
+      `${REACT_APP_BASE_URL}otp/send`,
+      { email },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Gửi OTP thất bại:", error);
+    throw error;
+  }
+};
+
+export const verifyOtp = async (email, otp) => {
+  try {
+    const response = await axios.post(
+      `${REACT_APP_BASE_URL}otp/verify`,
+      { email, otp },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Xác minh OTP thất bại:", error);
+    throw error;
+  }
+};
+
+// End OTP
