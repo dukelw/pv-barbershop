@@ -15,13 +15,14 @@ const cx = classNames.bind(styles);
 function Account() {
   const currentUser = useSelector((state) => state.user.signin.currentUser);
   const accessToken = currentUser?.metadata.tokens.accessToken;
-  const {userID} = useParams()
+  const { userID } = useParams();
   const axiosJWT = createAxios(currentUser);
 
   const dispatch = useDispatch();
 
   // Hàm để chuẩn hoá giá trị gender
-  const normalizeGender = (gender) => (typeof gender === "string" ? gender : "unknown");
+  const normalizeGender = (gender) =>
+    typeof gender === "string" ? gender : "unknown";
 
   const [userInfor, setUserInfor] = useState({});
   const [editable, setEditable] = useState(false);
@@ -165,7 +166,9 @@ function Account() {
           <DatePicker
             className={cx("input", "datepicker")}
             selected={
-              form.birthday ? parse(form.birthday, "dd-MM-yyyy", new Date()) : null
+              form.birthday
+                ? parse(form.birthday, "dd-MM-yyyy", new Date())
+                : null
             }
             onChange={(date) =>
               setForm((prev) => ({
@@ -216,7 +219,7 @@ function Account() {
             type="button"
             onClick={!editable ? handleToggleEdit : handleSubmit}
           >
-            {!editable ? "Cập nhật" : "Lưu"}
+            {!editable ? "Chỉnh sửa" : "Lưu"}
           </button>
         </div>
       </form>
