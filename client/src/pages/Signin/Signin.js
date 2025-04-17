@@ -13,9 +13,8 @@ import styles from "./Signin.module.scss";
 import { signin } from "../../redux/apiRequest";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
-import { FiEye, FiEyeOff } from "react-icons/fi"; 
+import { FiEye, FiEyeOff } from "react-icons/fi";
 import { toast } from "react-toastify";
-
 
 const cx = classNames.bind(styles);
 
@@ -143,6 +142,7 @@ function Signin() {
                   </span>
                 }
               />
+              <Link to={"/restore-password"}>Quên mật khẩu</Link>
             </Box>
 
             {/* Nút đăng nhập */}

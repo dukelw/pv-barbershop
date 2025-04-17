@@ -20,6 +20,8 @@ import Service from "../pages/ServiceList";
 
 import Gift from "../pages/Gift";
 import History from "../pages/History";
+import RestorePassword from "../pages/RestorePassword";
+
 const publicRoutes = [
   { path: config.routes.signin, component: Signin, layout: null },
   { path: config.routes.signup, component: Signup, layout: null },
@@ -31,7 +33,7 @@ const publicRoutes = [
   { path: config.routes.account, component: Account, layout: MainLayout },
   { path: config.routes.barber, component: Barber, layout: MainLayout },
   { path: config.routes.service, component: Service, layout: MainLayout },
-  {path: config.routes.history, component: History,layout: MainLayout},
+  { path: config.routes.history, component: History, layout: MainLayout },
   {
     path: config.routes.gift,
     component: Gift,
@@ -41,6 +43,11 @@ const publicRoutes = [
     path: config.routes.changePassword,
     component: Password,
     layout: MainLayout,
+  },
+  {
+    path: config.routes.restore,
+    component: RestorePassword,
+    layout: null,
   },
 ];
 
@@ -66,7 +73,6 @@ const privateRoutes = [
     path: config.routes.workbench,
     component: Workbench,
   },
-  
 ];
 
 export { publicRoutes, privateRoutes };
