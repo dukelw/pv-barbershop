@@ -36,6 +36,13 @@ class NotificationController {
       metadata: await notificationService.deleteNotification(req.params.id),
     }).send(res);
   }
+
+  async deleteAllNotificationOfUser(req, res, next) {
+    new SuccessResponse({
+      message: "Notification deleted",
+      metadata: await notificationService.deleteAllNotification(req.params.userID),
+    }).send(res);
+  }
 }
 
 module.exports = new NotificationController();
