@@ -30,8 +30,6 @@ class ReviewService {
     const reviews = await ReviewModel.find({ barber: barberID }).populate(
       "service"
     );
-    if (!reviews.length)
-      throw new NotFoundError("Have not get any review yet.");
 
     return reviews;
   }
