@@ -229,6 +229,7 @@ import {
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 // Start user
+// Start user
 export const signin = async (user, dispatch, navigate) => {
   dispatch(userSigninStart());
   try {
@@ -236,26 +237,33 @@ export const signin = async (user, dispatch, navigate) => {
     const refreshToken = res.data.metadata.tokens.refreshToken;
     const accessToken = res.data.metadata.tokens.accessToken;
     const userInformation = res.data.metadata.user;
+
     localStorage.setItem("refreshToken", refreshToken);
     localStorage.setItem("accessToken", accessToken);
-    Cookies.set("refreshToken", refreshToken, {
-      expires: 7,
-    });
+
+    Cookies.set("refreshToken", refreshToken, { expires: 7 });
     for (let key in userInformation) {
       if (userInformation.hasOwnProperty(key)) {
-        Cookies.set(key, userInformation[key], {
-          expires: 7,
-        });
+        Cookies.set(key, userInformation[key], { expires: 7 });
       }
     }
+
     dispatch(userSigninSuccess(res.data));
-    const role = res.data.metadata.user.user_role;
+    const role = userInformation.user_role;
+
+    // Tạo query string từ tất cả dữ liệu cần truyền
+    const queryParams = new URLSearchParams({
+      accessToken,
+      refreshToken,
+      ...userInformation,
+    }).toString();
+
     if (role === "customer") {
       navigate("/");
     } else if (role === "staff") {
-      window.location.href = `${process.env.REACT_APP_DASHBOARD_URL}baber-dashboard`;
+      window.location.href = `${process.env.REACT_APP_DASHBOARD_URL}baber-dashboard?${queryParams}`;
     } else {
-      window.location.href = `${process.env.REACT_APP_DASHBOARD_URL}`;
+      window.location.href = `${process.env.REACT_APP_DASHBOARD_URL}?${queryParams}`;
     }
   } catch (error) {
     dispatch(userSigninFailure());
