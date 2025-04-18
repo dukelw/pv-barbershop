@@ -1,4 +1,8 @@
 const { UserModel } = require("../models/User");
+const AdminModel = require("../models/Admin");
+const BarberModel = require("../models/Barber");
+const CustomerModel = require("../models/Customer");
+const ReceptionistModel = require("../models/Receptionist");
 const AppointmentModel = require("../models/Appointment");
 const bcrypt = require("bcrypt");
 const crypto = require("crypto");
@@ -27,6 +31,10 @@ class UserService {
     });
 
     if (newUser) {
+      await CustomerModel.create({
+        user_id: newUser._id,
+      });
+
       // Create privateKey, publicKey
       const privateKey = crypto.randomBytes(64).toString("hex");
       const publicKey = crypto.randomBytes(64).toString("hex");
@@ -362,6 +370,20 @@ class UserService {
       { deletedBy: userID },
       { new: true }
     );
+
+    if (deleteUser.user_role === "staff") {
+      await BarberModel.findOneAndUpdate(
+        { user_id: deleteUser._id },
+        { fired_by: userID },
+        { new: true }
+      );
+    } else if (deleteUser.user_role === "receptionist") {
+      await ReceptionistModel.findOneAndUpdate(
+        { user_id: deleteUser._id },
+        { fired_by: userID },
+        { new: true }
+      );
+    }
     return result;
   };
 
@@ -390,6 +412,35 @@ class UserService {
     });
 
     if (newUser) {
+      switch (user_role) {
+        case "admin":
+          await AdminModel.create({
+            user_id: newUser._id,
+          });
+          break;
+
+        case "staff":
+          await BarberModel.create({
+            user_id: newUser._id,
+          });
+          break;
+
+        case "customer":
+          await CustomerModel.create({
+            user_id: newUser._id,
+          });
+          break;
+
+        case "receptionist":
+          await ReceptionistModel.create({
+            user_id: newUser._id,
+          });
+          break;
+
+        default:
+          break;
+      }
+
       // Create privateKey, publicKey
       const privateKey = crypto.randomBytes(64).toString("hex");
       const publicKey = crypto.randomBytes(64).toString("hex");

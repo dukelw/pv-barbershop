@@ -28,7 +28,6 @@ const StyledCard = styled(Card)({
   boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
 });
 
-
 const StyledCardMedia = styled(CardMedia)({
   width: "100%",
   height: "250px", // hoặc bất kỳ chiều cao cố định nào bạn muốn
