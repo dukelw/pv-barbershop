@@ -12,6 +12,10 @@ router.get("/list", asyncHandler(giftController.getAllGifts));
 router.post("/redeem", asyncHandler(giftController.redeemGift));
 router.get("/redemptions", asyncHandler(giftController.getUserRedemptions));
 router.get("/all-redemption", asyncHandler(giftController.getRedemptions));
-router.delete("/:id", asyncHandler(giftController.delete))
+router.delete(
+  "/redemption/:id",
+  asyncHandler(giftController.completeRedemption)
+);
+router.delete("/:id", asyncHandler(giftController.delete));
 
 module.exports = router;

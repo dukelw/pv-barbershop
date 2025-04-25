@@ -84,6 +84,10 @@ class GiftService {
   async delete(id) {
     return await GiftModel.deleteOne({ _id: id });
   }
+
+  async completeRedemption(id) {
+    return await RedemptionModel.deleteOne({ _id: id });
+  }
 }
 
 module.exports = new GiftService();
