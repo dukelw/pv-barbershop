@@ -54,6 +54,13 @@ class GiftController {
       metadata: await giftService.delete(req.params.id),
     }).send(res);
   }
+
+  async completeRedemption(req, res, next) {
+    new SuccessResponse({
+      message: "Redemption completed",
+      metadata: await giftService.completeRedemption(req.params.id),
+    }).send(res);
+  }
 }
 
 module.exports = new GiftController();
